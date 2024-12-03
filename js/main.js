@@ -110,3 +110,72 @@ window.addEventListener('click', event => {
   });
 });
 
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+	// Вибір елементів для відкриття попапів
+	const openPopupButtons = document.querySelectorAll(
+		'.perform__item-first, .perform__item-second, .perform__item-third'
+	)
+	// Вибір попапів
+	const popups = {
+		'perform__item-first': '.pop-purchase',
+		'perform__item-second': '.pop-transfer',
+		'perform__item-third': '.pop-service',
+	}
+
+	// Відкриття попапів при натисканні на елементи
+	openPopupButtons.forEach(button => {
+		button.addEventListener('click', event => {
+			event.preventDefault()
+
+			// Знаходимо попап, що відповідає натиснутому елементу
+			const targetPopupClass = popups[button.classList[1]]
+			const popup = document.querySelector(targetPopupClass)
+			if (popup) {
+				// Закриваємо всі попапи
+				document
+					.querySelectorAll('.pop-purchase, .pop-transfer, .pop-service')
+					.forEach(p => p.classList.remove('active'))
+				// Відкриваємо відповідний попап
+				popup.classList.add('active')
+				popup.setAttribute('aria-hidden', 'false')
+			}
+		})
+	})
+
+	// Закриття попапів при кліку поза ними або по кнопці закриття
+	document.addEventListener('click', event => {
+		// Клік поза попапом
+		document
+			.querySelectorAll('.pop-purchase, .pop-transfer, .pop-service')
+			.forEach(popup => {
+				if (
+					!popup.contains(event.target) &&
+					!event.target.closest(
+						'.perform__item-first, .perform__item-second, .perform__item-third'
+					)
+				) {
+					popup.classList.remove('active')
+					popup.setAttribute('aria-hidden', 'true')
+				}
+			})
+
+		// Клік по кнопці закриття
+		if (event.target.matches('.popup__close')) {
+			const popup = event.target.closest(
+				'.pop-purchase, .pop-transfer, .pop-service'
+			)
+			if (popup) {
+				popup.classList.remove('active')
+				popup.setAttribute('aria-hidden', 'true')
+			}
+		}
+	})
+})
+
+
+
