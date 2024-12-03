@@ -16,6 +16,11 @@ body {
 	background: #0e0d13;
 }
 
+.main {
+	position: relative;
+	overflow: hidden;
+}
+
 input {
 	outline: none;
 	border: none;
@@ -1264,6 +1269,12 @@ hr {
 	position: relative;
 }
 
+.perform__decor{
+	position: absolute;
+	top: 62.8%;
+	left: 115px;
+}
+
 .perform__img {
 	opacity: 0;
 	animation: blink 2s infinite;
@@ -1280,7 +1291,6 @@ hr {
 	}
 }
 
-
 .perform__item {
 	transition: all 0.3s;
 	z-index: 100;
@@ -1289,7 +1299,6 @@ hr {
 .perform__item:hover {
 	scale: 1.05;
 }
-
 
 .perform__item-second {
 	background-image: url('../images/perform-2.png');
@@ -1311,7 +1320,6 @@ hr {
 	position: relative;
 	border-radius: 10px;
 	z-index: 10;
-
 }
 .perform__item-text {
 	font-family: 'Marvel';
@@ -1643,9 +1651,9 @@ hr {
 .footer {
 	border-radius: 54px 54px 0px 0px;
 	background: #fff;
-	padding: 97px 30px 30px;
+	padding: 97px 30px 30px 30px;
 	position: relative;
-	height: 415px;
+	/* height: 415px; */
 	overflow: hidden;
 }
 
@@ -1653,10 +1661,12 @@ hr {
 	display: flex;
 	justify-content: space-between;
 }
+
+
 .footer__content {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 48px;
+	margin-bottom: 30px;
 }
 
 .footer__wrapper {
@@ -1666,9 +1676,16 @@ hr {
 }
 .footer__img {
 	position: absolute;
-	transform: translateY(-320px);
-	right: 0;
-	z-index: 3;
+	right: 150px;
+	bottom: -70px;
+	z-index: 30;
+}
+
+.footer__decor-img{
+	position: absolute;
+	z-index: -1;
+	right: 65px;
+  bottom: 90px;
 }
 
 .footer__arrow {
