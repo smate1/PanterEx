@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PanterEx</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marvel:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main class="main">
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="header__left">
+            <a class="header__logo" href="#">
+              <img src="./images/logo.png" alt="">
+            </a>
+            <div class="select">
+              <div class="select__header">
+                <span class="select__current" data-value=""></span>
+                <div class="select__icon">
+                  <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
+                </div>
+              </div>
+              <div class="select__list">
+                <div class="select__item">Eng</div>
+                <div class="select__item">Ru</div>
+              </div>
+            </div>
+          </div>
+          <div class="header__right">
+            <div class="select">
+              <div class="select__header">
+                <span class="select__current" data-value=""></span>
+                <div class="select__icon select__icon-arrow"><img src="./images/sel.svg" alt=""></div>
+              </div>
+              <div class="select__list">
+                <div class="select__item">Тайланд</div>
+                <div class="select__item">Бали</div>
+                <div class="select__item">ОАЭ</div>
+                <div class="select__item">Китай</div>
+              </div>
+            </div>
+            <ul class="menu">
+              <li class="menu__item">
+                <a class="menu__item-link" href="#steps">
+                  Выгода
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__item-link" href="#perform">
+                  Услуги
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__item-link" href="#reviews">
+                  Доверие
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__item-link" href="#request">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+            <div class="header__socials">
+              <a class="header__socials-link instagram" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                  <path class="instagram-path"
+                    d="M12.5 16C13.605 16 14.6649 15.5786 15.4463 14.8284C16.2277 14.0783 16.6666 13.0609 16.6666 12C16.6666 10.9391 16.2277 9.92172 15.4463 9.17157C14.6649 8.42143 13.605 8 12.5 8C11.3949 8 10.3351 8.42143 9.5537 9.17157C8.7723 9.92172 8.33331 10.9391 8.33331 12C8.33331 13.0609 8.7723 14.0783 9.5537 14.8284C10.3351 15.5786 11.3949 16 12.5 16Z"
+                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  <path class="instagram-path"
+                    d="M3.125 16V8C3.125 6.67392 3.67373 5.40215 4.65049 4.46447C5.62724 3.52678 6.952 3 8.33333 3H16.6667C18.048 3 19.3728 3.52678 20.3495 4.46447C21.3263 5.40215 21.875 6.67392 21.875 8V16C21.875 17.3261 21.3263 18.5979 20.3495 19.5355C19.3728 20.4732 18.048 21 16.6667 21H8.33333C6.952 21 5.62724 20.4732 4.65049 19.5355C3.67373 18.5979 3.125 17.3261 3.125 16Z"
+                    stroke="white" />
+                  <path class="instagram-path" d="M18.2292 6.50862L18.2383 6.49899" stroke="white"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a class="header__socials-link telegram" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                  <path class="telegram-path" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M20.601 4.43C20.8584 4.32599 21.1402 4.29011 21.417 4.32611C21.6937 4.36211 21.9554 4.46866 22.1747 4.63468C22.394 4.8007 22.5629 5.02011 22.6639 5.27008C22.7649 5.52005 22.7943 5.79144 22.7489 6.056L20.3864 19.813C20.1573 21.14 18.6406 21.901 17.3729 21.24C16.3125 20.687 14.7375 19.835 13.3208 18.946C12.6125 18.501 10.4427 17.076 10.7094 16.062C10.9385 15.195 14.5844 11.937 16.6677 10C17.4854 9.239 17.1125 8.8 16.1469 9.5C13.7489 11.238 9.89894 13.881 8.62603 14.625C7.50311 15.281 6.91769 15.393 6.21769 15.281C4.94061 15.077 3.75623 14.761 2.78957 14.376C1.48332 13.856 1.54686 12.132 2.78853 11.63L20.601 4.43Z"
+                    fill="white" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="page-wrapper">
+      <section class="exchange">
+        <div class="page-container">
+          <div class="exchange__items">
+            <div class="exchange__item">
+              <img class="exchange__item-img" src="./images/item-1.svg" alt="">
+              <p class="exchange__item-text">
+                Получи наличные за <br> 15 мин в любой части страны
+              </p>
+            </div>
+            <div class="exchange__item">
+              <img class="exchange__item-img" src="./images/item-2.svg" alt="">
+              <p class="exchange__item-text">
+                <span id="number">7.850</span> <br>
+                Довольных клиентов
+              </p>
+            </div>
+            <div class="exchange__item">
+              <img class="exchange__item-img" src="./images/item-3.svg" alt="">
+              <p class="exchange__item-text">
+                Виртуальная карта для <br> платежей в подарок от 1000
+              </p>
+            </div>
+          </div>
+          <div class="exchange__content">
+            <div class="exchange__left">
+              <div class="exchange__left-top">
+                <h3 class="exchange__title">
+                  Лицензированная сеть обмена
+                </h3>
+                <div class="exchange__descr">
+                  Оформи заявку за 1 минуту
+                </div>
+              </div>
+              <div class="exchange__wrapper">
+                <div class="exchange__info">
+                  <div class="exchange__info-changing">
+                    Вы меняете:
+                  </div>
+                  <div class="exchange__info-secure">
+                    <img class="exchange__info-secure-img" src="./images/secure.svg" alt="">
+                    <p class="exchange__info-secure-text">безопасный обмен</p>
+                  </div>
+                </div>
+                <div class="select select-ex">
+                  <div class="select__header select-ex-header">
+                    <span class="select__current" data-value=""></span>
+                    <div class="select__icon">
+                      <div class="select__icon select__icon-ex"><img src="./images/sel-2.svg" alt=""></div>
+                    </div>
+                  </div>
+                  <div class="select__list select-ex-list">
+                    <div class="select__item">RUB <span>→</span> THB</div>
+                    <div class="select__item">THB <span>→</span> RUB</div>
+                  </div>
+                </div>
+                <div class="exchange__amount exchange__amount-rub">
+                  <input type="text" placeholder="0"><label>RUB</label>
+                </div>
+                <div class="exchange__info-receive">
+                  Вы получите:
+                </div>
+                <div class="exchange__amount exchange__amount-thb">
+                  <input type="text" placeholder="0"><label>THB</label>
+                </div>
+                <div class="exchange__rate">
+                  Курс обмена: 3.08
+                </div>
+                <div class="exchange__buttons">
+                  <a class="exchange__telegram" href="#">
+                    <!-- <img src="./images/telegram.svg" alt=""> -->
+                    Обменять в TG
+                  </a>
+                  <a class="exchange__whatsapp" href="#">
+                    <!-- <img src="./images/whatsapp.svg" alt=""> -->
+                    Обменять в whatsapp
+                  </a>
+                </div>
+                <div class="exchange__note">
+                  * при обмене от 100 Бат вы получите наиболее выгодный курс
+                </div>
+              </div>
+            </div>
+            <div class="exchange__right">
+              <h3 class="exchange__title exchange__title-rate">
+                КУрс обмена валют <br>
+                в российской федерации
+              </h3>
+              <hr>
+              <div class="exchange__right-content">
+                <div class="exchange__aver">
+                  Средний обменный курс в других обменниках:
+                </div>
+                <input class="exchange__right-input" type="text" placeholder="...">
+                <div class="exchange__averr">
+                  Обменный курс Pantene:
+                </div>
+                <input class="exchange__right-input" type="text" placeholder="...">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="about">
+      <h1 class="about__title">
+        PanterEx
+      </h1>
+      <p class="about__text">
+        Cнимает финансовые границы для всех людей по всему миру, ты будешь иметь <span>свободу выбора</span>,
+        перемещений, покупок и
+        инвестиций, быть в финансовой безопасности <span>имея за спиной надежного партнера.</span>
+      </p>
+    </div>
+    <div class="how__svgs">
+      <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
+        <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
+          stroke-opacity="0.2" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
+        <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
+          stroke-opacity="0.2" />
+      </svg>
+    </div>
+    <section class="steps" id="steps">
+      <div class="page-container">
+        <div class="steps__wrapper">
+          <div class="steps__left">
+            <div class="steps__item">
+              <div class="steps__item-num">
+                1.
+              </div>
+              <div class="steps__item-text">
+                <span>Лучший курс</span> среди обменников в Тайланде
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__item-num steps__item-num--two">
+                2.
+              </div>
+              <div class="steps__item-text">
+                Обмен при личной встрече
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__item-num steps__item-num--three">
+                3.
+              </div>
+              <div class="steps__item-text">
+                <span>Быстрая доставка</span> курьером Пхукет, Паттая, Бангкок
+              </div>
+            </div>
+          </div>
+          <div class="steps__center">
+            <div class="steps__soon">
+              SOON...
+            </div>
+            <div class="steps__name">
+              Teo...
+            </div>
+          </div>
+          <div class="steps__right">
+            <div class="steps__item">
+              <div class="steps__item-num">
+                4.
+              </div>
+              <div class="steps__item-text">
+                Откроем карту apple/google pay <span>бесплатно</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__item-num">
+                5.
+              </div>
+              <div class="steps__item-text">
+                Совершим обмен за <span>15 мин</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__item-num">
+                6.
+              </div>
+              <div class="steps__item-text">
+                Офисы в Дубае, Бали, Пхукете, Бангкоке, Паттайе, Москве
+                + 30 городов рф
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="steps__btn-wrapper">
+          <button class="steps-btn">
+            оформить заявку за 1 минуту
+          </button>
+        </div>
+      </div>
+    </section>
+    <div class="methods__wrapper">
+      <div class="methods">
+        <div class="methods-track">
+          <img src="./images/raif.svg" alt="">
+          <img src="./images/alfa.svg" alt="">
+          <img src="./images/vtb.png" alt="">
+          <img src="./images/sber.png" alt="">
+          <img src="./images/tbank.png" alt="">
+          <img src="./images/spb.png" alt="">
+          <img src="./images/union.svg" alt="">
+          <img src="./images/mastercard.svg" alt="">
+          <img src="./images/raif.svg" alt="">
+          <img src="./images/alfa.svg" alt="">
+          <img src="./images/vtb.png" alt="">
+          <img src="./images/sber.png" alt="">
+          <img src="./images/tbank.png" alt="">
+          <img src="./images/spb.png" alt="">
+          <img src="./images/union.svg" alt="">
+          <img src="./images/mastercard.svg" alt="">
+          <img src="./images/raif.svg" alt="">
+          <img src="./images/alfa.svg" alt="">
+          <img src="./images/vtb.png" alt="">
+          <img src="./images/sber.png" alt="">
+          <img src="./images/tbank.png" alt="">
+          <img src="./images/spb.png" alt="">
+          <img src="./images/union.svg" alt="">
+          <img src="./images/mastercard.svg" alt="">
+          <img src="./images/raif.svg" alt="">
+          <img src="./images/alfa.svg" alt="">
+          <img src="./images/vtb.png" alt="">
+          <img src="./images/sber.png" alt="">
+          <img src="./images/tbank.png" alt="">
+          <img src="./images/spb.png" alt="">
+          <img src="./images/union.svg" alt="">
+          <img src="./images/mastercard.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <section class="how">
+      <div class="container">
+        <div class="how__content">
+          <h2 class="how__title">
+            HКак происходит обмен?
+          </h2>
+          <img src="./images/how.png" alt="">
+        </div>
+        <div class="how__svgs">
+          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
+            <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
+              stroke-opacity="0.2" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
+            <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
+              stroke-opacity="0.2" />
+          </svg>
+        </div>
+        <div class="how__items">
+          <a class="how__item" href="#modal-atm">
+            <div class="how__item-title">Через <br> банкомат</div>
+            <div class="how__item-btn">Подробнее</div>
+            <img class="how__item-img how__item-img-1" src="./images/how-1.png" alt="">
+          </a>
+          <a class="how__item" href="#modal-del">
+            <div class="how__item-title">Доставка <br> курьером</div>
+            <div class="how__item-btn">Подробнее</div>
+            <img class="how__item-img how__item-img-2" src="./images/how-2.png" alt="">
+          </a>
+          <a class="how__item" href="#modal-cash">
+            <div class="how__item-title">Наличные <br> в офисе</div>
+            <div class="how__item-btn">Подробнее</div>
+            <img class="how__item-img how__item-img-3" src="./images/how-3.png" alt="">
+          </a>
+          <a class="how__item" href="#modal-thai">
+            <div class="how__item-title">На счет в <br> Тайском банке</div>
+            <div class="how__item-btn">Подробнее</div>
+            <img class="how__item-img how__item-img-4" src="./images/how-4.png" alt="">
+          </a>
+        </div>
+        <div class="how__btn-wrapper">
+          <button class="how__btn">
+            Написать менеджеру
+          </button>
+        </div>
+        <div class="how__svgs">
+          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="9" viewBox="0 0 573 9" fill="none">
+            <path d="M572 0V0C572 4.69442 568.194 8.5 563.5 8.5H9.5C4.80558 8.5 1 4.69442 1 0V0" stroke="white"
+              stroke-opacity="0.2" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="9" viewBox="0 0 573 9" fill="none">
+            <path d="M572 0V0C572 4.69442 568.194 8.5 563.5 8.5H9.5C4.80558 8.5 1 4.69442 1 0V0" stroke="white"
+              stroke-opacity="0.2" />
+          </svg>
+        </div>
+      </div>
+    </section>
+    <div class="modal modal-atm" id="modal-atm">
+      <div class="modal__box">
+        <button class="modal__close">&times;</button>
+        <h3 class="modal__title">
+          Через банкомат
+        </h3>
+        <div class="modal__descr">
+          Время транзакции составляет до 15 минут
+        </div>
+        <p class="modal__text">
+          1. Согласуйте с менеджером курс обмена и банк, из которого вы будете переводить рубли
+        </p>
+        <p class="modal__text">
+          2. Менеджер поможет вам выбрать ближайший банкомат KasikornBank, Bangkok Bank, SCB или KTB
+        </p>
+        <p class="modal__text">
+          3. Менеджер предоставит реквизиты для перевода в Банк Российской Федерации, ваша транзакция полностью
+          безопасна
+        </p>
+        <p class="modal__text">
+          4. Получите наличные через банкомат, используя QR-код
+        </p>
+        <div class="modal__note">
+          *Подробные инструкции будут предоставлены нашим менеджером
+        </div>
+        <a class="modal__link" href="#">Instruction</a>
+        <img class="modal__img" src="./images/atm.png" alt="">
+      </div>
+    </div>
+    <div class="modal modal-del" id="modal-del">
+      <div class="modal__box">
+        <button class="modal__close">&times;</button>
+        <h3 class="modal__title">
+          Доставка курьером
+        </h3>
+        <div class="modal__descr">
+          Время совершения сделки по договоренности
+        </div>
+        <p class="modal__text">
+          1. Согласуйте с менеджером детали сделки и сроки доставки
+        </p>
+        <p class="modal__text">
+          2. Встретьте курьера с деньгами (вы можете проверить сумму), затем переведите средства с российского счета,
+          используя
+          реквизиты, отправленные в чате
+        </p>
+        <p class="modal__text">
+          3. После подтверждения получения денежных средств курьер выдаст вам наличные
+          • Доставка от 15 000 бат бесплатная
+          • Доставка осуществляется: Пхукет, Бангкок, Паттайя
+        </p>
+        <div class="modal__note">
+          *Подробные инструкции будут предоставлены нашим менеджером
+        </div>
+        <img class="modal__img" src="./images/del.png" alt="">
+      </div>
+    </div>
+    <div class="modal modal-cash" id="modal-cash">
+      <div class="modal__box">
+        <button class="modal__close">&times;</button>
+        <h3 class="modal__title">
+          Наличные в офисе
+        </h3>
+        <div class="modal__descr">
+          Время совершения сделки по договоренности
+        </div>
+        <p class="modal__text">
+          1. Укажите сумму и валюту, подлежащие обмену
+        </p>
+        <p class="modal__text">
+          2. Согласуйте с менеджером время встречи в офисе.
+          Мы работаем с 10:00 до 22:00. Пхукет, Бангкок, Паттайя
+        </p>
+        <p class="modal__text">
+          3. Вы можете обменять наличные или осуществить перевод со своего счета, используя свои банковские реквизиты
+        </p>
+        <p class="modal__text">
+          4. Получите наличные в кассе
+        </p>
+        <div class="modal__note">
+          *Detailed instructions will be provided by our manager
+        </div>
+        <img class="modal__img" src="./images/cash.png" alt="">
+      </div>
+    </div>
+    <div class="modal modal-thai" id="modal-thai">
+      <div class="modal__box">
+        <button class="modal__close">&times;</button>
+        <h3 class="modal__title">
+          TНа счет в Тайском банке
+        </h3>
+        <div class="modal__descr">
+          Время транзакции составляет до 10 минут
+        </div>
+        <p class="modal__text">
+          1. Согласуйте детали сделки с менеджером
+        </p>
+        <p class="modal__text">
+          2. Переведите средства со своего аккаунта, используя реквизиты, отправленные в чате
+        </p>
+        <p class="modal__text">
+          3. Дождитесь подтверждения транзакции и получите перевод на свой счет
+        </p>
+        <div class="modal__note">
+          *Мы можем оплатить счет-фактуру, любую покупку или выставленный счет в ресторане. Для этого достаточно
+          предоставить
+          реквизиты или QR-код нашему менеджеру
+        </div>
+        <a class="modal__link" href="#">Instruction</a>
+        <img class="modal__img" src="./images/thai.png" alt="">
+      </div>
+    </div>
+    <div class="pop pop-purchase">
+      <button class="popup__close" id="popupClose">&times;</button>
+      <h1 class="pop__title-purchase">
+        <nobr>Покупка недвижимости, </nobr> оплата жилья и транспорта
+      </h1>
+      <p class="pop__text">
+        Одна из возможностей PanterEx - оплачивать свои покупки в любом месте и в любое время. Это могут быть
+        транзакции на любую сумму, например, чеки в кафе, новый iPhone или целая вилла с видом на Индийский океан.
+        Представьте ситуацию: вы привели красивую девушку на свидание в роскошный ресторан, но забыли дома всю
+        наличность.
+        Ситуация ужасная, хочется провалиться сквозь землю. Что делать? Может быть, мне стоит убежать и удалить
+        переписку? Нет!
+        Свяжитесь с компанией PanterEx. <br>
+        Мы закроем вашу учетную запись немедленно и без каких-либо вопросов! Просто отправьте нам QR-код, который будет
+        отображаться на терминале, и мы все сделаем за вас. <br>
+        Помимо того, что мы избавляем вас от подобных неприятных ситуаций, мы также осуществляем переводы на
+        счета в тайских банках как физических, так и юридических лиц и осуществляем платежи, используя ваши банковские
+        реквизиты, счета-фактуры и QR-коды. <br>
+        Мы поможем вам с оплатой различных товаров и услуг без каких-либо проблем. Это может быть аренда
+        а также покупка недвижимости, транспортных средств, образование, страхование, медицинские услуги, товары в
+        магазинах
+        электронной техники и многое другое.
+      </p>
+      <div class="pop__subtitle">
+        Покупка и аренда недвижимости
+      </div>
+      <div class="pop__subtitle-text">
+        <p>
+          Большое количество людей обращается в тайские агентства недвижимости, чтобы купить виллу или квартиру для
+          сдачи в аренду
+          и личного пользования. Такие инвестиции особенно популярны среди россиян, например, на долю российских
+          покупателей
+          приходится почти 40% всех жилых площадей, проданных иностранцам на Пхукете в 2022 году. <br> <br>
+
+          <b>Существует 2 основные стратегии управления инвестиционной недвижимостью:</b>
+        </p>
+        <p>
+          1. Сдача объекта в аренду с целью получения пассивного дохода.
+        </p>
+        <p>
+          2. Покупка объекта с целью его дальнейшей перепродажи: стоимость недвижимости в Таиланде растет на 27-80% в
+          год.
+        </p>
+        <p>
+          Сейчас рынок недвижимости Таиланда стремительно развивается, спрос на инвестиционную недвижимость растет, а
+          вместе с ним
+          растут и цены. В частности, рынок недвижимости Пхукета оценивается в 3 миллиарда батов или 7,6 миллиарда
+          рублей.
+          Заключать по-настоящему выгодные сделки становится все сложнее из-за большого количества комиссий. То есть
+          сначала вы
+          платите комиссию, меняя рубли на доллары, затем доллары на баты, затем вы должны заплатить комиссию агентству,
+          а затем
+          налоги государству. <br>
+          Кроме того, есть еще одна проблема - как осуществлять международные переводы из России в Таиланд? Делать
+          Переводы SWIFT крайне невыгодны, а лететь на Пхукет, чтобы расплатиться наличными на месте, долго,
+          дорого и не имеет смысла.<br>
+          Но PanterEx знает, как решить эту проблему. Наш сервис обмена валюты предлагает один из самых низких курсов
+          обмена на
+          Пхукете. А наша команда финансовых специалистов всегда подскажет вам, как совершить сделку с максимальной
+          выгодой для
+          вас. Например, через нас вы можете сразу обменять рубли на баты и значительно сэкономить на комиссии.
+          Кроме того, мы осуществляем международные переводы. Это работает следующим образом: вы переводите рубли на наш
+          счет или
+          выдаете их наличными в офисе, мы меняем их на наличные баты и передаем вашему партнеру в выбранной вами
+          стране. <br>
+          На данный момент, помимо Таиланда, доступно более 50 стран. <br>
+          Проще говоря, PanterEx точно знает, как помочь вам оплатить любые товары и услуги за рубежом, включая покупку
+          недвижимости. Мы предоставим вам наиболее выгодный курс обмена и такой уровень сервиса, который позволит вам
+          полностью
+          делегировать этот процесс нам.
+        </p>
+      </div>
+
+      <div class="pop__title-second">
+        Покупка недвижимости, оплата жилья и транспорта
+      </div>
+      <div class="pop__descr">
+        Оставьте заявку, и наш менеджер свяжется с вами в течение 5 минут в рабочее время
+      </div>
+      <div class="pop__items">
+        <div class="pop__item">
+          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path
+              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
+              fill="#00FF8D" />
+          </svg>
+          <div class="pop__item-text">наличные</div>
+        </div>
+        <div class="pop__item">
+          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path
+              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
+              fill="#00FF8D" />
+          </svg>
+          <div class="pop__item-text">безналичный расчет</div>
+        </div>
+        <div class="pop__item">
+          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path
+              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
+              fill="#00FF8D" />
+          </svg>
+          <div class="pop__item-text">безопасно</div>
+        </div>
+      </div>
+      <div class="form-wrap">
+        <div class="select select-pop">
+          <div class="select__header select-pop-header">
+            <span class="select__current" data-value=""></span>
+            <div class="select__icon">
+              <div class="select__pop-icon"><img src="./images/sel-2.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="select__list select__list-pop">
+            <div class="select__item">RU</div>
+            <div class="select__item">TH</div>
+            <div class="select__item">EN</div>
+          </div>
+        </div>
+        <input class="pop__info-input" type="text" placeholder="+7">
+      </div>
+      <div class="request__wrapper-btn">
+        <button class="request__btn">
+          отправить заявку
+        </button>
+      </div>
+    </div>
+    <div class="pop pop-transfer">
+      <h1 class="pop__title-transfer">
+        Международные переводы
+      </h1>
+      <p class="pop__text">
+        В эпоху санкций осуществление международных переводов стало большой проблемой. Осуществлять переводы SWIFT,
+        получать
+        иностранные банковские карты невыгодно, а также терять крупные суммы при конвертации валют. <br> Одна из услуг,
+        предоставляемых Pantex international transfers для физических и юридических лиц. Это быстро, просто, выгодно и
+        надежно.
+        Наша главная задача - сделать так, чтобы ваши деньги были переведены из одной страны в другую как можно скорее.
+        <br> Сумма
+        таких переводов может быть любой, а максимальная сумма обмена зависит исключительно от ваших желаний и
+        потребностей, в
+        то время как для юридических лиц доступны переводы всего на сумму от 20 000 долларов. <br> <br> <b>
+          Мы предоставляем 2 способа
+          осуществления международных переводов:
+        </b>
+      </p>
+      <p class="pop__text">
+        1.Когда вы находитесь в одной стране, вы переводите деньги на наш счет или переводите их наличными в
+        определенной
+        валюте, в то время как мы конвертируем, если сумма необходима, в другую валюту или меняем порядок, если деньги
+        нужны в
+        той же валюте. Например, такие транзакции часто совершаются с использованием доллара. Вы предоставляете нам
+        необходимую
+        информацию о сумме в долларах, а мы, в свою очередь, предоставляем такую же сумму в долларах (или в другой
+        валюте) в
+        нужной вам стране. Вы можете получить денежные средства наличными в кассе или с помощью курьерской доставки.
+      </p>
+      <p class="pop__text">
+        2. Сделка «из рук в руки» или «от стола к столу». Вы переводите деньги сотрудникам нашего офиса в одной валюте,
+        а ваш
+        партнер забирает их в то же время в выбранном пункте назначения в другой или той же валюте.
+      </p>
+      <p class="pop__text">
+        Такие транзакции доступны физическим и юридическим лицам в головном офисе на Пхукете и у 6 партнеров в разных
+        уголках
+        мира. Курьерская доставка доступна более чем в 52 странах.
+      </p>
+      <div class="pop__title-second">
+        Международные переводы
+      </div>
+      <div class="pop__descr">
+        Оставьте заявку, и наш менеджер свяжется с вами в течение 5 минут в рабочее время
+      </div>
+      <div class="pop__items">
+        <div class="pop__item">
+          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path
+              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
+              fill="#00FF8D" />
+          </svg>
+          <div class="pop__item-text">для физических и юридических лиц</div>
+        </div>
+        <div class="pop__item">
+          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path
+              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
+              fill="#00FF8D" />
+          </svg>
+          <div class="pop__item-text">транзакции между таблицами</div>
+        </div>
+        <div class="pop__item">
+          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path
+              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
+              fill="#00FF8D" />
+          </svg>
+          <div class="pop__item-text">наличные</div>
+        </div>
+        <div class="pop__item">
+          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path
+              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
+              fill="#00FF8D" />
+          </svg>
+          <div class="pop__item-text">безналичный расчет</div>
+        </div>
+        <div class="pop__item">
+          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path
+              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
+              fill="#00FF8D" />
+          </svg>
+          <div class="pop__item-text">безопасно</div>
+        </div>
+      </div>
+      <div class="select select-request">
+        <div class="select__header select-request-header">
+          <span class="select__current" data-value=""></span>
+          <div class="select__icon">
+            <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
+          </div>
+        </div>
+        <div class="select__list select__list-request">
+          <div class="select__item">RU</div>
+          <div class="select__item">TH</div>
+          <div class="select__item">EN</div>
+        </div>
+      </div>
+      <input class="request__info-input" type="text" placeholder="+7">
+      <div class="request__wrapper-btn">
+        <button class="request__btn">
+          отправить заявку
+        </button>
+      </div>
+    </div>
+    </div>
+    <div class="pop pop-service">
+      <h1 class="pop__title-service">
+        Услуги для предпринимателей
+      </h1>
+      <p class="pop__text">
+        <b>
+          Используйте для оплаты компании и банки из других стран. Юрисдикция Объединенных Арабских Эмиратов
+          зарекомендовала себя
+          достаточно хорошо.
+        </b>
+      </p>
+      <div class="pop__service-text">
+        <p>
+          1. Банки и компании ОАЭ признаны во всем мире. Они не вызывают подозрений в других странах, с ними заключаются
+          контракты, осуществляются экспортно-импортные операции, принимаются платежи.
+        </p>
+        <p>
+          2. Международные торговые операции. Благодаря использованию системы SWIFT, которая практически недоступна в
+          России,
+          можно осуществлять международные платежи со всеми странами мира в любой удобной валюте в кратчайшие сроки.
+          Средний срок
+          оплаты любого счета-фактуры составляет 1 рабочий день.
+        </p>
+        <p>
+          3. Дружественная страна. ОАЭ не вводили санкций против Российской Федерации, являются дружественной для нее
+          страной и не
+          чинят препятствий в ведении бизнеса с нашей страной и ее компаниями.not cause obstacles in doing business with
+          our country and its companies.
+        </p>
+
+        <div class="pop__service-subtitle">
+          Преимущества оплаты зарубежных поставок через ОАЭ:
+        </div>
+        <p>
+          1. Возможность принимать оплату в российских рублях. Вы можете оплатить товар российскими рублями. ОАЭ - одна
+          из
+          немногих стран, которые принимают переводы SWIFT из России. Рубли конвертируются в арабские дирхамы на стороне
+          банка
+          отправителя и затем поступают в ОАЭ.
+        </p>
+        <p>
+          2. Стабильный обменный курс дирхама по отношению к доллару США. Обменный курс арабского дирхама к доллару США
+          стабилен и
+          зафиксирован на законодательном уровне. Он не меняется уже более 20 лет, что чрезвычайно удобно и выгодно при
+          осуществлении расчетов с зарубежными поставщиками.
+        </p>
+        <p>
+          3. Поддерживаются различные валюты оплаты товаров. Доллары США, евро, китайские юани, арабские дирхамы.
+        </p>
+        <div class="pop__service-subtitle">
+          Наша компания поможет вам:
+        </div>
+        <p>
+          1. Заключить контракт на поставку. Контракт будет заключен с компанией из ОАЭ.
+        </p>
+        <p>
+          2. Быстро конвертировать и переводить рубли в доллары США, евро и другие валюты. По выгодному и стабильному
+          курсу.
+        </p>
+        <p>
+          3. Оплатить товар в любой стране мира. Европейский союз, США, Канада, Австралия, Япония и Корея. Каждая из
+          этих стран с
+          готовностью примет платежи от банков ОАЭ.
+        </p>
+      </div>
+
+      <div class="pop__title-second">
+        Услуги для предпринимателей
+      </div>
+      <div class="pop__descr">
+        Оставьте заявку, и наш менеджер свяжется с вами в течение 5 минут в рабочее время
+      </div>
+      <div class="select select-request">
+        <div class="select__header select-request-header">
+          <span class="select__current" data-value=""></span>
+          <div class="select__icon">
+            <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
+          </div>
+        </div>
+        <div class="select__list select__list-request">
+          <div class="select__item">RU</div>
+          <div class="select__item">TH</div>
+          <div class="select__item">EN</div>
+        </div>
+      </div>
+      <input class="request__info-input" type="text" placeholder="+7">
+      <div class="request__wrapper-btn">
+        <button class="request__btn">
+          отправить заявку
+        </button>
+      </div>
+    </div>
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="reviews__top">
+          <h2 class="reviews__title">
+            Отзывы
+          </h2>
+          <p class="reviews__descr">
+            Это не просто отзывы клиентов, <span>это целые истории.</span>
+            Помимо обмена, мы <span>помогаем решить любые финансовые вопросы</span> в Таиланде, на Бали, в ОАЭ, Китае
+          </p>
+          <div class="reviews__btn-wrapper">
+            <button class="reviews__top-btn">Оформить обмен</button>
+          </div>
+        </div>
+
+        <div class="reviews__rates">
+          <div class="reviews__rate reviews__rate-first">
+            <div class="reviews__rate-soon">
+              СКОРО
+            </div>
+            <div class="reviews__link">
+              Обращение Тео
+            </div>
+          </div>
+          <div class="reviews__rate">
+            <img class="reviews__rate-logo" src="./images/google.png" alt="">
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Average rating:</div>
+              <div class="reviews__rate-info-num">5.0</div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
+                  fill="#FBBC05" />
+              </svg>
+            </div>
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Number of reviews:</div>
+              <div class="reviews__rate-info-num">108</div>
+            </div>
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Number of ratings:</div>
+              <div class="reviews__rate-info-num">210</div>
+            </div>
+            <a class="reviews__rate-btn" href="#">
+              Read reviews
+            </a>
+          </div>
+          <div class="reviews__rate">
+            <img class="reviews__rate-logo" src="./images/yandex.svg" alt="">
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Average rating:</div>
+              <div class="reviews__rate-info-num">5.0</div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
+                  fill="#FBBC05" />
+              </svg>
+            </div>
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Number of reviews:</div>
+              <div class="reviews__rate-info-num">255</div>
+            </div>
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Number of ratings:</div>
+              <div class="reviews__rate-info-num">308</div>
+            </div>
+            <a class="reviews__rate-btn" href="#">
+              Read reviews
+            </a>
+          </div>
+        </div>
+        <div class="reviews__btn-wrapper">
+          <a class="rewiews__btn">
+            I want to make an exchange
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="perform" id="perform">
+      <div class="container">
+        <div class="perform__top">
+          <h2 class="perform__title">
+            Perform any financial <br> transactions
+          </h2>
+          <svg class="perform__img" xmlns="http://www.w3.org/2000/svg" width="176" height="83" viewBox="0 0 176 83"
+            fill="none">
+            <g filter="url(#filter0_f_0_1152)">
+              <g filter="url(#filter1_f_0_1152)">
+                <path
+                  d="M107.126 41.4504L104.398 43.8298L106.134 45.344L110.846 48.156L115.557 50.5355L120.516 51.8333H128.203L133.163 50.9681L138.122 49.0213L142.833 45.344L145.313 41.4504L146.553 38.2057L147.049 34.961L144.073 33.2305L138.866 31.9326L133.163 31.5L128.203 31.9326L124.484 32.5816L120.516 33.8794L114.565 36.6915L110.846 38.8546L107.126 41.4504Z"
+                  fill="#8300FF" />
+              </g>
+              <g filter="url(#filter2_f_0_1152)">
+                <path
+                  d="M70.9228 41.4504L73.6505 43.8298L71.9147 45.344L67.2033 48.156L62.4919 50.5355L57.5326 51.8333H49.8456L44.8862 50.9681L39.9269 49.0213L35.2155 45.344L32.7358 41.4504L31.496 38.2057L31 34.961L33.9757 33.2305L39.183 31.9326L44.8862 31.5L49.8456 31.9326L53.5651 32.5816L57.5326 33.8794L63.4838 36.6915L67.2033 38.8546L70.9228 41.4504Z"
+                  fill="#8300FF" />
+              </g>
+            </g>
+            <g filter="url(#filter3_f_0_1152)">
+              <path
+                d="M107.126 41.4504L104.398 43.8298L106.134 45.344L110.846 48.156L115.557 50.5355L120.516 51.8333H128.203L133.163 50.9681L138.122 49.0213L142.833 45.344L145.313 41.4504L146.553 38.2057L147.049 34.961L144.073 33.2305L138.866 31.9326L133.163 31.5L128.203 31.9326L124.484 32.5816L120.516 33.8794L114.565 36.6915L110.846 38.8546L107.126 41.4504Z"
+                fill="#8300FF" />
+              <path
+                d="M70.9228 41.4504L73.6505 43.8298L71.9147 45.344L67.2033 48.156L62.4919 50.5355L57.5326 51.8333H49.8456L44.8862 50.9681L39.9269 49.0213L35.2155 45.344L32.7358 41.4504L31.496 38.2057L31 34.961L33.9757 33.2305L39.183 31.9326L44.8862 31.5L49.8456 31.9326L53.5651 32.5816L57.5326 33.8794L63.4838 36.6915L67.2033 38.8546L70.9228 41.4504Z"
+                fill="#8300FF" />
+            </g>
+            <defs>
+              <filter id="filter0_f_0_1152" x="0.200062" y="0.700001" width="177.649" height="81.9333"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="15.4" result="effect1_foregroundBlur_0_1152" />
+              </filter>
+              <filter id="filter1_f_0_1152" x="93.9984" y="21.1" width="63.4505" height="41.1333"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="5.2" result="effect1_foregroundBlur_0_1152" />
+              </filter>
+              <filter id="filter2_f_0_1152" x="20.6001" y="21.1" width="63.4504" height="41.1333"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="5.2" result="effect1_foregroundBlur_0_1152" />
+              </filter>
+              <filter id="filter3_f_0_1152" x="27.0001" y="27.5" width="124.049" height="28.3333"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_0_1152" />
+              </filter>
+            </defs>
+          </svg>
+        </div>
+        <div class="how__svgs">
+          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
+            <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
+              stroke-opacity="0.2" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
+            <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
+              stroke-opacity="0.2" />
+          </svg>
+        </div>
+        <div class="perform__items">
+          <a class="perform__item perform__item-first" href="#">
+            <div class="perform__item-text">
+              Without limits on amounts and headaches. We will provide all the closing pains
+            </div>
+            <div class="perform__item-title">
+              Purchase of real <br> estate, payment for housing and transport
+            </div>
+          </a>
+          <a class="perform__item perform__item-second" href="#">
+            <div class="perform__item-text">
+              A profitable alternative
+              to SWIFT transfers, available in 50+ countries
+            </div>
+            <div class="perform-flex">
+              <div class="perform__item-title">
+                International transfers
+              </div>
+              <div class="perform__descr">
+                For business
+              </div>
+            </div>
+          </a>
+          <a class="perform__item perform__item-third" href="#">
+            <div class="perform__item-text">
+              Payment for goods
+              and services for the company
+            </div>
+            <div class="perform__item-title">
+              Services for entrepreneurs
+            </div>
+          </a>
+        </div>
+        <div class="perform__btn-wrapper">
+          <a class="perform__btn">
+            I want to make an exchange
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="team">
+      <div class="container">
+        <div class="team__inner">
+          <div class="team__content">
+            <h2 class="team__title">
+              THE GANG
+            </h2>
+            <div class="team__text">
+              We are creating a financialecosystem in which customers can make currency exchange transactions and
+              conduct
+              financial
+              transactions with ease and confidence.
+              Our team consists of experts in finance, arbitration, trading, blockchain, and law, united by a common
+              goal
+              - ensuring
+              financial freedom in all circumstances.
+              You can find out more information about the
+              development of PanterEx....
+            </div>
+            <a class="team__btn" href="#">
+              MORE INFO
+            </a>
+          </div>
+          <img class="team__img" src="./images/team-people.png" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="request" id="request">
+      <div class="container">
+        <div class="request__top">
+          <h2 class="request__title">
+            Didn't find the answer to the question?
+          </h2>
+          <div class="request__descr">
+            Оставьте заявку, и наш менеджер свяжется с вами в течение 5 минут в рабочее время
+          </div>
+        </div>
+        <div class="request__info">
+          <div class="select select-request">
+            <div class="select__header select-request-header">
+              <span class="select__current" data-value=""></span>
+              <div class="select__icon">
+                <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
+              </div>
+            </div>
+            <div class="select__list select__list-request">
+              <div class="select__item">RU</div>
+              <div class="select__item">TH</div>
+              <div class="select__item">EN</div>
+            </div>
+          </div>
+          <input class="request__info-input" type="text" placeholder="+7">
+        </div>
+        <div class="request__wrapper-btn">
+          <button class="request__btn">
+            отправить заявку
+          </button>
+        </div>
+        <div class="request__note">
+          Оставьте заявку, и наш менеджер свяжется с вами в течение 5 минут в рабочее время
+        </div>
+      </div>
+    </section>
+    <div class="partner-wrapper">
+      <section class="partner">
+        <div class="container">
+          <div class="patner__top">
+            <div class="partner__text">
+              We are <span>always open to</span>
+            </div>
+            <div class="partner__text">
+              cooperation and work on the <span>win-win</span>
+            </div>
+            <div class="partner__text">
+              principle, In turn,
+            </div>
+            <div class="partner__inner">
+              <div class="partner__text partner__text-left">
+                we offer <br> up to
+              </div>
+              <img class="partner__profit" src="./images/profit.png" alt="">
+              <div class="partner__text">
+                profit.
+              </div>
+            </div>
+          </div>
+          <h2 class="partner__title">
+            Let's develop together
+          </h2>
+          <div class="partner__wrapper-btn">
+            <button class="partner__btn">
+              Become a partner
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- <img class="perform__decor" src="./images/perform-decor.png" alt=""> -->
+    <img class="footer__img" src="./images/footer.svg" alt="">
+    <img class="footer__decor-img" src="./images/footer-decor.png" alt="">
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__wrapper">
+            <div class="footer__content">
+              <ul class="footer__menu">
+                <li class="footer__menu-item">
+                  <div class="footer__menu-title" href="#">
+                    SECTIONS OF THE SITE:
+                  </div>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">
+                    Currency exchange
+                  </a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">
+                    About PanterEx
+                  </a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">
+                    How does the exchange work?
+                  </a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">
+                    Reviews
+                  </a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">
+                    Financial transactions
+                  </a>
+                </li>
+              </ul>
+              <ul class="footer__menu">
+                <li class="footer__menu-item">
+                  <div class="footer__menu-title" href="#">
+                    SOC.NETWORKS:
+                  </div>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">
+                    Instagram
+                  </a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">
+                    Telegram
+                  </a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">
+                    Telegram Bot
+                  </a>
+                </li>
+              </ul>
+              <ul class="footer__menu">
+                <li class="footer__menu-item">
+                  <div class="footer__menu-title" href="#">
+                    CONTACTS:
+                  </div>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="mailto:pochta@mail.ru">
+                    pochta@mail.ru
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__bottom">
+              <div class="footer__bottom-policy">
+                <a href="#">The offer</a>
+                <a href="#">Agreement</a>
+              </div>
+              <div class="footer__bottom-descr">
+                Your finances are safe with us
+              </div>
+            </div>
+          </div>
+          <a class="footer__link" href="#">
+            <svg class="footer__arrow" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
+              fill="none">
+              <path d="M2 26.1938V2.0003H26" stroke="#8300FF" stroke-width="3" />
+              <path d="M25.613 25.6123L2.19366 2.19295" stroke="#8300FF" stroke-width="3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
