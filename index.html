@@ -10,8 +10,10 @@
   <link rel="stylesheet" href="css/slick.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marvel:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marvel:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -32,16 +34,16 @@
                   <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
                 </div>
               </div>
-              <div class="select__list">
-                <div class="select__item">Eng</div>
-                <div class="select__item">Ru</div>
+              <div class="select__list select__list-link">
+                <a href="./index.html" class="select__item select__item-link" data-value="en">Eng</a>
+                <a href="./content-ru.html" class="select__item select__item-link" data-value="ru">Ru</a>
               </div>
             </div>
           </div>
           <div class="header__right">
             <div class="select">
               <div class="select__header">
-                <span class="select__current" data-value=""></span>
+                <span class="select__current language-specific" data-value=""></span>
                 <div class="select__icon select__icon-arrow"><img src="./images/sel.svg" alt=""></div>
               </div>
               <div class="select__list">
@@ -86,7 +88,7 @@
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
-              <a class="header__socials-link telegram" href="#">
+              <a class="header__socials-link telegram" href="@panterex_support">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                   <path class="telegram-path" fill-rule="evenodd" clip-rule="evenodd"
                     d="M20.601 4.43C20.8584 4.32599 21.1402 4.29011 21.417 4.32611C21.6937 4.36211 21.9554 4.46866 22.1747 4.63468C22.394 4.8007 22.5629 5.02011 22.6639 5.27008C22.7649 5.52005 22.7943 5.79144 22.7489 6.056L20.3864 19.813C20.1573 21.14 18.6406 21.901 17.3729 21.24C16.3125 20.687 14.7375 19.835 13.3208 18.946C12.6125 18.501 10.4427 17.076 10.7094 16.062C10.9385 15.195 14.5844 11.937 16.6677 10C17.4854 9.239 17.1125 8.8 16.1469 9.5C13.7489 11.238 9.89894 13.881 8.62603 14.625C7.50311 15.281 6.91769 15.393 6.21769 15.281C4.94061 15.077 3.75623 14.761 2.78957 14.376C1.48332 13.856 1.54686 12.132 2.78853 11.63L20.601 4.43Z"
@@ -152,26 +154,32 @@
                   <div class="select__list select-ex-list">
                     <div class="select__item">RUB <span>→</span> THB</div>
                     <div class="select__item">THB <span>→</span> RUB</div>
+                    <div class="select__item">IDR <span>→</span> RUB</div>
+                    <div class="select__item">RUB <span>→</span> IDR</div>
+                    <div class="select__item">AED <span>→</span> RUB</div>
+                    <div class="select__item">RUB <span>→</span> AED</div>
+                    <div class="select__item">RMB <span>→</span> RUB</div>
+                    <div class="select__item">RUB <span>→</span> RMB</div>
                   </div>
                 </div>
-                <div class="exchange__amount exchange__amount-rub">
+                <div class="exchange__amount exchange__amount-rub ">
                   <input type="text" placeholder="0"><label>RUB</label>
                 </div>
                 <div class="exchange__info-receive">
                   You will receive:
                 </div>
-                <div class="exchange__amount exchange__amount-thb">
+                <div class="exchange__amount exchange__amount-thb ">
                   <input type="text" placeholder="0"><label>THB</label>
                 </div>
                 <div class="exchange__rate">
                   Exchange rate: 3.08
                 </div>
                 <div class="exchange__buttons">
-                  <a class="exchange__telegram" href="#">
+                  <a class="exchange__telegram" href="https://t.me/panterex_support">
                     <!-- <img src="./images/telegram.svg" alt=""> -->
                     Exchange in TG
                   </a>
-                  <a class="exchange__whatsapp" href="#">
+                  <a class="exchange__whatsapp" href="https://wa.me/message/454TMQ2IPRJNP1">
                     <!-- <img src="./images/whatsapp.svg" alt=""> -->
                     Exchange in whatsapp
                   </a>
@@ -190,17 +198,72 @@
                 <div class="exchange__aver">
                   The average exchange rate in other exchangers:
                 </div>
-                <input class="exchange__right-input" type="text" placeholder="...">
+                <input class="exchange__right-input" type="text">
                 <div class="exchange__averr">
                   PanterEx Exchange Rate:
                 </div>
-                <input class="exchange__right-input" type="text" placeholder="...">
+                <input class="exchange__right-input" type="text">
+                <div class="exchange__offer">
+                  Offer:
+                </div>
+                <textarea class="exchange__right-textarea"></textarea>
+                <div class="exchange__note-right">
+                  *Please check the exact rate with the manager
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
+    <section class="wallet">
+      <div class="page-container">
+        <div class="wallet__inner">
+          <img class="wallet__img" src="./images/wallet.png" alt="">
+          <div class="wallet__content">
+            <h3 class="wallet__title">
+              eWallet Card
+            </h3>
+            <div class="wallet__descr">
+              by LinkPay
+            </div>
+            <div class="wallet__text">
+              Connect eWallet Card to Apple Pay and Google Pay for a hassle-free payment experience in any store or online platform.
+              Enjoy the speed and safety of digital transactions with LinkPay.
+            </div>
+            <div class="wallet__benefits">
+              <div class="wallet__benefit">
+                <div class="wallet__benefit-text">
+                  3-D Secure
+                </div>
+                <div class="wallet__benefit-descr">
+                  Supported
+                </div>
+              </div>
+              <div class="wallet__benefit wallet__benefit-commission">
+                <div class="wallet__benefit-text">
+                  0%
+                </div>
+                <div class="wallet__benefit-descr">
+                  Deposit fee
+                </div>
+              </div>
+              <div class="wallet__benefit">
+                <div class="wallet__benefit-text">
+                  3%
+                </div>
+                <div class="wallet__benefit-descr">
+                  Cashback
+                </div>
+              </div>
+            </div>
+            <a class="wallet__btn" href="#">
+              Explore all the terms
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="about">
       <h1 class="about__title">
         PanterEx
@@ -296,7 +359,7 @@
     <div class="methods__wrapper">
       <div class="methods">
         <div class="methods-track">
-          <img src="./images/raif.svg" alt="">
+          <img src="./images/raif.png" alt="">
           <img src="./images/alfa.svg" alt="">
           <img src="./images/vtb.png" alt="">
           <img src="./images/sber.png" alt="">
@@ -304,7 +367,7 @@
           <img src="./images/spb.png" alt="">
           <img src="./images/union.svg" alt="">
           <img src="./images/master.svg" alt="">
-          <img src="./images/raif.svg" alt="">
+          <img src="./images/raif.png" alt="">
           <img src="./images/alfa.svg" alt="">
           <img src="./images/vtb.png" alt="">
           <img src="./images/sber.png" alt="">
@@ -312,7 +375,7 @@
           <img src="./images/spb.png" alt="">
           <img src="./images/union.svg" alt="">
           <img src="./images/master.svg" alt="">
-          <img src="./images/raif.svg" alt="">
+          <img src="./images/raif.png" alt="">
           <img src="./images/alfa.svg" alt="">
           <img src="./images/vtb.png" alt="">
           <img src="./images/sber.png" alt="">
@@ -320,7 +383,7 @@
           <img src="./images/spb.png" alt="">
           <img src="./images/union.svg" alt="">
           <img src="./images/master.svg" alt="">
-          <img src="./images/raif.svg" alt="">
+          <img src="./images/raif.png" alt="">
           <img src="./images/alfa.svg" alt="">
           <img src="./images/vtb.png" alt="">
           <img src="./images/sber.png" alt="">
@@ -388,6 +451,186 @@
         </div>
       </div>
     </section>
+    <section class="reviews">
+      <div class="container">
+        <div class="reviews__top">
+          <h2 class="reviews__title">
+            reviews
+          </h2>
+          <p class="reviews__descr">
+            These are not just customer reviews, <span>they are whole stories.</span><br>
+            In addition to the exchange, <span>we help solve any financial issues</span> in Thailand, Bali, UAE, China
+          </p>
+          <div class="reviews__btn-wrapper">
+            <button class="reviews__top-btn">exchange counter</button>
+          </div>
+        </div>
+        <div class="reviews__items">
+          <div class="reviews__item">
+            <div class="review__item-top">
+              <div class="reviews__item-name">
+                ALINA, BALI
+              </div>
+              <img class="reviews__item-img" src="./images/alina.png" alt="">
+            </div>
+            <div class="reviews__item-title">
+              Help with housing and bike payments
+            </div>
+            <div class="reviews__item-text">
+              Alina was running out of time to pay for housing and a bike, she made an urgent request late in the
+              evening.
+              At several
+              exchangers,
+              she did not pass the exchange rate and she did not have
+              enough money in rubles to exchange.
+              We have given the best course and speed.
+            </div>
+            <a class="reviews__item-btn" href="./images/alina.mp4" id="alina">
+              Video review
+            </a>
+          </div>
+          <div class="reviews__item">
+            <div class="review__item-top">
+              <div class="reviews__item-name">
+                EKATERINA, Thailand
+              </div>
+              <img class="reviews__item-img" src="./images/ekaterina.png" alt="">
+            </div>
+            <div class="reviews__item-title">
+              Disbursement of a large sum
+            </div>
+            <div class="reviews__item-text">
+              Katya is our regular customer, at first there was a fear of changing large amounts, so she started with
+              10,000 rubles.
+              After several exchanges, Katya realized that she was working with professionals and using our service she
+              paid for
+              significant purchases and changed large amounts.
+            </div>
+            <a class="reviews__item-btn" href="#" id="ekaterina">
+              Video review
+            </a>
+          </div>
+          <div class="reviews__item">
+            <div class="review__item-top">
+              <div class="reviews__item-name">
+                DENIS, CHINA
+              </div>
+              <img class="reviews__item-img" src="./images/denis.png" alt="">
+            </div>
+            <div class="reviews__item-title">
+              Non-standard way of exchange
+            </div>
+            <div class="reviews__item-text">
+              Denis travels a lot, there was a non-standard request for an exchange. Top up your alipay account in
+              China.
+              Of course, we coped with the task, it is fundamentally important
+              for us to solve any request.
+            </div>
+            <a class="reviews__item-btn" href="#" id="denis">
+              Video review
+            </a>
+          </div>
+          <div class="reviews__item">
+            <div class="review__item-top">
+              <div class="reviews__item-name">
+                NATALYA, CHINA
+              </div>
+              <img class="reviews__item-img" src="./images/natalia.png" alt="">
+            </div>
+            <div class="reviews__item-title">
+              Help with buying a car in China
+            </div>
+            <div class="reviews__item-text">
+              Natalia came to us with despair, she could not find a company that would pay for her car. It was not
+              difficult for us.
+              There were minor difficulties with payment and contracts, within a week we completely solved the request.
+            </div>
+            <a class="reviews__item-btn" href="#" id="natalia">
+              Video review
+            </a>
+          </div>
+        </div>
+        <div class="modals" id="videoModal" style="display: none;">
+          <div class="modals-content">
+            <span class="modals-close" id="closeModal">&times;</span>
+            <div class="custom-video-player">
+              <video id="videoPlayer" style="display: none;">
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-controls">
+                <button id="playPause" class="play-btn">▶</button>
+                <input id="progressBar" type="range" min="0" max="100" value="0">
+                <span id="currentTime">0:00</span>
+                <button id="muteToggle" class="mute-btn">🔊</button>
+                <button id="fullScreen" class="fullscreen-btn">⤢</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reviews__rates">
+          <div class="reviews__rate reviews__rate-first">
+            <div class="reviews__rate-soon">
+              SOON...
+            </div>
+            <div class="reviews__link">
+              Theo's Appeal
+            </div>
+          </div>
+          <div class="reviews__rate">
+            <img class="reviews__rate-logo" src="./images/google.png" alt="">
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Average rating:</div>
+              <div class="reviews__rate-info-num">5.0</div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
+                  fill="#FBBC05" />
+              </svg>
+            </div>
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Number of reviews:</div>
+              <div class="reviews__rate-info-num">108</div>
+            </div>
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Number of ratings:</div>
+              <div class="reviews__rate-info-num">210</div>
+            </div>
+            <a class="reviews__rate-btn" href="#">
+              Read reviews
+            </a>
+          </div>
+          <div class="reviews__rate">
+            <img class="reviews__rate-logo" src="./images/yandex.svg" alt="">
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Average rating:</div>
+              <div class="reviews__rate-info-num">5.0</div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
+                  fill="#FBBC05" />
+              </svg>
+            </div>
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Number of reviews:</div>
+              <div class="reviews__rate-info-num">255</div>
+            </div>
+            <div class="reviews__rate-info">
+              <div class="reviews__rate-info-text">Number of ratings:</div>
+              <div class="reviews__rate-info-num">308</div>
+            </div>
+            <a class="reviews__rate-btn" href="#">
+              Read reviews
+            </a>
+          </div>
+        </div>
+        <div class="reviews__btn-wrapper">
+          <a class="rewiews__btn">
+            I want to make an exchange
+          </a>
+        </div>
+      </div>
+    </section>
     <div class="modal modal-atm" id="modal-atm">
       <div class="modal__box">
         <button class="modal__close">&times;</button>
@@ -414,7 +657,6 @@
         <div class="modal__note">
           *Detailed instructions will be provided by our manager
         </div>
-        <a class="modal__link" href="#">Instruction</a>
         <img class="modal__img" src="./images/atm.png" alt="">
       </div>
     </div>
@@ -500,7 +742,6 @@
           our
           manager
         </div>
-        <a class="modal__link" href="#">Instruction</a>
         <img class="modal__img" src="./images/thai.png" alt="">
       </div>
     </div>
@@ -850,7 +1091,7 @@
         </button>
       </div>
     </div>
-    <section class="reviews" id="reviews">
+    <!-- <section class="reviews" id="reviews">
       <div class="container">
         <div class="reviews__top">
           <h2 class="reviews__title">
@@ -867,67 +1108,67 @@
 
         <div class="reviews__rates">
           <div class="reviews__rate reviews__rate-first">
-            <div class="reviews__rate-soon">
+            <divЮю class="reviews__rate-soon">
               SOON...
-            </div>
-            <div class="reviews__link">
-              Theo's Appeal
-            </div>
           </div>
-          <div class="reviews__rate">
-            <img class="reviews__rate-logo" src="./images/google.png" alt="">
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Average rating:</div>
-              <div class="reviews__rate-info-num">5.0</div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
-                  fill="#FBBC05" />
-              </svg>
-            </div>
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of reviews:</div>
-              <div class="reviews__rate-info-num">108</div>
-            </div>
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of ratings:</div>
-              <div class="reviews__rate-info-num">210</div>
-            </div>
-            <a class="reviews__rate-btn" href="#">
-              Read reviews
-            </a>
-          </div>
-          <div class="reviews__rate">
-            <img class="reviews__rate-logo" src="./images/yandex.svg" alt="">
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Average rating:</div>
-              <div class="reviews__rate-info-num">5.0</div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
-                  fill="#FBBC05" />
-              </svg>
-            </div>
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of reviews:</div>
-              <div class="reviews__rate-info-num">255</div>
-            </div>
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of ratings:</div>
-              <div class="reviews__rate-info-num">308</div>
-            </div>
-            <a class="reviews__rate-btn" href="#">
-              Read reviews
-            </a>
+          <div class="reviews__link">
+            Theo's Appeal
           </div>
         </div>
-        <div class="reviews__btn-wrapper">
-          <a class="rewiews__btn">
-            I want to make an exchange
+        <div class="reviews__rate">
+          <img class="reviews__rate-logo" src="./images/google.png" alt="">
+          <div class="reviews__rate-info">
+            <div class="reviews__rate-info-text">Average rating:</div>
+            <div class="reviews__rate-info-num">5.0</div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
+                fill="#FBBC05" />
+            </svg>
+          </div>
+          <div class="reviews__rate-info">
+            <div class="reviews__rate-info-text">Number of reviews:</div>
+            <div class="reviews__rate-info-num">108</div>
+          </div>
+          <div class="reviews__rate-info">
+            <div class="reviews__rate-info-text">Number of ratings:</div>
+            <div class="reviews__rate-info-num">210</div>
+          </div>
+          <a class="reviews__rate-btn" href="#">
+            Read reviews
+          </a>
+        </div>
+        <div class="reviews__rate">
+          <img class="reviews__rate-logo" src="./images/yandex.svg" alt="">
+          <div class="reviews__rate-info">
+            <div class="reviews__rate-info-text">Average rating:</div>
+            <div class="reviews__rate-info-num">5.0</div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
+                fill="#FBBC05" />
+            </svg>
+          </div>
+          <div class="reviews__rate-info">
+            <div class="reviews__rate-info-text">Number of reviews:</div>
+            <div class="reviews__rate-info-num">255</div>
+          </div>
+          <div class="reviews__rate-info">
+            <div class="reviews__rate-info-text">Number of ratings:</div>
+            <div class="reviews__rate-info-num">308</div>
+          </div>
+          <a class="reviews__rate-btn" href="#">
+            Read reviews
           </a>
         </div>
       </div>
-    </section>
+      <div class="reviews__btn-wrapper">
+        <a class="rewiews__btn">
+          I want to make an exchange
+        </a>
+      </div>
+      </div>
+    </section> -->
     <section class="perform" id="perform">
       <div class="container">
         <div class="perform__top">
@@ -1029,7 +1270,7 @@
         </div>
         <div class="perform__btn-wrapper">
           <a class="perform__btn">
-            I want to make an exchange
+            Manager's consultation
           </a>
         </div>
       </div>
@@ -1183,7 +1424,7 @@
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
+                  <a class="footer__menu-link" href="https://t.me/panterex_support">
                     Telegram
                   </a>
                 </li>

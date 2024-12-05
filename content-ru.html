@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="css/slick.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marvel:wght@400;700&display=swap"
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&family=Oswald:wght@200..700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -32,43 +33,43 @@
                   <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
                 </div>
               </div>
-              <div class="select__list">
-                <div class="select__item">Eng</div>
-                <div class="select__item">Ru</div>
+              <div class="select__list select__list-link">
+                <a class="select__item select__item-link" href="./content-ru.html">Ru</a>
+                <a class="select__item select__item-link" href="./index.html">Eng</a>
               </div>
             </div>
           </div>
           <div class="header__right">
             <div class="select">
               <div class="select__header">
-                <span class="select__current" data-value=""></span>
+                <span class="select__current language-specific" data-value=""></span>
                 <div class="select__icon select__icon-arrow"><img src="./images/sel.svg" alt=""></div>
               </div>
               <div class="select__list">
-                <div class="select__item">Тайланд</div>
-                <div class="select__item">Бали</div>
-                <div class="select__item">ОАЭ</div>
-                <div class="select__item">Китай</div>
+                <div class="select__item language-specific">Тайланд</div>
+                <div class="select__item language-specific">Бали</div>
+                <div class="select__item language-specific">ОАЭ</div>
+                <div class="select__item language-specific">Китай</div>
               </div>
             </div>
             <ul class="menu">
               <li class="menu__item">
-                <a class="menu__item-link" href="#steps">
+                <a class="menu__item-link language-specific" href="#steps">
                   Выгода
                 </a>
               </li>
               <li class="menu__item">
-                <a class="menu__item-link" href="#perform">
+                <a class="menu__item-link language-specific" href="#perform">
                   Услуги
                 </a>
               </li>
               <li class="menu__item">
-                <a class="menu__item-link" href="#reviews">
+                <a class="menu__item-link language-specific" href="#reviews">
                   Доверие
                 </a>
               </li>
               <li class="menu__item">
-                <a class="menu__item-link" href="#request">
+                <a class="menu__item-link language-specific" href="#request">
                   Контакты
                 </a>
               </li>
@@ -128,18 +129,18 @@
                 <h3 class="exchange__title">
                   Лицензированная сеть обмена
                 </h3>
-                <div class="exchange__descr">
+                <div class="exchange__descr language-specific">
                   Оформи заявку за 1 минуту
                 </div>
               </div>
               <div class="exchange__wrapper">
                 <div class="exchange__info">
-                  <div class="exchange__info-changing">
+                  <div class="exchange__info-changing language-specific">
                     Вы меняете:
                   </div>
                   <div class="exchange__info-secure">
                     <img class="exchange__info-secure-img" src="./images/secure.svg" alt="">
-                    <p class="exchange__info-secure-text">безопасный обмен</p>
+                    <p class="exchange__info-secure-text language-specific">безопасный обмен</p>
                   </div>
                 </div>
                 <div class="select select-ex">
@@ -152,31 +153,37 @@
                   <div class="select__list select-ex-list">
                     <div class="select__item">RUB <span>→</span> THB</div>
                     <div class="select__item">THB <span>→</span> RUB</div>
+                    <div class="select__item">IDR <span>→</span> RUB</div>
+                    <div class="select__item">RUB <span>→</span> IDR</div>
+                    <div class="select__item">AED <span>→</span> RUB</div>
+                    <div class="select__item">RUB <span>→</span> AED</div>
+                    <div class="select__item">RMB <span>→</span> RUB</div>
+                    <div class="select__item">RUB <span>→</span> RMB</div>
                   </div>
                 </div>
-                <div class="exchange__amount exchange__amount-rub">
-                  <input type="text" placeholder="0"><label>RUB</label>
+                <div class="exchange__amount exchange__amount-rub language-specific language-specific">
+                  <input type="text" placeholder="0"><label class="language-specific">Руб</label>
                 </div>
-                <div class="exchange__info-receive">
+                <div class="exchange__info-receive language-specific">
                   Вы получите:
                 </div>
-                <div class="exchange__amount exchange__amount-thb">
-                  <input type="text" placeholder="0"><label>THB</label>
+                <div class="exchange__amount exchange__amount-thb language-specific language-specific">
+                  <input type="text" placeholder="0"><label class="language-specific">Бат</label>
                 </div>
-                <div class="exchange__rate">
+                <div class="exchange__rate ">
                   Курс обмена: 3.08
                 </div>
                 <div class="exchange__buttons">
-                  <a class="exchange__telegram" href="#">
+                  <a class="exchange__telegram language-specific" href="https://t.me/panterex_support">
                     <!-- <img src="./images/telegram.svg" alt=""> -->
                     Обменять в TG
                   </a>
-                  <a class="exchange__whatsapp" href="#">
+                  <a class="exchange__whatsapp language-specific" href="https://wa.me/message/454TMQ2IPRJNP1">
                     <!-- <img src="./images/whatsapp.svg" alt=""> -->
                     Обменять в whatsapp
                   </a>
                 </div>
-                <div class="exchange__note">
+                <div class="exchange__note language-specific">
                   * при обмене от 100 Бат вы получите наиболее выгодный курс
                 </div>
               </div>
@@ -188,25 +195,81 @@
               </h3>
               <hr>
               <div class="exchange__right-content">
-                <div class="exchange__aver">
+                <div class="exchange__aver language-specific">
                   Средний обменный курс в других обменниках:
                 </div>
-                <input class="exchange__right-input" type="text" placeholder="...">
-                <div class="exchange__averr">
+                <input class="exchange__right-input language-specific" type="text">
+                <div class="exchange__averr language-specific">
                   Обменный курс Pantene:
                 </div>
-                <input class="exchange__right-input" type="text" placeholder="...">
+                <input class="exchange__right-input language-specific" type="text">
+                <div class="exchange__offer language-specific">
+                  Оффер:
+                </div>
+                <textarea class="exchange__right-textarea language-specific"></textarea>
+                <div class="exchange__note-right language-specific">
+                  * Точный курс уточняйте у менеджера
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
+    <section class="wallet">
+      <div class="page-container">
+        <div class="wallet__inner">
+          <img class="wallet__img" src="./images/wallet.png" alt="">
+          <div class="wallet__content">
+            <h3 class="wallet__title">
+              eWallet Card
+            </h3>
+            <div class="wallet__descr">
+              Оплата по ссылке
+            </div>
+            <div class="wallet__text">
+              Подключите карту eWallet к Apple Pay и Google Pay, чтобы без проблем совершать платежи в любом магазине
+              или на любой
+              онлайн-платформе. Оцените скорость и безопасность цифровых транзакций с помощью Link Pay.
+            </div>
+            <div class="wallet__benefits">
+              <div class="wallet__benefit">
+                <div class="wallet__benefit-text">
+                  3-D Защита
+                </div>
+                <div class="wallet__benefit-descr">
+                  Поддерживается
+                </div>
+              </div>
+              <div class="wallet__benefit wallet__benefit-commission">
+                <div class="wallet__benefit-text">
+                  0%
+                </div>
+                <div class="wallet__benefit-descr">
+                  Комиссия
+                </div>
+              </div>
+              <div class="wallet__benefit">
+                <div class="wallet__benefit-text">
+                  3%
+                </div>
+                <div class="wallet__benefit-descr">
+                  Кэшбэк
+                </div>
+              </div>
+            </div>
+            <a class="wallet__btn" href="#">
+              Читать подробнее
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="about">
       <h1 class="about__title">
         PanterEx
       </h1>
-      <p class="about__text">
+      <p class="about__text language-specific-2">
         Cнимает финансовые границы для всех людей по всему миру, ты будешь иметь <span>свободу выбора</span>,
         перемещений, покупок и
         инвестиций, быть в финансовой безопасности <span>имея за спиной надежного партнера.</span>
@@ -230,23 +293,23 @@
               <div class="steps__item-num">
                 1.
               </div>
-              <div class="steps__item-text">
+              <div class="steps__item-text language-specific-3">
                 <span>Лучший курс</span> среди обменников в Тайланде
               </div>
             </div>
             <div class="steps__item">
-              <div class="steps__item-num steps__item-num--two">
+              <div class="steps__item-num steps__item-num--two language-specific-2">
                 2.
               </div>
-              <div class="steps__item-text">
+              <div class="steps__item-text language-specific-3">
                 Обмен при личной встрече
               </div>
             </div>
             <div class="steps__item">
-              <div class="steps__item-num steps__item-num--three">
+              <div class="steps__item-num steps__item-num--three language-specific-2">
                 3.
               </div>
-              <div class="steps__item-text">
+              <div class="steps__item-text language-specific-3">
                 <span>Быстрая доставка</span> курьером Пхукет, Паттая, Бангкок
               </div>
             </div>
@@ -264,7 +327,7 @@
               <div class="steps__item-num">
                 4.
               </div>
-              <div class="steps__item-text">
+              <div class="steps__item-text language-specific-3">
                 Откроем карту apple/google pay <span>бесплатно</span>
               </div>
             </div>
@@ -272,7 +335,7 @@
               <div class="steps__item-num">
                 5.
               </div>
-              <div class="steps__item-text">
+              <div class="steps__item-text language-specific-3">
                 Совершим обмен за <span>15 мин</span>
               </div>
             </div>
@@ -280,7 +343,7 @@
               <div class="steps__item-num">
                 6.
               </div>
-              <div class="steps__item-text">
+              <div class="steps__item-text language-specific-3">
                 Офисы в Дубае, Бали, Пхукете, Бангкоке, Паттайе, Москве
                 + 30 городов рф
               </div>
@@ -336,7 +399,7 @@
       <div class="container">
         <div class="how__content">
           <h2 class="how__title">
-            HКак происходит обмен?
+            Как происходит обмен?
           </h2>
           <img src="./images/how.png" alt="">
         </div>
@@ -353,22 +416,22 @@
         <div class="how__items">
           <a class="how__item" href="#modal-atm">
             <div class="how__item-title">Через <br> банкомат</div>
-            <div class="how__item-btn">Подробнее</div>
+            <div class="how__item-btn language-specific-4">Подробнее</div>
             <img class="how__item-img how__item-img-1" src="./images/how-1.png" alt="">
           </a>
           <a class="how__item" href="#modal-del">
             <div class="how__item-title">Доставка <br> курьером</div>
-            <div class="how__item-btn">Подробнее</div>
+            <div class="how__item-btn language-specific-4">Подробнее</div>
             <img class="how__item-img how__item-img-2" src="./images/how-2.png" alt="">
           </a>
           <a class="how__item" href="#modal-cash">
             <div class="how__item-title">Наличные <br> в офисе</div>
-            <div class="how__item-btn">Подробнее</div>
+            <div class="how__item-btn language-specific-4">Подробнее</div>
             <img class="how__item-img how__item-img-3" src="./images/how-3.png" alt="">
           </a>
           <a class="how__item" href="#modal-thai">
             <div class="how__item-title">На счет в <br> Тайском банке</div>
-            <div class="how__item-btn">Подробнее</div>
+            <div class="how__item-btn language-specific-4">Подробнее</div>
             <img class="how__item-img how__item-img-4" src="./images/how-4.png" alt="">
           </a>
         </div>
@@ -395,23 +458,23 @@
         <h3 class="modal__title">
           Через банкомат
         </h3>
-        <div class="modal__descr">
+        <div class="modal__descr language-specific-10--descr">
           Время транзакции составляет до 15 минут
         </div>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           1. Согласуйте с менеджером курс обмена и банк, из которого вы будете переводить рубли
         </p>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           2. Менеджер поможет вам выбрать ближайший банкомат KasikornBank, Bangkok Bank, SCB или KTB
         </p>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           3. Менеджер предоставит реквизиты для перевода в Банк Российской Федерации, ваша транзакция полностью
           безопасна
         </p>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           4. Получите наличные через банкомат, используя QR-код
         </p>
-        <div class="modal__note">
+        <div class="modal__note language-specific-10">
           *Подробные инструкции будут предоставлены нашим менеджером
         </div>
         <a class="modal__link" href="#">Instruction</a>
@@ -424,23 +487,23 @@
         <h3 class="modal__title">
           Доставка курьером
         </h3>
-        <div class="modal__descr">
+        <div class="modal__descr language-specific-10--descrip">
           Время совершения сделки по договоренности
         </div>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           1. Согласуйте с менеджером детали сделки и сроки доставки
         </p>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           2. Встретьте курьера с деньгами (вы можете проверить сумму), затем переведите средства с российского счета,
           используя
           реквизиты, отправленные в чате
         </p>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           3. После подтверждения получения денежных средств курьер выдаст вам наличные
           • Доставка от 15 000 бат бесплатная
           • Доставка осуществляется: Пхукет, Бангкок, Паттайя
         </p>
-        <div class="modal__note">
+        <div class="modal__note language-specific-10">
           *Подробные инструкции будут предоставлены нашим менеджером
         </div>
         <img class="modal__img" src="./images/del.png" alt="">
@@ -452,23 +515,23 @@
         <h3 class="modal__title">
           Наличные в офисе
         </h3>
-        <div class="modal__descr">
+        <div class="modal__descr language-specific-10--descrip">
           Время совершения сделки по договоренности
         </div>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           1. Укажите сумму и валюту, подлежащие обмену
         </p>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           2. Согласуйте с менеджером время встречи в офисе.
           Мы работаем с 10:00 до 22:00. Пхукет, Бангкок, Паттайя
         </p>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           3. Вы можете обменять наличные или осуществить перевод со своего счета, используя свои банковские реквизиты
         </p>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           4. Получите наличные в кассе
         </p>
-        <div class="modal__note">
+        <div class="modal__note language-specific-7">
           *Detailed instructions will be provided by our manager
         </div>
         <img class="modal__img" src="./images/cash.png" alt="">
@@ -480,19 +543,19 @@
         <h3 class="modal__title">
           TНа счет в Тайском банке
         </h3>
-        <div class="modal__descr">
+        <div class="modal__descr language-specific-10--descrip">
           Время транзакции составляет до 10 минут
         </div>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           1. Согласуйте детали сделки с менеджером
         </p>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           2. Переведите средства со своего аккаунта, используя реквизиты, отправленные в чате
         </p>
-        <p class="modal__text">
+        <p class="modal__text language-specific-6">
           3. Дождитесь подтверждения транзакции и получите перевод на свой счет
         </p>
-        <div class="modal__note">
+        <div class="modal__note language-specific-7">
           *Мы можем оплатить счет-фактуру, любую покупку или выставленный счет в ресторане. Для этого достаточно
           предоставить
           реквизиты или QR-код нашему менеджеру
@@ -506,7 +569,7 @@
       <h1 class="pop__title-purchase">
         <nobr>Покупка недвижимости, </nobr> оплата жилья и транспорта
       </h1>
-      <p class="pop__text">
+      <p class="pop__text language-specific-6">
         Одна из возможностей PanterEx - оплачивать свои покупки в любом месте и в любое время. Это могут быть
         транзакции на любую сумму, например, чеки в кафе, новый iPhone или целая вилла с видом на Индийский океан.
         Представьте ситуацию: вы привели красивую девушку на свидание в роскошный ресторан, но забыли дома всю
@@ -527,7 +590,7 @@
       <div class="pop__subtitle">
         Покупка и аренда недвижимости
       </div>
-      <div class="pop__subtitle-text">
+      <div class="pop__subtitle-text language-specific-6">
         <p>
           Большое количество людей обращается в тайские агентства недвижимости, чтобы купить виллу или квартиру для
           сдачи в аренду
@@ -577,7 +640,7 @@
       <div class="pop__title-second">
         Покупка недвижимости, оплата жилья и транспорта
       </div>
-      <div class="pop__descr">
+      <div class="pop__descr language-specific-3">
         Оставьте заявку, и наш менеджер свяжется с вами в течение 5 минут в рабочее время
       </div>
       <div class="pop__items">
@@ -588,7 +651,7 @@
               d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
               fill="#00FF8D" />
           </svg>
-          <div class="pop__item-text">наличные</div>
+          <div class="pop__item-text language-specific-5">наличные</div>
         </div>
         <div class="pop__item">
           <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -597,7 +660,7 @@
               d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
               fill="#00FF8D" />
           </svg>
-          <div class="pop__item-text">безналичный расчет</div>
+          <div class="pop__item-text language-specific-5">безналичный расчет</div>
         </div>
         <div class="pop__item">
           <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -606,7 +669,7 @@
               d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
               fill="#00FF8D" />
           </svg>
-          <div class="pop__item-text">безопасно</div>
+          <div class="pop__item-text language-specific-5">безопасно</div>
         </div>
       </div>
       <div class="form-wrap">
@@ -623,7 +686,7 @@
             <div class="select__item">EN</div>
           </div>
         </div>
-        <input class="pop__info-input" type="text" placeholder="+7">
+        <input class="pop__info-input language-specific" type="text" placeholder="+7">
       </div>
       <div class="request__wrapper-btn">
         <button class="request__btn">
@@ -635,7 +698,7 @@
       <h1 class="pop__title-transfer">
         Международные переводы
       </h1>
-      <p class="pop__text">
+      <p class="pop__text language-specific-6">
         В эпоху санкций осуществление международных переводов стало большой проблемой. Осуществлять переводы SWIFT,
         получать
         иностранные банковские карты невыгодно, а также терять крупные суммы при конвертации валют. <br> Одна из услуг,
@@ -650,7 +713,7 @@
           осуществления международных переводов:
         </b>
       </p>
-      <p class="pop__text">
+      <p class="pop__text language-specific-6">
         1.Когда вы находитесь в одной стране, вы переводите деньги на наш счет или переводите их наличными в
         определенной
         валюте, в то время как мы конвертируем, если сумма необходима, в другую валюту или меняем порядок, если деньги
@@ -661,12 +724,12 @@
         валюте) в
         нужной вам стране. Вы можете получить денежные средства наличными в кассе или с помощью курьерской доставки.
       </p>
-      <p class="pop__text">
+      <p class="pop__text language-specific-6">
         2. Сделка «из рук в руки» или «от стола к столу». Вы переводите деньги сотрудникам нашего офиса в одной валюте,
         а ваш
         партнер забирает их в то же время в выбранном пункте назначения в другой или той же валюте.
       </p>
-      <p class="pop__text">
+      <p class="pop__text language-specific-6">
         Такие транзакции доступны физическим и юридическим лицам в головном офисе на Пхукете и у 6 партнеров в разных
         уголках
         мира. Курьерская доставка доступна более чем в 52 странах.
@@ -674,8 +737,28 @@
       <div class="pop__title-second">
         Международные переводы
       </div>
-      <div class="pop__descr">
+      <div class="pop__descr language-specific-3">
         Оставьте заявку, и наш менеджер свяжется с вами в течение 5 минут в рабочее время
+      </div>
+      <div class="pop__notes">
+        <div class="pop__note">
+          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path
+              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
+              fill="#00FF8D" />
+          </svg>
+          <div class="pop__item-text language-specific-5">для физических и юридических лиц</div>
+        </div>
+        <div class="pop__note">
+          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path
+              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
+              fill="#00FF8D" />
+          </svg>
+          <div class="pop__item-text language-specific-5">транзакции между таблицами</div>
+        </div>
       </div>
       <div class="pop__items">
         <div class="pop__item">
@@ -685,7 +768,7 @@
               d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
               fill="#00FF8D" />
           </svg>
-          <div class="pop__item-text">для физических и юридических лиц</div>
+          <div class="pop__item-text language-specific-5">наличные</div>
         </div>
         <div class="pop__item">
           <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -694,7 +777,7 @@
               d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
               fill="#00FF8D" />
           </svg>
-          <div class="pop__item-text">транзакции между таблицами</div>
+          <div class="pop__item-text language-specific-5">безналичный расчет</div>
         </div>
         <div class="pop__item">
           <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
@@ -703,41 +786,25 @@
               d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
               fill="#00FF8D" />
           </svg>
-          <div class="pop__item-text">наличные</div>
-        </div>
-        <div class="pop__item">
-          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-            fill="none">
-            <path
-              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
-              fill="#00FF8D" />
-          </svg>
-          <div class="pop__item-text">безналичный расчет</div>
-        </div>
-        <div class="pop__item">
-          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-            fill="none">
-            <path
-              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
-              fill="#00FF8D" />
-          </svg>
-          <div class="pop__item-text">безопасно</div>
+          <div class="pop__item-text language-specific-5">безопасно</div>
         </div>
       </div>
-      <div class="select select-request">
-        <div class="select__header select-request-header">
-          <span class="select__current" data-value=""></span>
-          <div class="select__icon">
-            <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
+      <div class="form-wrap">
+        <div class="select select-pop">
+          <div class="select__header select-pop-header">
+            <span class="select__current" data-value=""></span>
+            <div class="select__icon">
+              <div class="select__pop-icon"><img src="./images/sel-2.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="select__list select__list-pop">
+            <div class="select__item">RU</div>
+            <div class="select__item">TH</div>
+            <div class="select__item">EN</div>
           </div>
         </div>
-        <div class="select__list select__list-request">
-          <div class="select__item">RU</div>
-          <div class="select__item">TH</div>
-          <div class="select__item">EN</div>
-        </div>
+        <input class="pop__info-input language-specific" type="text" placeholder="+7">
       </div>
-      <input class="request__info-input" type="text" placeholder="+7">
       <div class="request__wrapper-btn">
         <button class="request__btn">
           отправить заявку
@@ -749,14 +816,14 @@
       <h1 class="pop__title-service">
         Услуги для предпринимателей
       </h1>
-      <p class="pop__text">
+      <p class="pop__text language-specific-6">
         <b>
           Используйте для оплаты компании и банки из других стран. Юрисдикция Объединенных Арабских Эмиратов
           зарекомендовала себя
           достаточно хорошо.
         </b>
       </p>
-      <div class="pop__service-text">
+      <div class="pop__service-text language-specific-6">
         <p>
           1. Банки и компании ОАЭ признаны во всем мире. Они не вызывают подозрений в других странах, с ними заключаются
           контракты, осуществляются экспортно-импортные операции, принимаются платежи.
@@ -814,21 +881,24 @@
       <div class="pop__title-second">
         Услуги для предпринимателей
       </div>
-      <div class="pop__descr">
+      <div class="pop__descr language-specific-3">
         Оставьте заявку, и наш менеджер свяжется с вами в течение 5 минут в рабочее время
       </div>
-      <div class="select select-request">
-        <div class="select__header select-request-header">
-          <span class="select__current" data-value=""></span>
-          <div class="select__icon">
-            <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
+      <div class="form-wrap">
+        <div class="select select-pop">
+          <div class="select__header select-pop-header">
+            <span class="select__current" data-value=""></span>
+            <div class="select__icon">
+              <div class="select__pop-icon"><img src="./images/sel-2.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="select__list select__list-pop">
+            <div class="select__item">RU</div>
+            <div class="select__item">TH</div>
+            <div class="select__item">EN</div>
           </div>
         </div>
-        <div class="select__list select__list-request">
-          <div class="select__item">RU</div>
-          <div class="select__item">TH</div>
-          <div class="select__item">EN</div>
-        </div>
+        <input class="pop__info-input language-specific" type="text" placeholder="+7">
       </div>
       <input class="request__info-input" type="text" placeholder="+7">
       <div class="request__wrapper-btn">
@@ -843,7 +913,7 @@
           <h2 class="reviews__title">
             Отзывы
           </h2>
-          <p class="reviews__descr">
+          <p class="reviews__descr language-specific-2">
             Это не просто отзывы клиентов, <span>это целые истории.</span>
             Помимо обмена, мы <span>помогаем решить любые финансовые вопросы</span> в Таиланде, на Бали, в ОАЭ, Китае
           </p>
@@ -851,20 +921,121 @@
             <button class="reviews__top-btn">Оформить обмен</button>
           </div>
         </div>
-
+        <div class="reviews__items">
+          <div class="reviews__item">
+            <div class="review__item-top">
+              <div class="reviews__item-name">
+                АЛИНА, БАЛИ
+              </div>
+              <img class="reviews__item-img" src="./images/alina.png" alt="">
+            </div>
+            <div class="reviews__item-title">
+              Помощь с оплатой жилья и велосипедов
+            </div>
+            <div class="reviews__item-text language-specific-5">
+              У Алины заканчивалось время на оплату жилья и велосипеда, поздно вечером она сделала срочный запрос. В
+              нескольких
+              обменниках у
+              нее не прошел курс обмена и у нее не хватило денег в рублях.
+              Мы быстро подобрали наилучший курс.
+            </div>
+            <a class="reviews__item-btn" href="./images/alina.mp4" id="alina">
+              Видео обзор
+            </a>
+          </div>
+          <div class="reviews__item">
+            <div class="review__item-top">
+              <div class="reviews__item-name">
+                Екатерина, Тайланд
+              </div>
+              <img class="reviews__item-img" src="./images/ekaterina.png" alt="">
+            </div>
+            <div class="reviews__item-title">
+              Выплата крупной суммы
+            </div>
+            <div class="reviews__item-text language-specific-5">
+              Катя - наша постоянная клиентка, сначала была боязнь менять большие суммы, поэтому она начала с 10 000
+              рублей. После
+              нескольких обменов Катя поняла, что работает с профессионалами и с помощью нашего сервиса оплачивала
+              значительные
+              покупки и меняла большие суммы.
+            </div>
+            <a class="reviews__item-btn" href="#" id="ekaterina">
+              Видео обзор
+            </a>
+          </div>
+          <div class="reviews__item">
+            <div class="review__item-top">
+              <div class="reviews__item-name">
+                Денис, Китай
+              </div>
+              <img class="reviews__item-img" src="./images/denis.png" alt="">
+            </div>
+            <div class="reviews__item-title">
+              Нестандартный способ обмена
+            </div>
+            <div class="reviews__item-text language-specific-5">
+              Денис много путешествует, поступил нестандартный запрос на обмен - пополнить счет alipay в Китае. Конечно,
+              мы справились
+              с задачей,
+              для нас принципиально важно решить любой запрос.
+            </div>
+            <a class="reviews__item-btn" href="#" id="denis">
+              Видео обзор
+            </a>
+          </div>
+          <div class="reviews__item">
+            <div class="review__item-top">
+              <div class="reviews__item-name">
+                Наталья, Китай
+              </div>
+              <img class="reviews__item-img" src="./images/natalia.png" alt="">
+            </div>
+            <div class="reviews__item-title">
+              Помощь с покупкой автомобиля в Китае
+            </div>
+            <div class="reviews__item-text language-specific-5">
+              Наталья пришла к нам в отчаянии, она не могла найти компанию, которая оплатила бы ее автомобиль. Для нас
+              это не
+              составило труда.
+              Были небольшие сложности с оплатой и договорами, в течение недели мы полностью решили вопрос.
+            </div>
+            <a class="reviews__item-btn" href="#" id="natalia">
+              Видео обзор
+            </a>
+          </div>
+        </div>
+        <div class="modals" id="videoModal" style="display: none;">
+          <div class="modals-content">
+            <span class="modals-close" id="closeModal">&times;</span>
+            <div class="custom-video-player">
+              <video id="videoPlayer" style="display: none;">
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-controls">
+                <button id="playPause" class="play-btn">▶</button>
+                <input id="progressBar" type="range" min="0" max="100" value="0">
+                <span id="currentTime">0:00</span>
+                <button id="muteToggle" class="mute-btn">🔊</button>
+                <button id="fullScreen" class="fullscreen-btn">⤢</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="reviews__rates">
           <div class="reviews__rate reviews__rate-first">
             <div class="reviews__rate-soon">
               СКОРО
             </div>
-            <div class="reviews__link">
+            <div class="reviews__link language-specific-6">
               Обращение Тео
             </div>
           </div>
           <div class="reviews__rate">
             <img class="reviews__rate-logo" src="./images/google.png" alt="">
             <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Average rating:</div>
+              <div class="reviews__rate-info-text language-specific-6">Средний рейтинг:</div>
               <div class="reviews__rate-info-num">5.0</div>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -873,21 +1044,21 @@
               </svg>
             </div>
             <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of reviews:</div>
+              <div class="reviews__rate-info-text language-specific-6">Количество отзывов:</div>
               <div class="reviews__rate-info-num">108</div>
             </div>
             <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of ratings:</div>
+              <div class="reviews__rate-info-text language-specific-6">Количество оценок:</div>
               <div class="reviews__rate-info-num">210</div>
             </div>
-            <a class="reviews__rate-btn" href="#">
-              Read reviews
+            <a class="reviews__rate-btn language-specific-6" href="#">
+              Читать отзывы
             </a>
           </div>
           <div class="reviews__rate">
             <img class="reviews__rate-logo" src="./images/yandex.svg" alt="">
             <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Average rating:</div>
+              <div class="reviews__rate-info-text language-specific-6">Средний рейтинг:</div>
               <div class="reviews__rate-info-num">5.0</div>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -896,21 +1067,21 @@
               </svg>
             </div>
             <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of reviews:</div>
+              <div class="reviews__rate-info-text language-specific-6">Количество отзывов:</div>
               <div class="reviews__rate-info-num">255</div>
             </div>
             <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of ratings:</div>
+              <div class="reviews__rate-info-text language-specific-6">Количество оценок:</div>
               <div class="reviews__rate-info-num">308</div>
             </div>
-            <a class="reviews__rate-btn" href="#">
-              Read reviews
+            <a class="reviews__rate-btn language-specific-6" href="#">
+              Читать отзывы
             </a>
           </div>
         </div>
         <div class="reviews__btn-wrapper">
           <a class="rewiews__btn">
-            I want to make an exchange
+            хочу оформить обмен
           </a>
         </div>
       </div>
@@ -919,7 +1090,7 @@
       <div class="container">
         <div class="perform__top">
           <h2 class="perform__title">
-            Perform any financial <br> transactions
+            Совершайте <span>любые</span> <br> финансовые операции
           </h2>
           <svg class="perform__img" xmlns="http://www.w3.org/2000/svg" width="176" height="83" viewBox="0 0 176 83"
             fill="none">
@@ -983,40 +1154,40 @@
         </div>
         <div class="perform__items">
           <a class="perform__item perform__item-first" href="#">
-            <div class="perform__item-text">
-              Without limits on amounts and headaches. We will provide all the closing pains
+            <div class="perform__item-text language-specific-6">
+              Без ограничений по количеству и головной боли. Мы позаботимся обо всех нюансах
             </div>
             <div class="perform__item-title">
-              Purchase of real <br> estate, payment for housing and transport
+              Покупка <br> недвижимости, оплата жилья и транспорта
             </div>
           </a>
           <a class="perform__item perform__item-second" href="#">
-            <div class="perform__item-text">
-              A profitable alternative
-              to SWIFT transfers, available in 50+ countries
+            <div class="perform__item-text language-specific-6">
+              Выгодная альтернатива
+              переводам SWIFT, доступная более чем в 50 странах
             </div>
             <div class="perform-flex">
               <div class="perform__item-title">
-                International transfers
+                Международные переводы
               </div>
-              <div class="perform__descr">
-                For business
+              <div class="perform__descr language-specific-5">
+                Для бизнеса
               </div>
             </div>
           </a>
           <a class="perform__item perform__item-third" href="#">
-            <div class="perform__item-text">
-              Payment for goods
-              and services for the company
+            <div class="perform__item-text language-specific-6">
+              Оплата товаров
+              и услуг для компании
             </div>
             <div class="perform__item-title">
-              Services for entrepreneurs
+              Услуги для предпринимателей
             </div>
           </a>
         </div>
         <div class="perform__btn-wrapper">
           <a class="perform__btn">
-            I want to make an exchange
+            Консультация менеджера
           </a>
         </div>
       </div>
@@ -1028,20 +1199,18 @@
             <h2 class="team__title">
               THE GANG
             </h2>
-            <div class="team__text">
-              We are creating a financialecosystem in which customers can make currency exchange transactions and
-              conduct
-              financial
-              transactions with ease and confidence.
-              Our team consists of experts in finance, arbitration, trading, blockchain, and law, united by a common
-              goal
-              - ensuring
-              financial freedom in all circumstances.
-              You can find out more information about the
-              development of PanterEx....
+            <div class="team__text language-specific-2">
+              Мы создаем финансовую экосистему, в которой клиенты могут совершать операции по обмену валюты и проводить
+              финансовые
+              транзакции с легкостью и уверенностью.
+              Наша команда состоит из экспертов в области финансов, арбитража, трейдинга, блокчейна и права,
+              объединенных общей целью
+              - обеспечение финансовой свободы при любых обстоятельствах.
+              Вы можете ознакомиться с более подробной информацией о
+              разработке Pantene....
             </div>
             <a class="team__btn" href="#">
-              MORE INFO
+              ДОп ИНФОРМАЦИЯ
             </a>
           </div>
           <img class="team__img" src="./images/team-people.png" alt="">
@@ -1052,9 +1221,9 @@
       <div class="container">
         <div class="request__top">
           <h2 class="request__title">
-            Didn't find the answer to the question?
+            Не нашли <span>ответа</span> на свой вопрос?
           </h2>
-          <div class="request__descr">
+          <div class="request__descr language-specific-2">
             Оставьте заявку, и наш менеджер свяжется с вами в течение 5 минут в рабочее время
           </div>
         </div>
@@ -1079,42 +1248,40 @@
             отправить заявку
           </button>
         </div>
-        <div class="request__note">
-          Оставьте заявку, и наш менеджер свяжется с вами в течение 5 минут в рабочее время
+        <div class="request__note language-specific-5">
+          *Менеджер ответит вам в течение минуты
         </div>
       </div>
     </section>
     <div class="partner-wrapper">
       <section class="partner">
-        <div class="container">
-          <div class="patner__top">
-            <div class="partner__text">
-              We are <span>always open to</span>
+        <div class="patner__top">
+          <div class="partner__text">
+            Мы <span>всегда открыты</span>
+          </div>
+          <div class="partner__text">
+            к сотрудничеству и работаем по
+          </div>
+          <div class="partner__text">
+            принципу <span>win-win</span>, в свою очередь,
+          </div>
+          <div class="partner__inner">
+            <div class="partner__text partner__text-left">
+              <nobr>мы предлагаем</nobr> <span>до</span>
             </div>
+            <img class="partner__profit" src="./images/profit.png" alt="">
             <div class="partner__text">
-              cooperation and work on the <span>win-win</span>
-            </div>
-            <div class="partner__text">
-              principle, In turn,
-            </div>
-            <div class="partner__inner">
-              <div class="partner__text partner__text-left">
-                we offer <br> up to
-              </div>
-              <img class="partner__profit" src="./images/profit.png" alt="">
-              <div class="partner__text">
-                profit.
-              </div>
+              прибыли.
             </div>
           </div>
-          <h2 class="partner__title">
-            Let's develop together
-          </h2>
-          <div class="partner__wrapper-btn">
-            <button class="partner__btn">
-              Become a partner
-            </button>
-          </div>
+        </div>
+        <h2 class="partner__title">
+          Давайте развиваться <span>вместе</span>
+        </h2>
+        <div class="partner__wrapper-btn">
+          <button class="partner__btn">
+            Стать партнером
+          </button>
         </div>
       </section>
     </div>
@@ -1129,53 +1296,53 @@
               <ul class="footer__menu">
                 <li class="footer__menu-item">
                   <div class="footer__menu-title" href="#">
-                    SECTIONS OF THE SITE:
+                    РАЗДЕЛЫ САЙТА:
                   </div>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    Currency exchange
+                  <a class="footer__menu-link language-specific-2" href="#">
+                    Обмен валюты
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    About PanterEx
+                  <a class="footer__menu-link language-specific-2" href="#">
+                    О компании Pentax
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    How does the exchange work?
+                  <a class="footer__menu-link language-specific-2" href="#">
+                    Как работает биржа?
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    Reviews
+                  <a class="footer__menu-link language-specific-2" href="#">
+                    Отзывы
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    Financial transactions
+                  <a class="footer__menu-link language-specific-2" href="#">
+                    Финансовые операции
                   </a>
                 </li>
               </ul>
               <ul class="footer__menu">
                 <li class="footer__menu-item">
                   <div class="footer__menu-title" href="#">
-                    SOC.NETWORKS:
+                    СОЦИАЛЬНЫЕ СЕТИ:
                   </div>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
+                  <a class="footer__menu-link language-specific-2" href="#">
                     Instagram
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
+                  <a class="footer__menu-link language-specific-2" href="#">
                     Telegram
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
+                  <a class="footer__menu-link language-specific-2" href="#">
                     Telegram Bot
                   </a>
                 </li>
@@ -1183,11 +1350,11 @@
               <ul class="footer__menu">
                 <li class="footer__menu-item">
                   <div class="footer__menu-title" href="#">
-                    CONTACTS:
+                    контакты:
                   </div>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="mailto:pochta@mail.ru">
+                  <a class="footer__menu-link language-specific-2" href="mailto:pochta@mail.ru">
                     pochta@mail.ru
                   </a>
                 </li>
@@ -1195,11 +1362,11 @@
             </div>
             <div class="footer__bottom">
               <div class="footer__bottom-policy">
-                <a href="#">The offer</a>
-                <a href="#">Agreement</a>
+                <a class="language-specific" href="#">Соглашение-оферта</a>
+                <a class="language-specific" href="#">Политика конфиденциальности</a>
               </div>
-              <div class="footer__bottom-descr">
-                Your finances are safe with us
+              <div class="footer__bottom-descr language-specific">
+                <nobr>С нами ваши финансы</nobr> в безопасности
               </div>
             </div>
           </div>
