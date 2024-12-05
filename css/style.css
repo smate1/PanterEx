@@ -1,1508 +1,2523 @@
-<!DOCTYPE html>
-<html lang="en">
+*,
+html {
+	box-sizing: border-box;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PanterEx</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&family=Oswald:wght@200..700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+html {
+	scroll-behavior: smooth;
+}
 
-<body>
-  <main class="main">
-    <header class="header">
-      <div class="container">
-        <div class="header__wrapper">
-          <div class="header__left">
-            <a class="header__logo" href="#">
-              <img src="./images/logo.png" alt="">
-            </a>
-            <div class="select">
-              <div class="select__header">
-                <span class="select__current" data-value=""></span>
-                <div class="select__icon">
-                  <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
-                </div>
-              </div>
-              <div class="select__list select__list-link">
-                <a href="./index.html" class="select__item select__item-link" data-value="en">Eng</a>
-                <a href="./content-ru.html" class="select__item select__item-link" data-value="ru">Ru</a>
-              </div>
-            </div>
-          </div>
-          <div class="header__right">
-            <div class="select">
-              <div class="select__header">
-                <span class="select__current language-specific" data-value=""></span>
-                <div class="select__icon select__icon-arrow"><img src="./images/sel.svg" alt=""></div>
-              </div>
-              <div class="select__list">
-                <div class="select__item">Thailand</div>
-                <div class="select__item">Bali</div>
-                <div class="select__item">UAE</div>
-                <div class="select__item">China</div>
-              </div>
-            </div>
-            <ul class="menu">
-              <li class="menu__item">
-                <a class="menu__item-link" href="#steps">
-                  Benefit
-                </a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__item-link" href="#perform">
-                  Services
-                </a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__item-link" href="#reviews">
-                  Trust
-                </a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__item-link" href="#request">
-                  Contacts
-                </a>
-              </li>
-            </ul>
-            <div class="header__socials">
-              <a class="header__socials-link instagram" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                  <path class="instagram-path"
-                    d="M12.5 16C13.605 16 14.6649 15.5786 15.4463 14.8284C16.2277 14.0783 16.6666 13.0609 16.6666 12C16.6666 10.9391 16.2277 9.92172 15.4463 9.17157C14.6649 8.42143 13.605 8 12.5 8C11.3949 8 10.3351 8.42143 9.5537 9.17157C8.7723 9.92172 8.33331 10.9391 8.33331 12C8.33331 13.0609 8.7723 14.0783 9.5537 14.8284C10.3351 15.5786 11.3949 16 12.5 16Z"
-                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                  <path class="instagram-path"
-                    d="M3.125 16V8C3.125 6.67392 3.67373 5.40215 4.65049 4.46447C5.62724 3.52678 6.952 3 8.33333 3H16.6667C18.048 3 19.3728 3.52678 20.3495 4.46447C21.3263 5.40215 21.875 6.67392 21.875 8V16C21.875 17.3261 21.3263 18.5979 20.3495 19.5355C19.3728 20.4732 18.048 21 16.6667 21H8.33333C6.952 21 5.62724 20.4732 4.65049 19.5355C3.67373 18.5979 3.125 17.3261 3.125 16Z"
-                    stroke="white" />
-                  <path class="instagram-path" d="M18.2292 6.50862L18.2383 6.49899" stroke="white"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </a>
-              <a class="header__socials-link telegram" href="@panterex_support">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                  <path class="telegram-path" fill-rule="evenodd" clip-rule="evenodd"
-                    d="M20.601 4.43C20.8584 4.32599 21.1402 4.29011 21.417 4.32611C21.6937 4.36211 21.9554 4.46866 22.1747 4.63468C22.394 4.8007 22.5629 5.02011 22.6639 5.27008C22.7649 5.52005 22.7943 5.79144 22.7489 6.056L20.3864 19.813C20.1573 21.14 18.6406 21.901 17.3729 21.24C16.3125 20.687 14.7375 19.835 13.3208 18.946C12.6125 18.501 10.4427 17.076 10.7094 16.062C10.9385 15.195 14.5844 11.937 16.6677 10C17.4854 9.239 17.1125 8.8 16.1469 9.5C13.7489 11.238 9.89894 13.881 8.62603 14.625C7.50311 15.281 6.91769 15.393 6.21769 15.281C4.94061 15.077 3.75623 14.761 2.78957 14.376C1.48332 13.856 1.54686 12.132 2.78853 11.63L20.601 4.43Z"
-                    fill="white" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="page-wrapper">
-      <section class="exchange">
-        <div class="page-container">
-          <div class="exchange__items">
-            <div class="exchange__item">
-              <img class="exchange__item-img" src="./images/item-1.svg" alt="">
-              <p class="exchange__item-text">
-                get cash in 15 minutes in<br> any part of your country
-              </p>
-            </div>
-            <div class="exchange__item">
-              <img class="exchange__item-img" src="./images/item-2.svg" alt="">
-              <p class="exchange__item-text">
-                <span id="number">7.850</span> <br>
-                satisfied customers
-              </p>
-            </div>
-            <div class="exchange__item">
-              <img class="exchange__item-img" src="./images/item-3.svg" alt="">
-              <p class="exchange__item-text">
-                virtual card for payments <br>as a gift from 1000
-              </p>
-            </div>
-          </div>
-          <div class="exchange__content">
-            <div class="exchange__left">
-              <div class="exchange__left-top">
-                <h3 class="exchange__title">
-                  licensed exchange network
-                </h3>
-                <div class="exchange__descr">
-                  Submit an application in 1 minute
-                </div>
-              </div>
-              <div class="exchange__wrapper">
-                <div class="exchange__info">
-                  <div class="exchange__info-changing">
-                    You are changing:
-                  </div>
-                  <div class="exchange__info-secure">
-                    <img class="exchange__info-secure-img" src="./images/secure.svg" alt="">
-                    <p class="exchange__info-secure-text">secure exchange</p>
-                  </div>
-                </div>
-                <div class="select select-ex">
-                  <div class="select__header select-ex-header">
-                    <span class="select__current" data-value=""></span>
-                    <div class="select__icon">
-                      <div class="select__icon select__icon-ex"><img src="./images/sel-2.svg" alt=""></div>
-                    </div>
-                  </div>
-                  <div class="select__list select-ex-list">
-                    <div class="select__item">RUB <span>→</span> THB</div>
-                    <div class="select__item">THB <span>→</span> RUB</div>
-                    <div class="select__item">IDR <span>→</span> RUB</div>
-                    <div class="select__item">RUB <span>→</span> IDR</div>
-                    <div class="select__item">AED <span>→</span> RUB</div>
-                    <div class="select__item">RUB <span>→</span> AED</div>
-                    <div class="select__item">RMB <span>→</span> RUB</div>
-                    <div class="select__item">RUB <span>→</span> RMB</div>
-                  </div>
-                </div>
-                <div class="exchange__amount exchange__amount-rub ">
-                  <input type="text" placeholder="0"><label>RUB</label>
-                </div>
-                <div class="exchange__info-receive">
-                  You will receive:
-                </div>
-                <div class="exchange__amount exchange__amount-thb ">
-                  <input type="text" placeholder="0"><label>THB</label>
-                </div>
-                <div class="exchange__rate">
-                  Exchange rate: 3.08
-                </div>
-                <div class="exchange__buttons">
-                  <a class="exchange__telegram" href="https://t.me/panterex_support">
-                    <!-- <img src="./images/telegram.svg" alt=""> -->
-                    Exchange in TG
-                  </a>
-                  <a class="exchange__whatsapp" href="https://wa.me/message/454TMQ2IPRJNP1">
-                    <!-- <img src="./images/whatsapp.svg" alt=""> -->
-                    Exchange in whatsapp
-                  </a>
-                </div>
-                <div class="exchange__note">
-                  *if you exchange from 1000 you will receive the most favorable rate
-                </div>
-              </div>
-            </div>
-            <div class="exchange__right">
-              <h3 class="exchange__title exchange__title-rate">
-                exchange rate in the <br> Russian Federation
-              </h3>
-              <hr>
-              <div class="exchange__right-content">
-                <div class="exchange__aver">
-                  The average exchange rate in other exchangers:
-                </div>
-                <input class="exchange__right-input" type="text">
-                <div class="exchange__averr">
-                  PanterEx Exchange Rate:
-                </div>
-                <input class="exchange__right-input" type="text">
-                <div class="exchange__offer">
-                  Offer:
-                </div>
-                <textarea class="exchange__right-textarea"></textarea>
-                <div class="exchange__note-right">
-                  *Please check the exact rate with the manager
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <section class="wallet">
-      <div class="page-container">
-        <div class="wallet__inner">
-          <img class="wallet__img" src="./images/wallet.png" alt="">
-          <div class="wallet__content">
-            <h3 class="wallet__title">
-              eWallet Card
-            </h3>
-            <div class="wallet__descr">
-              by LinkPay
-            </div>
-            <div class="wallet__text">
-              Connect eWallet Card to Apple Pay and Google Pay for a hassle-free payment experience in any store or online platform.
-              Enjoy the speed and safety of digital transactions with LinkPay.
-            </div>
-            <div class="wallet__benefits">
-              <div class="wallet__benefit">
-                <div class="wallet__benefit-text">
-                  3-D Secure
-                </div>
-                <div class="wallet__benefit-descr">
-                  Supported
-                </div>
-              </div>
-              <div class="wallet__benefit wallet__benefit-commission">
-                <div class="wallet__benefit-text">
-                  0%
-                </div>
-                <div class="wallet__benefit-descr">
-                  Deposit fee
-                </div>
-              </div>
-              <div class="wallet__benefit">
-                <div class="wallet__benefit-text">
-                  3%
-                </div>
-                <div class="wallet__benefit-descr">
-                  Cashback
-                </div>
-              </div>
-            </div>
-            <a class="wallet__btn" href="#">
-              Explore all the terms
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="about">
-      <h1 class="about__title">
-        PanterEx
-      </h1>
-      <p class="about__text">
-        Removes financial boundaries for all people around the world, you will have <span>freedom of choice</span>,
-        movement, purchases and investments, be financially secure with <span>a reliable partner behind you.</span>
-      </p>
-    </div>
-    <div class="how__svgs">
-      <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
-        <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
-          stroke-opacity="0.2" />
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
-        <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
-          stroke-opacity="0.2" />
-      </svg>
-    </div>
-    <section class="steps" id="steps">
-      <div class="page-container">
-        <div class="steps__wrapper">
-          <div class="steps__left">
-            <div class="steps__item">
-              <div class="steps__item-num">
-                1.
-              </div>
-              <div class="steps__item-text">
-                <span>The best</span> exchange rate among exchangers in Thailand
-              </div>
-            </div>
-            <div class="steps__item">
-              <div class="steps__item-num steps__item-num--two">
-                2.
-              </div>
-              <div class="steps__item-text">
-                Exchange in person
-              </div>
-            </div>
-            <div class="steps__item">
-              <div class="steps__item-num steps__item-num--three">
-                3.
-              </div>
-              <div class="steps__item-text">
-                <span>Fast delivery</span> by courier Phuket, Pattaya
-              </div>
-            </div>
-          </div>
-          <div class="steps__center">
-            <div class="steps__soon">
-              SOON...
-            </div>
-            <div class="steps__name">
-              Teo...
-            </div>
-          </div>
-          <div class="steps__right">
-            <div class="steps__item">
-              <div class="steps__item-num">
-                4.
-              </div>
-              <div class="steps__item-text">
-                Let's <span>open</span> an apple/google pay
-                card <span>for free</span>
-              </div>
-            </div>
-            <div class="steps__item">
-              <div class="steps__item-num">
-                5.
-              </div>
-              <div class="steps__item-text">
-                We will make the exchange in <span>15 minutes</span>
-              </div>
-            </div>
-            <div class="steps__item">
-              <div class="steps__item-num">
-                6.
-              </div>
-              <div class="steps__item-text">
-                Offices in Dubai, Bali, Phuket, Bangkok, Pattaya, Moscow
-                + 30 cities of the Russian Federation
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="steps__btn-wrapper">
-          <button class="steps-btn">
-            Make an application in 1 minute
-          </button>
-        </div>
-      </div>
-    </section>
-    <div class="methods__wrapper">
-      <div class="methods">
-        <div class="methods-track">
-          <img src="./images/raif.png" alt="">
-          <img src="./images/alfa.svg" alt="">
-          <img src="./images/vtb.png" alt="">
-          <img src="./images/sber.png" alt="">
-          <img src="./images/tbank.png" alt="">
-          <img src="./images/spb.png" alt="">
-          <img src="./images/union.svg" alt="">
-          <img src="./images/master.svg" alt="">
-          <img src="./images/raif.png" alt="">
-          <img src="./images/alfa.svg" alt="">
-          <img src="./images/vtb.png" alt="">
-          <img src="./images/sber.png" alt="">
-          <img src="./images/tbank.png" alt="">
-          <img src="./images/spb.png" alt="">
-          <img src="./images/union.svg" alt="">
-          <img src="./images/master.svg" alt="">
-          <img src="./images/raif.png" alt="">
-          <img src="./images/alfa.svg" alt="">
-          <img src="./images/vtb.png" alt="">
-          <img src="./images/sber.png" alt="">
-          <img src="./images/tbank.png" alt="">
-          <img src="./images/spb.png" alt="">
-          <img src="./images/union.svg" alt="">
-          <img src="./images/master.svg" alt="">
-          <img src="./images/raif.png" alt="">
-          <img src="./images/alfa.svg" alt="">
-          <img src="./images/vtb.png" alt="">
-          <img src="./images/sber.png" alt="">
-          <img src="./images/tbank.png" alt="">
-          <img src="./images/spb.png" alt="">
-          <img src="./images/union.svg" alt="">
-          <img src="./images/master.svg" alt="">
-        </div>
-      </div>
-    </div>
-    <section class="how">
-      <div class="container">
-        <div class="how__content">
-          <h2 class="how__title">
-            How does the exchange work?
-          </h2>
-          <img src="./images/how.png" alt="">
-        </div>
-        <div class="how__svgs">
-          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
-            <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
-              stroke-opacity="0.2" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
-            <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
-              stroke-opacity="0.2" />
-          </svg>
-        </div>
-        <div class="how__items">
-          <a class="how__item" href="#modal-atm">
-            <div class="how__item-title">Through an <br> ATM</div>
-            <div class="how__item-btn">More detailed</div>
-            <img class="how__item-img how__item-img-1" src="./images/how-1.png" alt="">
-          </a>
-          <a class="how__item" href="#modal-del">
-            <div class="how__item-title">Delivery by <br> courier</div>
-            <div class="how__item-btn">More detailed</div>
-            <img class="how__item-img how__item-img-2" src="./images/how-2.png" alt="">
-          </a>
-          <a class="how__item" href="#modal-cash">
-            <div class="how__item-title">Cash in the <br> office</div>
-            <div class="how__item-btn">More detailed</div>
-            <img class="how__item-img how__item-img-3" src="./images/how-3.png" alt="">
-          </a>
-          <a class="how__item" href="#modal-thai">
-            <div class="how__item-title">To a Thai <br> bank account</div>
-            <div class="how__item-btn">More detailed</div>
-            <img class="how__item-img how__item-img-4" src="./images/how-4.png" alt="">
-          </a>
-        </div>
-        <div class="how__btn-wrapper">
-          <button class="how__btn">
-            Write to the manager
-          </button>
-        </div>
-        <div class="how__svgs">
-          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="9" viewBox="0 0 573 9" fill="none">
-            <path d="M572 0V0C572 4.69442 568.194 8.5 563.5 8.5H9.5C4.80558 8.5 1 4.69442 1 0V0" stroke="white"
-              stroke-opacity="0.2" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="9" viewBox="0 0 573 9" fill="none">
-            <path d="M572 0V0C572 4.69442 568.194 8.5 563.5 8.5H9.5C4.80558 8.5 1 4.69442 1 0V0" stroke="white"
-              stroke-opacity="0.2" />
-          </svg>
-        </div>
-      </div>
-    </section>
-    <section class="reviews">
-      <div class="container">
-        <div class="reviews__top">
-          <h2 class="reviews__title">
-            reviews
-          </h2>
-          <p class="reviews__descr">
-            These are not just customer reviews, <span>they are whole stories.</span><br>
-            In addition to the exchange, <span>we help solve any financial issues</span> in Thailand, Bali, UAE, China
-          </p>
-          <div class="reviews__btn-wrapper">
-            <button class="reviews__top-btn">exchange counter</button>
-          </div>
-        </div>
-        <div class="reviews__items">
-          <div class="reviews__item">
-            <div class="review__item-top">
-              <div class="reviews__item-name">
-                ALINA, BALI
-              </div>
-              <img class="reviews__item-img" src="./images/alina.png" alt="">
-            </div>
-            <div class="reviews__item-title">
-              Help with housing and bike payments
-            </div>
-            <div class="reviews__item-text">
-              Alina was running out of time to pay for housing and a bike, she made an urgent request late in the
-              evening.
-              At several
-              exchangers,
-              she did not pass the exchange rate and she did not have
-              enough money in rubles to exchange.
-              We have given the best course and speed.
-            </div>
-            <a class="reviews__item-btn" href="./images/alina.mp4" id="alina">
-              Video review
-            </a>
-          </div>
-          <div class="reviews__item">
-            <div class="review__item-top">
-              <div class="reviews__item-name">
-                EKATERINA, Thailand
-              </div>
-              <img class="reviews__item-img" src="./images/ekaterina.png" alt="">
-            </div>
-            <div class="reviews__item-title">
-              Disbursement of a large sum
-            </div>
-            <div class="reviews__item-text">
-              Katya is our regular customer, at first there was a fear of changing large amounts, so she started with
-              10,000 rubles.
-              After several exchanges, Katya realized that she was working with professionals and using our service she
-              paid for
-              significant purchases and changed large amounts.
-            </div>
-            <a class="reviews__item-btn" href="#" id="ekaterina">
-              Video review
-            </a>
-          </div>
-          <div class="reviews__item">
-            <div class="review__item-top">
-              <div class="reviews__item-name">
-                DENIS, CHINA
-              </div>
-              <img class="reviews__item-img" src="./images/denis.png" alt="">
-            </div>
-            <div class="reviews__item-title">
-              Non-standard way of exchange
-            </div>
-            <div class="reviews__item-text">
-              Denis travels a lot, there was a non-standard request for an exchange. Top up your alipay account in
-              China.
-              Of course, we coped with the task, it is fundamentally important
-              for us to solve any request.
-            </div>
-            <a class="reviews__item-btn" href="#" id="denis">
-              Video review
-            </a>
-          </div>
-          <div class="reviews__item">
-            <div class="review__item-top">
-              <div class="reviews__item-name">
-                NATALYA, CHINA
-              </div>
-              <img class="reviews__item-img" src="./images/natalia.png" alt="">
-            </div>
-            <div class="reviews__item-title">
-              Help with buying a car in China
-            </div>
-            <div class="reviews__item-text">
-              Natalia came to us with despair, she could not find a company that would pay for her car. It was not
-              difficult for us.
-              There were minor difficulties with payment and contracts, within a week we completely solved the request.
-            </div>
-            <a class="reviews__item-btn" href="#" id="natalia">
-              Video review
-            </a>
-          </div>
-        </div>
-        <div class="modals" id="videoModal" style="display: none;">
-          <div class="modals-content">
-            <span class="modals-close" id="closeModal">&times;</span>
-            <div class="custom-video-player">
-              <video id="videoPlayer" style="display: none;">
-                <source id="videoSource" src="" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="video-controls">
-                <button id="playPause" class="play-btn">▶</button>
-                <input id="progressBar" type="range" min="0" max="100" value="0">
-                <span id="currentTime">0:00</span>
-                <button id="muteToggle" class="mute-btn">🔊</button>
-                <button id="fullScreen" class="fullscreen-btn">⤢</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="reviews__rates">
-          <div class="reviews__rate reviews__rate-first">
-            <div class="reviews__rate-soon">
-              SOON...
-            </div>
-            <div class="reviews__link">
-              Theo's Appeal
-            </div>
-          </div>
-          <div class="reviews__rate">
-            <img class="reviews__rate-logo" src="./images/google.png" alt="">
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Average rating:</div>
-              <div class="reviews__rate-info-num">5.0</div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
-                  fill="#FBBC05" />
-              </svg>
-            </div>
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of reviews:</div>
-              <div class="reviews__rate-info-num">108</div>
-            </div>
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of ratings:</div>
-              <div class="reviews__rate-info-num">210</div>
-            </div>
-            <a class="reviews__rate-btn" href="#">
-              Read reviews
-            </a>
-          </div>
-          <div class="reviews__rate">
-            <img class="reviews__rate-logo" src="./images/yandex.svg" alt="">
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Average rating:</div>
-              <div class="reviews__rate-info-num">5.0</div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
-                  fill="#FBBC05" />
-              </svg>
-            </div>
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of reviews:</div>
-              <div class="reviews__rate-info-num">255</div>
-            </div>
-            <div class="reviews__rate-info">
-              <div class="reviews__rate-info-text">Number of ratings:</div>
-              <div class="reviews__rate-info-num">308</div>
-            </div>
-            <a class="reviews__rate-btn" href="#">
-              Read reviews
-            </a>
-          </div>
-        </div>
-        <div class="reviews__btn-wrapper">
-          <a class="rewiews__btn">
-            I want to make an exchange
-          </a>
-        </div>
-      </div>
-    </section>
-    <div class="modal modal-atm" id="modal-atm">
-      <div class="modal__box">
-        <button class="modal__close">&times;</button>
-        <h3 class="modal__title">
-          Through an ATM
-        </h3>
-        <div class="modal__descr">
-          the transaction time is up to 15 min.
-        </div>
-        <p class="modal__text">
-          1. Coordinate with the manager the exchange rate and the bank from which you will transfer rubles
-        </p>
-        <p class="modal__text">
-          2. The manager will help you choose the nearest ATM KasikornBank, Bangkok Bank, SCB or KTB
-        </p>
-        <p class="modal__text">
-          3. The manager will provide the details for the transfer to the Bank of the Russian Federation, your
-          transaction is
-          completely safe
-        </p>
-        <p class="modal__text">
-          4. Receive cash through an ATM using a QR code.
-        </p>
-        <div class="modal__note">
-          *Detailed instructions will be provided by our manager
-        </div>
-        <img class="modal__img" src="./images/atm.png" alt="">
-      </div>
-    </div>
-    <div class="modal modal-del" id="modal-del">
-      <div class="modal__box">
-        <button class="modal__close">&times;</button>
-        <h3 class="modal__title">
-          Delivery by courier
-        </h3>
-        <div class="modal__descr">
-          the transaction time is up to 15 min.
-        </div>
-        <p class="modal__text">
-          1. Coordinate with the manager the details of the transaction and the delivery time
-        </p>
-        <p class="modal__text">
-          2. Meet the courier with the money (you can check the amount), then transfer the funds from the Russian
-          account
-          using
-          the details sent in the chat
-        </p>
-        <p class="modal__text">
-          3. After confirming receipt of funds, the courier will give you cash
-          • Delivery from 15,000 baht is free
-          • Delivery works: Phuket, Bangkok, Pattaya
-        </p>
-        <div class="modal__note">
-          *Detailed instructions will be provided by our manager
-        </div>
-        <img class="modal__img" src="./images/del.png" alt="">
-      </div>
-    </div>
-    <div class="modal modal-cash" id="modal-cash">
-      <div class="modal__box">
-        <button class="modal__close">&times;</button>
-        <h3 class="modal__title">
-          Cash in the office
-        </h3>
-        <div class="modal__descr">
-          the transaction time is up to 15 min.
-        </div>
-        <p class="modal__text">
-          1. Specify the amount and currency to be exchanged
-        </p>
-        <p class="modal__text">
-          2. Coordinate with the manager the time of the meeting in the office.
-          We work from 10:00 to 22:00. Phuket, Bangkok, Pattaya
-        </p>
-        <p class="modal__text">
-          3. You can exchange cash or make a transfer from your account using your bank details
-        </p>
-        <p class="modal__text">
-          4. Get cash from the cashier
-        </p>
-        <div class="modal__note">
-          *Detailed instructions will be provided by our manager
-        </div>
-        <img class="modal__img" src="./images/cash.png" alt="">
-      </div>
-    </div>
-    <div class="modal modal-thai" id="modal-thai">
-      <div class="modal__box">
-        <button class="modal__close">&times;</button>
-        <h3 class="modal__title">
-          To a Thai bank account
-        </h3>
-        <div class="modal__descr">
-          the transaction time is up to 15 min.
-        </div>
-        <p class="modal__text">
-          1. Coordinate the details of the transaction with the manager
-        </p>
-        <p class="modal__text">
-          2. Transfer funds from your account using the details sent in the chat
-        </p>
-        <p class="modal__text">
-          3. Wait for the transaction to be confirmed and receive the transfer to your account
-        </p>
-        <div class="modal__note">
-          *We can pay the invoice, any purchase or bill at the restaurant. It is enough to provide the details or QR
-          code
-          to
-          our
-          manager
-        </div>
-        <img class="modal__img" src="./images/thai.png" alt="">
-      </div>
-    </div>
-    <div class="pop pop-purchase">
-      <button class="popup__close" id="popupClose">&times;</button>
-      <h1 class="pop__title-purchase">
-        <nobr>PURCHASE OF REAL ESTATE, PAYMEN</nobr>T FOR HOUSING AND TANSPORT
-      </h1>
-      <p class="pop__text">
-        One of the possibilities of PanterEx is to pay for your purchases in any bridge and at any time. These can be
-        transactions for any amount, for example, checks at a cafe, a new iPhone or an entire villa overlooking the
-        Indian
-        Ocean. <br>
-        Imagine the situation: you brought a beautiful girl on a date to a luxury restaurant, but forgot all the cash at
-        home.
-        The situation is terrible, I want to sink through the ground. What to do? Maybe I should run away and delete the
-        correspondence? No! Contact PanterEx. <br> <br>
-        We will close your account immediately and without any questions! Just send us the QR code that will be
-        displayed on the
-        terminal, and we will do everything for you. <br>
-        In addition to saving you from such unpleasant situations, we also make transfers to Thai
-        bank accounts of both individuals and legal entities and make payments using your bank details, invoices and QR
-        codes. <br>
-        We will help you with the payment of various goods and services without any problems. This can be the rental
-        and purchase of real estate, vehicles, education, insurance, medical services, goods in electronic equipment
-        stores and
-        much more.
-      </p>
-      <div class="pop__subtitle">
-        Buying and renting real estate
-      </div>
-      <div class="pop__subtitle-text">
-        <p>
-          A large number of people turn to Thai real estate agencies to buy a villa or apartment for rent and personal
-          use. Such
-          investments are especially popular among Russians, for example, Russian buyers account for almost 40% of all
-          residential
-          space sold to foreigners in Phuket in 2022. <br> <br>
+@font-face {
+	font-family: 'SF Pro Display';
+	src: url('../fonts/sf-ui-display-medium-58646be638f96.woff') format('woff');
+	font-weight: 500; /* Regular */
+	font-style: normal;
+}
 
-          There are 2 main strategies for managing investment real estate:
-        </p>
-        <p>
-          1. Renting out an object for the purpose of obtaining passive income.
-        </p>
-        <p>
-          2. Buying an object for the purpose of its further resale: the value of real estate in Thailand is growing by
-          27-80% per
-          year.
-        </p>
-        <p>
-          Now the Thai real estate market is fast-growing, the demand for investment properties is growing, and prices
-          are rising
-          along with it. In particular, the Phuket real estate market is estimated at 3 billion. baht or 7.6 billion
-          rubles.
-          It is becoming increasingly difficult to conclude truly profitable deals due to the large number of
-          commissions. That
-          is, first you pay a commission, changing rubles into dollars, then dollars into baht, then you have to pay a
-          commission
-          to the agency, and then taxes to the state.
-          In addition, there is another problem - how to make international transfers from Russia to Thailand? To make
-          SWIFT transfers are extremely unprofitable, and flying to Phuket to pay in cash on the spot is long,
-          expensive and makes no sense.
-          But PanterEx knows how to solve this issue. Our currency exchange service offers one of the lowest exchange
-          rates in
-          Phuket. And our team of financial specialists will always tell you how to make a deal with
-          the maximum benefit for you. For example, through us you can immediately exchange rubles for baht and save
-          a lot on commission.
-          In addition, we make international transfers. It works this way: you transfer rubles to our account or give
-          them
-          in cash at the office, we change them to cash baht and give them to your partner in your chosen country.
-          At the moment, in addition to Thailand, there are more than 50 countries available.
-          In simple words, PanterEx knows exactly how to help you pay for any goods and services abroad, including the
-          purchase of
-          real estate.
-          We will provide you with the most favorable exchange rate and a level of service that will allow you to fully
-          delegate
-          this process to us.
-        </p>
-      </div>
-      <div class="pop__title-second">
-        Purchase of real estate, payment for housing and transport
-      </div>
-      <div class="pop__descr">
-        Leave a request and our manager will contact you within 5 minutes during business hours
-      </div>
-      <div class="pop__items">
-        <div class="pop__item">
-          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-            fill="none">
-            <path
-              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
-              fill="#00FF8D" />
-          </svg>
-          <div class="pop__item-text">cash</div>
-        </div>
-        <div class="pop__item">
-          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-            fill="none">
-            <path
-              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
-              fill="#00FF8D" />
-          </svg>
-          <div class="pop__item-text">non-cash</div>
-        </div>
-        <div class="pop__item">
-          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-            fill="none">
-            <path
-              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
-              fill="#00FF8D" />
-          </svg>
-          <div class="pop__item-text">safely</div>
-        </div>
-      </div>
-      <div class="form-wrap">
-        <div class="select select-pop">
-          <div class="select__header select-pop-header">
-            <span class="select__current" data-value=""></span>
-            <div class="select__icon">
-              <div class="select__pop-icon"><img src="./images/sel-2.svg" alt=""></div>
-            </div>
-          </div>
-          <div class="select__list select__list-pop">
-            <div class="select__item">RU</div>
-            <div class="select__item">TH</div>
-            <div class="select__item">EN</div>
-          </div>
-        </div>
-        <input class="pop__info-input" type="text" placeholder="+7">
-      </div>
-      <div class="request__wrapper-btn">
-        <button class="request__btn">
-          submit your application
-        </button>
-      </div>
-    </div>
-    <div class="pop pop-transfer">
-      <button class="popup__close" id="popupClose">&times;</button>
-      <h1 class="pop__title-transfer">
-        International <br> transfers
-      </h1>
-      <p class="pop__text">
-        In the era of sanctions, making international transfers has become a big problem. It is not profitable to make
-        SWIFT
-        transfers, get foreign bank cards and lose large amounts when converting currencies, too.One of the services
-        provided
-        by PanterEx international transfers for individuals and legal entities. It's fast, simple, profitable and
-        reliable. Our
-        main task is to make sure that your money moves from one country to another as soon as possible.The amount of
-        such
-        transfers can be any, and the maximum amount of exchange depends solely on your desires and needs, while
-        transfers from
-        only $ 20,000 are available for legal entities.
+@font-face {
+	font-family: 'SF Pro Display';
+	src: url('../fonts/sf-ui-display-bold-58646a511e3d9.woff') format('woff');
+	font-weight: 700; /* Bold */
+	font-style: normal;
+}
 
+body {
+	font-family: 'SF UI Display', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	color: #fff;
+	font-size: 16px;
+	background: #0e0d13;
+}
 
-        We provide 2 ways to make international transfers:
-      </p>
-      <p class="pop__text">
-        A large number of people turn to Thai real estate agencies to buy a villa or apartment for rent and personal
-        use. Such
-        investments are especially popular among Russians, for example, Russian buyers account for almost 40% of all
-        residential
-        space sold to foreigners in Phuket in 2022.
+.main {
+	position: relative;
+	overflow: hidden;
+}
 
-        There are 2 main strategies for managing investment real estate:
-      </p>
-      <p class="pop__text">
-        1. Renting out an object for the purpose of obtaining passive income.
-      </p>
-      <p class="pop__text">
-        2. Buying an object for the purpose of its further resale: the value of real estate in Thailand is growing by
-        27-80% per
-        year.
-      </p>
-      <p class="pop__text">
-        Such transactions are available to individuals and legal entities at the head office in Phuket and 6 partners in
-        different parts of the world. Courier delivery is available in more than 52 countries.
-      </p>
-      <div class="pop__title-second">
-        Purchase of real estate, payment for housing and transport
-      </div>
-      <div class="pop__descr">
-        Leave a request and our manager will contact you within 5 minutes during business hours
-      </div>
-      <div class="pop__notes">
-        <div class="pop__note">
-          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-            fill="none">
-            <path
-              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
-              fill="#00FF8D" />
-          </svg>
-          <div class="pop__item-text">for individuals and legal entities</div>
-        </div>
-        <div class="pop__note">
-          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-            fill="none">
-            <path
-              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
-              fill="#00FF8D" />
-          </svg>
-          <div class="pop__item-text">Table-to-table transactions</div>
-        </div>
-      </div>
-      <div class="pop__items">
+input {
+	outline: none;
+	border: none;
+}
 
-        <div class="pop__item">
-          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-            fill="none">
-            <path
-              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
-              fill="#00FF8D" />
-          </svg>
-          <div class="pop__item-text">cash</div>
-        </div>
-        <div class="pop__item">
-          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-            fill="none">
-            <path
-              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
-              fill="#00FF8D" />
-          </svg>
-          <div class="pop__item-text">non-cash</div>
-        </div>
-        <div class="pop__item">
-          <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-            fill="none">
-            <path
-              d="M6.12504 10.6252L3.93754 8.43766C3.88033 8.37976 3.81221 8.33379 3.73711 8.30241C3.66201 8.27104 3.58143 8.25488 3.50004 8.25488C3.41864 8.25488 3.33806 8.27104 3.26296 8.30241C3.18786 8.33379 3.11974 8.37976 3.06254 8.43766C3.00464 8.49486 2.95867 8.56298 2.92729 8.63808C2.89592 8.71319 2.87976 8.79377 2.87976 8.87516C2.87976 8.95655 2.89592 9.03713 2.92729 9.11223C2.95867 9.18733 3.00464 9.25546 3.06254 9.31266L5.68129 11.9314C5.92504 12.1752 6.31879 12.1752 6.56254 11.9314L13.1875 5.31266C13.2454 5.25546 13.2914 5.18733 13.3228 5.11223C13.3542 5.03713 13.3703 4.95655 13.3703 4.87516C13.3703 4.79377 13.3542 4.71319 13.3228 4.63809C13.2914 4.56298 13.2454 4.49486 13.1875 4.43766C13.1303 4.37976 13.0622 4.33379 12.9871 4.30241C12.912 4.27104 12.8314 4.25488 12.75 4.25488C12.6686 4.25488 12.5881 4.27104 12.513 4.30241C12.4379 4.33379 12.3697 4.37976 12.3125 4.43766L6.12504 10.6252Z"
-              fill="#00FF8D" />
-          </svg>
-          <div class="pop__item-text">safely</div>
-        </div>
-      </div>
-      <div class="form-wrap">
-        <div class="select select-pop">
-          <div class="select__header select-pop-header">
-            <span class="select__current" data-value=""></span>
-            <div class="select__icon">
-              <div class="select__pop-icon"><img src="./images/sel-2.svg" alt=""></div>
-            </div>
-          </div>
-          <div class="select__list select__list-pop">
-            <div class="select__item">RU</div>
-            <div class="select__item">TH</div>
-            <div class="select__item">EN</div>
-          </div>
-        </div>
-        <input class="pop__info-input" type="text" placeholder="+7">
-      </div>
-      <div class="request__wrapper-btn">
-        <button class="request__btn">
-          submit your application
-        </button>
-      </div>
-    </div>
-    <div class="pop pop-service">
-      <button class="popup__close" id="popupClose">&times;</button>
-      <h1 class="pop__title-service">
-        Services for <br> entrepreneurs
-      </h1>
-      <p class="pop__text">
-        Use companies and banks from other countries for payment. The jurisdiction of the United Arab Emirates has
-        proven itself
-        quite well.
-      </p>
-      <div class="pop__service-text">
-        <p>
-          1. UAE banks and companies are recognized worldwide. They do not arouse suspicion in other countries,
-          contracts are
-          concluded with them, export-import operations are carried out, payments are accepted.
-        </p>
-        <p>
-          2. International trade operations. Thanks to the use of the SWIFT system, which is practically inaccessible in
-          Russia,
-          it is possible to make international payments with all countries of the world in any convenient currency in
-          the shortest
-          possible time. The average payment period for any invoice is 1 business day.
-        </p>
-        <p>
-          3. A friendly country. The UAE has not imposed sanctions against the Russian Federation, is a friendly country
-          for it
-          and does not cause obstacles in doing business with our country and its companies.
-        </p>
+li {
+	list-style: none;
+	color: inherit;
+}
 
-        <div class="pop__service-subtitle">
-          Advantages of paying for foreign supplies through the UAE:
-        </div>
-        <p>
-          1. The ability to accept payment in Russian rubles. You can repay the goods using Russian rubles. The UAE is
-          one of the
-          few countries that accept SWIFT transfers from Russia. Rubles are converted into Arabic Dirhams on the side of
-          the
-          sender's bank and then enter the UAE.
-        </p>
-        <p>
-          2. Stable exchange rate of the dirham against the US dollar. The exchange rate of the Arab dirham to the US
-          dollar is
-          stable and fixed at the legislative level. It has not changed for more than 20 years, which is extremely
-          convenient and
-          profitable when making settlements with foreign suppliers.
-        </p>
-        <p>
-          3. A variety of payment currencies for goods are supported. US Dollars, Euros, Chinese Yuan, Arab Dirhams.
-        </p>
-        <div class="pop__service-subtitle">
-          Our company will help you:
-        </div>
-        <p>
-          1. Conclude a supply contract. The contract will be concluded with a company from the UAE
-        </p>
-        <p>
-          2. Quickly convert and transfer rubles. In US dollars, Euros, and other currencies. At a favorable and stable
-          rate
-        </p>
-        <p>
-          3. Pay for the goods in any country of the world. The European Union, the USA, Canada, Australia, Japan and
-          Korea. Each
-          of these countries will readily accept payments from UAE banks.
-        </p>
-      </div>
-      <div class="pop__title-second">
-        Purchase of real estate, payment for housing and transport
-      </div>
-      <div class="pop__descr">
-        Leave a request and our manager will contact you within <br> 5 minutes during business hours
-      </div>
-      <div class="form-wrap">
-        <div class="select select-pop">
-          <div class="select__header select-pop-header">
-            <span class="select__current" data-value=""></span>
-            <div class="select__icon">
-              <div class="select__pop-icon"><img src="./images/sel-2.svg" alt=""></div>
-            </div>
-          </div>
-          <div class="select__list select__list-pop">
-            <div class="select__item">RU</div>
-            <div class="select__item">TH</div>
-            <div class="select__item">EN</div>
-          </div>
-        </div>
-        <input class="pop__info-input" type="text" placeholder="+7">
-      </div>
-      <div class="request__wrapper-btn">
-        <button class="request__btn">
-          submit your application
-        </button>
-      </div>
-    </div>
-    <!-- <section class="reviews" id="reviews">
-      <div class="container">
-        <div class="reviews__top">
-          <h2 class="reviews__title">
-            reviews
-          </h2>
-          <p class="reviews__descr">
-            These are not just customer reviews, <span>they are whole stories.</span><br>
-            In addition to the exchange, <span>we help solve any financial issues</span> in Thailand, Bali, UAE, China
-          </p>
-          <div class="reviews__btn-wrapper">
-            <button class="reviews__top-btn">exchange counter</button>
-          </div>
-        </div>
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+	outline: none;
+}
 
-        <div class="reviews__rates">
-          <div class="reviews__rate reviews__rate-first">
-            <divЮю class="reviews__rate-soon">
-              SOON...
-          </div>
-          <div class="reviews__link">
-            Theo's Appeal
-          </div>
-        </div>
-        <div class="reviews__rate">
-          <img class="reviews__rate-logo" src="./images/google.png" alt="">
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Average rating:</div>
-            <div class="reviews__rate-info-num">5.0</div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
-                fill="#FBBC05" />
-            </svg>
-          </div>
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Number of reviews:</div>
-            <div class="reviews__rate-info-num">108</div>
-          </div>
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Number of ratings:</div>
-            <div class="reviews__rate-info-num">210</div>
-          </div>
-          <a class="reviews__rate-btn" href="#">
-            Read reviews
-          </a>
-        </div>
-        <div class="reviews__rate">
-          <img class="reviews__rate-logo" src="./images/yandex.svg" alt="">
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Average rating:</div>
-            <div class="reviews__rate-info-num">5.0</div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
-                fill="#FBBC05" />
-            </svg>
-          </div>
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Number of reviews:</div>
-            <div class="reviews__rate-info-num">255</div>
-          </div>
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Number of ratings:</div>
-            <div class="reviews__rate-info-num">308</div>
-          </div>
-          <a class="reviews__rate-btn" href="#">
-            Read reviews
-          </a>
-        </div>
-      </div>
-      <div class="reviews__btn-wrapper">
-        <a class="rewiews__btn">
-          I want to make an exchange
-        </a>
-      </div>
-      </div>
-    </section> -->
-    <section class="perform" id="perform">
-      <div class="container">
-        <div class="perform__top">
-          <h2 class="perform__title">
-            Perform any financial <br> transactions
-          </h2>
-          <svg class="perform__img" xmlns="http://www.w3.org/2000/svg" width="176" height="83" viewBox="0 0 176 83"
-            fill="none">
-            <g filter="url(#filter0_f_0_1152)">
-              <g filter="url(#filter1_f_0_1152)">
-                <path
-                  d="M107.126 41.4504L104.398 43.8298L106.134 45.344L110.846 48.156L115.557 50.5355L120.516 51.8333H128.203L133.163 50.9681L138.122 49.0213L142.833 45.344L145.313 41.4504L146.553 38.2057L147.049 34.961L144.073 33.2305L138.866 31.9326L133.163 31.5L128.203 31.9326L124.484 32.5816L120.516 33.8794L114.565 36.6915L110.846 38.8546L107.126 41.4504Z"
-                  fill="#8300FF" />
-              </g>
-              <g filter="url(#filter2_f_0_1152)">
-                <path
-                  d="M70.9228 41.4504L73.6505 43.8298L71.9147 45.344L67.2033 48.156L62.4919 50.5355L57.5326 51.8333H49.8456L44.8862 50.9681L39.9269 49.0213L35.2155 45.344L32.7358 41.4504L31.496 38.2057L31 34.961L33.9757 33.2305L39.183 31.9326L44.8862 31.5L49.8456 31.9326L53.5651 32.5816L57.5326 33.8794L63.4838 36.6915L67.2033 38.8546L70.9228 41.4504Z"
-                  fill="#8300FF" />
-              </g>
-            </g>
-            <g filter="url(#filter3_f_0_1152)">
-              <path
-                d="M107.126 41.4504L104.398 43.8298L106.134 45.344L110.846 48.156L115.557 50.5355L120.516 51.8333H128.203L133.163 50.9681L138.122 49.0213L142.833 45.344L145.313 41.4504L146.553 38.2057L147.049 34.961L144.073 33.2305L138.866 31.9326L133.163 31.5L128.203 31.9326L124.484 32.5816L120.516 33.8794L114.565 36.6915L110.846 38.8546L107.126 41.4504Z"
-                fill="#8300FF" />
-              <path
-                d="M70.9228 41.4504L73.6505 43.8298L71.9147 45.344L67.2033 48.156L62.4919 50.5355L57.5326 51.8333H49.8456L44.8862 50.9681L39.9269 49.0213L35.2155 45.344L32.7358 41.4504L31.496 38.2057L31 34.961L33.9757 33.2305L39.183 31.9326L44.8862 31.5L49.8456 31.9326L53.5651 32.5816L57.5326 33.8794L63.4838 36.6915L67.2033 38.8546L70.9228 41.4504Z"
-                fill="#8300FF" />
-            </g>
-            <defs>
-              <filter id="filter0_f_0_1152" x="0.200062" y="0.700001" width="177.649" height="81.9333"
-                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="15.4" result="effect1_foregroundBlur_0_1152" />
-              </filter>
-              <filter id="filter1_f_0_1152" x="93.9984" y="21.1" width="63.4505" height="41.1333"
-                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="5.2" result="effect1_foregroundBlur_0_1152" />
-              </filter>
-              <filter id="filter2_f_0_1152" x="20.6001" y="21.1" width="63.4504" height="41.1333"
-                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="5.2" result="effect1_foregroundBlur_0_1152" />
-              </filter>
-              <filter id="filter3_f_0_1152" x="27.0001" y="27.5" width="124.049" height="28.3333"
-                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_0_1152" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-        <div class="how__svgs">
-          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
-            <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
-              stroke-opacity="0.2" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="573" height="10" viewBox="0 0 573 10" fill="none">
-            <path d="M572 9.5V9.5C572 4.80558 568.194 1 563.5 1H9.5C4.80558 1 1 4.80558 1 9.5V9.5" stroke="white"
-              stroke-opacity="0.2" />
-          </svg>
-        </div>
-        <div class="perform__items">
-          <a class="perform__item perform__item-first" href="#">
-            <div class="perform__item-text">
-              Without limits on amounts and headaches. We will provide all the closing pains
-            </div>
-            <div class="perform__item-title">
-              Purchase of real <br> estate, payment for housing and transport
-            </div>
-          </a>
-          <a class="perform__item perform__item-second" href="#">
-            <div class="perform__item-text">
-              A profitable alternative
-              to SWIFT transfers, available in 50+ countries
-            </div>
-            <div class="perform-flex">
-              <div class="perform__item-title">
-                International transfers
-              </div>
-              <div class="perform__descr">
-                For business
-              </div>
-            </div>
-          </a>
-          <a class="perform__item perform__item-third" href="#">
-            <div class="perform__item-text">
-              Payment for goods
-              and services for the company
-            </div>
-            <div class="perform__item-title">
-              Services for entrepreneurs
-            </div>
-          </a>
-        </div>
-        <div class="perform__btn-wrapper">
-          <a class="perform__btn">
-            Manager's consultation
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="team">
-      <div class="container">
-        <div class="team__inner">
-          <div class="team__content">
-            <h2 class="team__title">
-              THE GANG
-            </h2>
-            <div class="team__text">
-              We are creating a financialecosystem in which customers can make currency exchange transactions and
-              conduct
-              financial
-              transactions with ease and confidence.
-              Our team consists of experts in finance, arbitration, trading, blockchain, and law, united by a common
-              goal
-              - ensuring
-              financial freedom in all circumstances.
-              You can find out more information about the
-              development of PanterEx....
-            </div>
-            <a class="team__btn" href="#">
-              MORE INFO
-            </a>
-          </div>
-          <img class="team__img" src="./images/team-people.png" alt="">
-        </div>
-      </div>
-    </section>
-    <section class="request" id="request">
-      <div class="container">
-        <div class="request__top">
-          <h2 class="request__title">
-            Didn't find the <span>answer</span> to the question?
-          </h2>
-          <div class="request__descr">
-            Leave a request, we will contact you and tell you everything
-          </div>
-        </div>
-        <div class="request__info">
-          <div class="select select-request">
-            <div class="select__header select-request-header">
-              <span class="select__current" data-value=""></span>
-              <div class="select__icon">
-                <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
-              </div>
-            </div>
-            <div class="select__list select__list-request">
-              <div class="select__item">RU</div>
-              <div class="select__item">TH</div>
-              <div class="select__item">EN</div>
-            </div>
-          </div>
-          <input class="request__info-input" type="text" placeholder="+7">
-        </div>
-        <div class="request__wrapper-btn">
-          <button class="request__btn">
-            submit your application
-          </button>
-        </div>
-        <div class="request__note">
-          *The manager will respond to you within a minute
-        </div>
-      </div>
-    </section>
-    <div class="partner-wrapper">
-      <section class="partner">
-        <div class="container">
-          <div class="patner__top">
-            <div class="partner__text">
-              We are <span>always open to</span>
-            </div>
-            <div class="partner__text">
-              cooperation and work on the <span>win-win</span>
-            </div>
-            <div class="partner__text">
-              principle, In turn,
-            </div>
-            <div class="partner__inner">
-              <div class="partner__text partner__text-left">
-                we offer <br> up to
-              </div>
-              <img class="partner__profit" src="./images/profit.png" alt="">
-              <div class="partner__text">
-                profit.
-              </div>
-            </div>
-          </div>
-          <h2 class="partner__title">
-            Let's develop together
-          </h2>
-          <div class="partner__wrapper-btn">
-            <button class="partner__btn">
-              Become a partner
-            </button>
-          </div>
-        </div>
-      </section>
-    </div>
-    <!-- <img class="perform__decor" src="./images/perform-decor.png" alt=""> -->
-    <img class="footer__img" src="./images/footer.svg" alt="">
-    <img class="footer__decor-img" src="./images/footer-decor.png" alt="">
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__inner">
-          <div class="footer__wrapper">
-            <div class="footer__content">
-              <ul class="footer__menu">
-                <li class="footer__menu-item">
-                  <div class="footer__menu-title" href="#">
-                    SECTIONS OF THE SITE:
-                  </div>
-                </li>
-                <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    Currency exchange
-                  </a>
-                </li>
-                <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    About PanterEx
-                  </a>
-                </li>
-                <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    How does the exchange work?
-                  </a>
-                </li>
-                <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    Reviews
-                  </a>
-                </li>
-                <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    Financial transactions
-                  </a>
-                </li>
-              </ul>
-              <ul class="footer__menu">
-                <li class="footer__menu-item">
-                  <div class="footer__menu-title" href="#">
-                    SOC.NETWORKS:
-                  </div>
-                </li>
-                <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    Instagram
-                  </a>
-                </li>
-                <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="https://t.me/panterex_support">
-                    Telegram
-                  </a>
-                </li>
-                <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
-                    Telegram Bot
-                  </a>
-                </li>
-              </ul>
-              <ul class="footer__menu">
-                <li class="footer__menu-item">
-                  <div class="footer__menu-title" href="#">
-                    CONTACTS:
-                  </div>
-                </li>
-                <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="mailto:pochta@mail.ru">
-                    pochta@mail.ru
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="footer__bottom">
-              <div class="footer__bottom-policy">
-                <a href="#">The offer</a>
-                <a href="#">Agreement</a>
-              </div>
-              <div class="footer__bottom-descr">
-                Your finances are safe with us
-              </div>
-            </div>
-          </div>
-          <a class="footer__link" href="#">
-            <svg class="footer__arrow" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
-              fill="none">
-              <path d="M2 26.1938V2.0003H26" stroke="#8300FF" stroke-width="3" />
-              <path d="M25.613 25.6123L2.19366 2.19295" stroke="#8300FF" stroke-width="3" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </footer>
-  </main>
+button {
+	outline: none;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
 
+select {
+	outline: none;
+	border: none;
+}
 
+html[lang='en'] .language-specific {
+	font-family: 'Marvel', sans-serif;
+	font-weight: 400;
+}
 
+html[lang='ru'] .language-specific {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 200;
+}
+html[lang='ru'] .language-specific-10 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 200;
+}
 
+html[lang='en'] .language-specific-2 {
+	font-family: 'Marvel', sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+}
 
+html[lang='ru'] .language-specific-2 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 22px;
+}
 
+html[lang='ru'] .language-specific-4 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+}
 
+html[lang='ru'] .language-specific-3 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 200;
+	font-size: 18px;
+}
+html[lang='ru'] .language-specific-6 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+}
 
+html[lang='ru'] .language-specific-5 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 200;
+	font-size: 14px;
+}
 
+html[lang='ru'] .language-specific-7 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 13px;
+}
 
+html[lang='ru'] .language-specific-10--descr {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	width: 240px;
+}
+html[lang='ru'] .language-specific-10--descrip {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	width: 255px;
+}
 
+.header {
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	padding: 21px 0;
+}
+.container {
+	max-width: 1205px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
 
+.header__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 
+.header__left {
+	display: flex;
+	align-items: center;
+}
 
+.header__logo {
+	margin-right: 43px;
+}
 
+.header__lang,
+.header__countries {
+	padding-right: 8px;
+	margin-left: 43px;
+	text-transform: capitalize;
+	background: #0e0d13;
+	color: #fff;
+	transition: all 0.3s;
+}
 
+.select {
+	margin: 0 auto;
+	position: relative;
+	z-index: 300;
+	border: 1.5px dashed #310857;
+	border-radius: 5px 5px 0 0;
+}
 
+.select.is-active .select__body {
+	display: block;
+}
 
+.select-ex-list {
+	color: #000;
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
 
+.select__list {
+	display: block;
+	z-index: 300;
+	background: #310857;
+	border-radius: 0 0 5px 5px;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	max-height: 0;
+	opacity: 0;
+	transition: all 0.3s ease;
+}
 
+.select__list-link a {
+	display: block;
+}
 
+.select__list-request {
+	border-radius: 0 0 10px 10px;
+	border: 0.2px solid #fff;
+	border-top: 0px;
+	background: rgba(255, 255, 255, 0.1);
+}
 
+.select.is-active .select__list {
+	max-height: 300px;
+	opacity: 1;
+}
 
+.select__header {
+	cursor: pointer;
+	display: flex;
+	z-index: 300;
+}
 
+.select__current {
+	font-size: 18px;
+	line-height: 24px;
+	padding: 8px;
+}
 
+.select__icon {
+	align-items: center;
+	display: flex;
+	flex-shrink: 0;
+	justify-content: center;
+	height: 40px;
+	margin-left: auto;
+	text-align: center;
+	width: 40px;
+	z-index: 300;
+	transform: rotate(90deg);
+}
 
+.select__icon-arrow {
+	transform: rotate(180deg);
+}
 
+.select__item,
+.select__item-link {
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 8px;
+	color: #ffffff;
+	background-color: transparent;
+	transition: background-color 0.3s ease;
+}
 
+.select__item:hover {
+	background-color: #432c66;
+}
 
+.lang-ru {
+	visibility: hidden;
+	transition: all 0.3s;
+}
 
+.header__lang:hover .lang-ru {
+	visibility: visible;
+}
 
+.header__right {
+	display: flex;
+	align-items: center;
+}
 
+.menu {
+	display: flex;
+	align-items: center;
+	margin-left: 42px;
+}
+.menu__item + .menu__item {
+	margin-left: 42px;
+}
 
+.menu__item-link {
+	transition: all 0.3s;
+}
+.menu__item-link:hover {
+	color: #8300ff;
+}
+.header__socials {
+	margin-left: 58px;
+}
 
+.instagram-path,
+.telegram-path {
+	transition: all 0.3s;
+}
 
-  <script src="js/main.js"></script>
-</body>
+.header__socials a + a {
+	margin-left: 16px;
+}
 
-</html>
+.header__socials-link:hover .instagram-path {
+	stroke: #8300ff;
+}
+
+.header__socials-link:hover .telegram-path {
+	fill: #8300ff;
+}
+
+.exchange {
+	position: relative;
+	padding-bottom: 330px;
+}
+
+.page-wrapper {
+	background-image: url('../images/down-bg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	z-index: 10;
+}
+
+.exchange::before {
+	top: 38px;
+	position: absolute;
+	content: '';
+	width: 467px;
+	height: 204px;
+	background-image: url('../images/right-decor.png');
+	background-repeat: no-repeat;
+	left: 0;
+	z-index: -1;
+}
+
+.exchange::after {
+	top: 38px;
+	position: absolute;
+	content: '';
+	width: 467px;
+	height: 204px;
+	background-image: url('../images/right-decor.png');
+	background-repeat: no-repeat;
+	right: 0;
+	z-index: -1;
+}
+.page-container {
+	max-width: 1005px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+.exchange__items {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+.exchange__item {
+	padding: 15px 20px;
+	border-radius: 10px;
+	background: #8300ff;
+	display: flex;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	box-shadow: 0 0 20px rgba(131, 0, 255, 0.8);
+}
+
+.exchange__item + .exchange__item {
+	margin-left: 20px;
+}
+
+.exchange__item-text {
+	white-space: nowrap;
+	margin-left: 12px;
+}
+.exchange__content {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	position: relative;
+	padding-bottom: 155px;
+}
+
+.exchange__content::after {
+	content: '';
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	scale: 0.5;
+	bottom: 0;
+	background-image: url('../images/paws.png');
+	background-repeat: no-repeat;
+	opacity: 0.8;
+	right: 50%;
+	transform: translateX(100%);
+}
+.exchange__left {
+	margin-right: 22px;
+	border-radius: 8px;
+	border: 4px solid #8300ff;
+	backdrop-filter: blur(5px);
+	min-width: 461px;
+	background: #fff;
+	border-radius: 8px;
+	border: 0.5px solid #fff;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+	flex: 1;
+	border-radius: 8px;
+	border: 4px solid #8300ff;
+	backdrop-filter: blur(5px);
+	min-width: 461px;
+	border-radius: 8px;
+	box-shadow: 0 0 20px rgba(225, 116, 225, 0.8);
+}
+
+hr {
+	margin: 0;
+}
+
+.exchange__title {
+	text-align: center;
+	padding-top: 27px;
+
+	font-size: 20px;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	margin-bottom: 13px;
+}
+.exchange__descr {
+	text-align: center;
+	padding-bottom: 27px;
+	font-family: Marvel;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	position: relative;
+}
+
+.exchange__descr:after {
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	background-image: url('../images/descr-decor.svg');
+	background-repeat: no-repeat;
+	top: 7px;
+	right: 130px;
+}
+
+.exchange__left-top {
+	background: #8300ff;
+}
+
+.exchange__wrapper {
+	padding: 24px 28px 27px 20px;
+}
+
+.exchange__info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 25px;
+	padding-left: 42px;
+	position: relative;
+	color: #000;
+}
+
+.exchange__info:before {
+	content: '1';
+	position: absolute;
+	left: 0;
+	font-family: Marvel;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	border-radius: 100px;
+	color: #000;
+	background: #8300ff;
+	padding: 0 12px;
+}
+
+.select-ex-list {
+	border-radius: 10px;
+	border: 0.2px solid #000;
+	background: rgba(0, 0, 0, 0.9);
+	color: #000;
+}
+
+.exchange__info-changing {
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+}
+.exchange__info-secure {
+	border-radius: 100px;
+	background: rgba(0, 255, 141, 0.3);
+	display: flex;
+	align-items: center;
+	padding: 0 12px;
+	overflow: hidden;
+}
+
+.select__icon-ex {
+	transform: rotate(-90deg);
+}
+
+.exchange__info-secure-text {
+	color: #00ff8d;
+	text-align: center;
+	font-family: 'Marvel';
+	font-size: 12px;
+	font-weight: 400;
+	margin-left: 4px;
+}
+
+.select-ex {
+	border-radius: 10px;
+	border: 0.2px solid #000;
+	background: rgba(0, 0, 0, 0.1);
+}
+.select-ex-header {
+	border-radius: 10px;
+	padding: 5px 5px;
+	border-radius: 10px;
+	height: 45px;
+	color: #000;
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-weight: 400;
+	width: 100%;
+}
+
+.exchange__amount input {
+	border-radius: 10px;
+	background: rgba(0, 0, 0, 0.1);
+	border: 0.2px solid #000;
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-weight: 400;
+	padding: 17px 12px;
+	width: 270px;
+	margin-right: 12px;
+	height: 45px;
+	color: #000;
+}
+
+.exchange__amount label {
+	color: #000;
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.exchange__amount {
+	margin-top: 10px;
+	color: #000;
+}
+
+.exchange__amount-rub {
+	margin-bottom: 27px;
+}
+
+.exchange__amount input::placeholder {
+	color: #000;
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.exchange__amount-thb {
+	margin-bottom: 23px;
+}
+.exchange__info-receive {
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 25px;
+	padding-left: 42px;
+	position: relative;
+	color: #000;
+}
+
+.exchange__info-receive:before {
+	content: '2';
+	position: absolute;
+	color: #000;
+	left: 0;
+	top: 2px;
+	font-family: 'Marvel';
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	border-radius: 100px;
+	background: #8300ff;
+	padding: 0 12px;
+}
+
+.exchange__rate {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	margin-bottom: 21px;
+	color: #000;
+}
+.exchange__buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 16px;
+}
+.exchange__telegram,
+.exchange__whatsapp {
+	font-family: 'Marvel';
+	text-align: center;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	position: relative;
+	flex: 1;
+	transition: all 0.3s;
+}
+
+.exchange__telegram:hover {
+	background: transparent;
+	color: #000;
+}
+
+.exchange__whatsapp:hover {
+	background: transparent;
+	color: #000;
+}
+
+.exchange__telegram {
+	background: #43b5fc;
+	border: 1.5px solid #43b5fc;
+	margin-right: 11px;
+	padding: 10px 65px;
+	white-space: nowrap;
+}
+.exchange__whatsapp {
+	background: #00de7b;
+	border: 1.5px solid #00de7b;
+	justify-self: right;
+	white-space: nowrap;
+	padding: 10px 50px;
+}
+
+.exchange__telegram::before {
+	content: '';
+	position: absolute;
+	width: 19px;
+	height: 18px;
+	background-image: url('../images/telegram.svg');
+	background-repeat: no-repeat;
+	left: 12px;
+}
+.exchange__whatsapp::before {
+	content: '';
+	position: absolute;
+	width: 19px;
+	height: 18px;
+	background-image: url('../images/whatsapp.svg');
+	background-repeat: no-repeat;
+	left: 12px;
+}
+.exchange__note {
+	color: #000;
+	font-family: 'Marvel';
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	text-align: center;
+}
+
+.exchange__note-right {
+	font-family: 'Marvel';
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.exchange__right {
+	flex: 1;
+	border-radius: 10px;
+	border: 3px solid #8300ff;
+	backdrop-filter: blur(5px);
+	min-width: 461px;
+	background: rgba(131, 0, 255, 0.2);
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(225, 116, 225, 0.8);
+}
+
+.exchange__aver,
+.exchange__averr,
+.exchange__offer {
+	color: #fff;
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-weight: 400;
+	line-height: normal;
+	padding-left: 42px;
+	position: relative;
+	margin-bottom: 26px;
+}
+
+.exchange__aver:before {
+	content: '1';
+	position: absolute;
+	color: #fff;
+	left: 0;
+	top: 5px;
+	font-family: 'Marvel';
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	border-radius: 100px;
+	background: #8300ff;
+	padding: 0 12px;
+}
+.exchange__averr:before {
+	content: '2';
+	position: absolute;
+	color: #fff;
+	left: 0;
+	top: 5px;
+	font-family: 'Marvel';
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	border-radius: 100px;
+	background: #8300ff;
+	padding: 0 12px;
+}
+
+.exchange__offer::before {
+	content: '3';
+	position: absolute;
+	color: #fff;
+	left: 0;
+	top: 5px;
+	font-family: 'Marvel';
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	border-radius: 100px;
+	background: #8300ff;
+	padding: 0 12px;
+}
+
+.exchange__right-content {
+	padding: 24px;
+}
+
+.exchange__right-input {
+	color: #fff;
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-weight: 400;
+	padding: 10px;
+	line-height: normal;
+	position: relative;
+	margin-bottom: 26px;
+	border-radius: 10px;
+	border: 0.2px solid #fff;
+	background: rgba(255, 255, 255, 0.1);
+	width: 100%;
+	height: 45px;
+}
+
+.exchange__right-textarea {
+	color: #fff;
+	font-family: 'Oswald';
+	font-size: 16px;
+	font-weight: 400;
+	padding: 10px;
+	line-height: normal;
+	outline: none;
+	position: relative;
+	margin-bottom: 15px;
+	border-radius: 10px;
+	border: 0.2px solid #fff;
+	background: rgba(255, 255, 255, 0.1);
+	width: 100%;
+	height: 85px;
+	resize: none;
+}
+
+.exchange__title-rate {
+	margin-bottom: 28px;
+}
+
+.wallet {
+	margin-top: -200px;
+	margin-bottom: 300px;
+}
+
+.wallet__inner {
+	display: flex;
+	align-items: stretch;
+	gap: 22px;
+	padding: 30px;
+	border-radius: 20px;
+	background: rgba(45, 15, 89, 0.3);
+}
+.wallet__img {
+	border-radius: 20px;
+	background: #fff;
+	z-index: 10;
+}
+.wallet__content {
+	z-index: 10;
+}
+.wallet__title {
+	text-align: left;
+	font-size: 26px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin-bottom: 7px;
+}
+.wallet__descr {
+	color: rgba(255, 255, 255, 0.4);
+	font-family: 'Oswald';
+	font-size: 13px;
+	font-weight: 200;
+	line-height: 135%; /* 17.55px */
+	letter-spacing: 0.39px;
+	margin-bottom: 15px;
+}
+.wallet__text {
+	font-family: 'Oswald';
+	font-size: 16px;
+	font-weight: 200;
+	line-height: 135%; /* 21.6px */
+	letter-spacing: 0.48px;
+	margin-bottom: 25px;
+	width: 370px;
+}
+.wallet__benefits {
+	display: flex;
+	margin-bottom: 35px;
+}
+
+.wallet__benefit:first-child {
+	margin-right: 16px;
+}
+
+.wallet__benefit:nth-child(2) {
+	padding: 0 20px;
+}
+
+.wallet__benefit-commission {
+	position: relative;
+}
+
+.wallet__benefit-commission::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 1px;
+	height: 28px;
+	background: rgba(217, 217, 217, 0.4);
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.wallet__benefit-commission::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	width: 1px;
+	height: 28px;
+	background: rgba(217, 217, 217, 0.4);
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.wallet__benefit:last-child {
+	margin-left: 20px;
+}
+
+.wallet__benefit-text {
+	font-family: Oswald;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 135%; /* 21.6px */
+	letter-spacing: 0.48px;
+	margin-bottom: 3px;
+}
+.wallet__benefit-descr {
+	color: rgba(255, 255, 255, 0.4);
+	font-family: Oswald;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 200;
+	line-height: 135%; /* 16.2px */
+	letter-spacing: 0.36px;
+}
+.wallet__btn {
+	color: var(--, #fff);
+
+	font-size: 13px;
+	font-weight: 500;
+	line-height: normal;
+	border-radius: 100px;
+	border: 0.5px solid #fff;
+	padding: 16px 23px;
+	display: inline-block;
+	transition: all 0.3s;
+}
+
+.wallet__btn:hover {
+	background: #fff;
+	color: #0e0d13;
+}
+
+.about {
+	margin-bottom: -110px;
+	transform: translateY(-110%);
+	text-align: center;
+	position: relative;
+	z-index: 10;
+}
+.about__title {
+	font-family: 'SF UI Display', sans-serif;
+	font-size: 64px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 26px;
+}
+.about__text {
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	max-width: 563px;
+	margin: 0 auto;
+}
+.about__text span {
+	color: #8300ff;
+}
+
+.steps {
+	padding-top: 127px;
+	padding-bottom: 85px;
+}
+
+.steps__wrapper {
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+
+.steps__item + .steps__item {
+	margin-top: 20px;
+}
+
+.steps__item {
+	max-width: 262px;
+	border-radius: 10px;
+	border: 0.5px solid #fff;
+	background: rgba(14, 13, 19, 0.3);
+	backdrop-filter: blur(5px);
+	padding: 14px;
+}
+
+.steps__item-num {
+	margin-bottom: 21px;
+	color: rgba(255, 255, 255, 0.5);
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.steps__item-num-two {
+	margin-bottom: 43px;
+}
+
+.steps__item-num--three {
+	margin-bottom: 69px;
+}
+
+.steps__item-text {
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.steps__item-text span {
+	color: #8300ff;
+}
+
+.steps__center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.steps__soon {
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	padding: 120px 100px;
+	background: #d5d5d5;
+	border-radius: 50%;
+	margin-bottom: 30px;
+}
+
+.steps__btn-wrapper {
+	text-align: center;
+}
+
+.steps-btn {
+	border-radius: 100px;
+	border: 0.1px solid #fff;
+	background: #8300ff;
+	font-family: 'SF UI Display', sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 26px 42px;
+	box-shadow: 0 0 40px rgba(131, 0, 255, 0.8);
+	transition: all 0.3s;
+	display: block;
+	justify-self: center;
+	margin: 0 auto;
+}
+
+.steps-btn:hover {
+	scale: 1.05;
+}
+
+.methods {
+	padding: 16px 0;
+	background: #fff;
+	overflow: hidden;
+	/* position: relative; */
+}
+
+.methods__wrapper {
+	position: relative;
+}
+
+.methods__wrapper::after {
+	content: '';
+	position: absolute;
+	height: 77px;
+	width: 104%;
+	transform: rotate(3.3deg);
+	background: #8300ff;
+	z-index: -1;
+	top: 0;
+	left: -4px;
+}
+
+.methods-track {
+	gap: 40px;
+	display: flex;
+	animation: moveLeft 20s linear infinite;
+}
+
+.methods-track img {
+	height: 50px;
+}
+
+@keyframes moveLeft {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+.how {
+	padding: 60px 0 120px;
+}
+.how__content {
+	display: flex;
+	justify-content: space-between;
+	align-content: end;
+}
+
+.how__content img {
+	transform: translateY(20%);
+	margin-right: 50px;
+}
+
+.how__title {
+	max-width: 470px;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	margin-top: 120px;
+	position: relative;
+}
+
+.how__title::before {
+	content: '';
+	position: absolute;
+	width: 551px;
+	height: 240px;
+	background-image: url('../images/right-decor.png');
+	background-repeat: no-repeat;
+	top: -110px;
+	right: -100px;
+	z-index: -1;
+}
+
+.how__items {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: 15px;
+	margin: 50px 0;
+}
+.how__item {
+	border-radius: 21px;
+	padding: 19px 0 0 20px;
+	background: #f4f4f4;
+	overflow: hidden;
+	width: 278px;
+	transition: all 0.3s;
+}
+
+.how__item:hover {
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	-webkit-text-stroke-width: 1;
+	-webkit-text-stroke-color: #000;
+	scale: 1.05;
+}
+
+.how__item-title {
+	color: #0e0d13;
+
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 30px;
+}
+.how__item-btn {
+	font-family: Marvel;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	color: #8300ff;
+	position: relative;
+	padding-right: 35px;
+}
+
+.how__item-btn::after {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-image: url('../images/how-arrow.svg');
+	background-repeat: no-repeat;
+	right: 130px;
+	top: 1px;
+}
+
+.how__item:last-child {
+	display: inline-block;
+}
+
+.how__item-img-1 {
+	transform: translateY(15px);
+}
+.how__item-img-2 {
+	transform: translateY(10px);
+}
+.how__item-img-3 {
+	transform: translateY(15px);
+}
+.how__item-img-4 {
+	transform: translateY(80px);
+}
+
+.how__btn-wrapper {
+	text-align: center;
+}
+
+.how__btn {
+	border-radius: 100px;
+	border: 0.1px solid #fff;
+	background: #8300ff;
+	font-family: 'SF UI Display', sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 26px 42px;
+	box-shadow: 0 0 40px rgba(131, 0, 255, 0.8);
+	transition: all 0.3s;
+	display: block;
+	justify-self: center;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+.how__btn:hover {
+	scale: 1.05;
+}
+
+.how__svgs {
+	display: flex;
+	justify-content: center;
+}
+
+.modals {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.modals-content {
+	position: relative;
+	background-color: #8300ff;
+	padding: 5px;
+	border-radius: 8px;
+	text-align: center;
+	max-width: 80%;
+}
+
+.modals-content video {
+	width: 100%;
+	max-width: 600px;
+	border-radius: 5px;
+}
+
+.modals-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #000;
+}
+
+.custom-video-player {
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	background: #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.video-controls {
+	display: flex;
+	align-items: center;
+	/* justify-content: space-between; */
+	width: 100%;
+	padding: 10px;
+	background-color: #222;
+	color: #fff;
+	border-radius: 8px;
+}
+
+.play-btn,
+.mute-btn,
+.fullscreen-btn {
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 18px;
+}
+
+.play-btn:hover,
+.mute-btn:hover,
+.fullscreen-btn:hover {
+	color: #8300ff;
+}
+#playPause {
+	color: #fff;
+}
+.mute-btn {
+	color: #8300ff;
+}
+#progressBar {
+	flex: 1;
+	margin: 0 10px;
+	appearance: none;
+	background: #444;
+	height: 4px;
+	border-radius: 2px;
+	outline: none;
+}
+
+#progressBar::-webkit-slider-thumb {
+	appearance: none;
+	width: 12px;
+	height: 12px;
+	background: #8300ff;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.reviews__top {
+	text-align: center;
+	margin-bottom: 50px;
+}
+.reviews__title {
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+}
+.reviews__descr {
+	margin: 32px auto;
+	max-width: 753px;
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.reviews__descr span {
+	color: #8300ff;
+}
+.reviews__btn-wrapper {
+	text-align: center;
+}
+.reviews__top-btn {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	border-radius: 100px;
+	border: 0.5px solid #fff;
+	padding: 20px 45px;
+	margin: 0 auto;
+	color: #fff;
+	transition: all 0.3s;
+}
+
+.reviews__top-btn:hover {
+	background: #fff;
+	color: #0e0d13;
+}
+
+.reviews__items {
+	display: flex;
+	align-items: stretch;
+	gap: 9px;
+}
+.reviews__item {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 8px;
+	max-width: 278px;
+	border-radius: 16px;
+	background-color: #fff;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.reviews__item-name {
+	padding: 10px 55px;
+	border-radius: 16px 16px 0px 0px;
+	background: #8300ff;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 115%;
+	letter-spacing: 0.08px;
+	text-align: center;
+}
+.reviews__item-img {
+	border-radius: 0px 0px 16px 16px;
+	border: 1.5px solid #8300ff;
+	width: 100%;
+}
+.reviews__item-title {
+	color: #8300ff;
+	margin: 22px 0;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+}
+.reviews__item-text {
+	font-family: Marvel;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	color: #0e0d13;
+	margin-bottom: 53px;
+}
+.reviews__item-btn {
+	display: block;
+
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-transform: uppercase;
+	color: #8300ff;
+	border-radius: 8px;
+	border: 2px solid #8300ff;
+	background: #fff;
+	padding: 8px;
+	width: 100%;
+	position: relative;
+	transition: all 0.3s;
+}
+
+.reviews__item-btn::after {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	background-image: url('../images/how-arrow.svg');
+	right: 10px;
+	background-repeat: no-repeat;
+	transform: rotate(40deg);
+	top: 5px;
+	scale: 1.5;
+}
+
+.reviews__item-btn:hover {
+	color: #fff;
+	background: #8300ff;
+}
+
+.reviews__rates {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: 13px;
+	margin-bottom: 60px;
+}
+.reviews__rate {
+	border-radius: 10px;
+	background: #15141a;
+	padding: 22px 23px;
+	flex: 1;
+}
+
+.reviews__rate:first-child {
+	flex: 2;
+}
+
+.reviews__rate-info + .reviews__rate-info {
+	margin-top: 23px;
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.reviews__rate-first {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+}
+
+.reviews__rate-first::before {
+	content: '';
+	position: absolute;
+	width: 427px;
+	height: 270px;
+	background-image: url('../images/review-decor.png');
+	background-repeat: no-repeat;
+	left: -40px;
+	top: 48%;
+	z-index: -1;
+}
+
+.reviews__rate-soon {
+	text-align: center;
+	margin: 0 auto;
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-weight: 700;
+	padding: 110px 100px;
+	background: #d9d9d9;
+	border-radius: 50%;
+	margin-top: 25px;
+}
+.reviews__link {
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-weight: 700;
+	line-height: normal;
+	color: #8300ff;
+}
+.reviews__rate-logo {
+	margin-bottom: 45px;
+}
+.reviews__rate-info {
+	display: flex;
+	align-items: center;
+}
+.reviews__rate-info-text {
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-weight: 700;
+	line-height: normal;
+}
+.reviews__rate-info-num {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: normal;
+	padding: 0 5px 0 11px;
+}
+.reviews__rate-btn {
+	margin-top: 95px;
+	display: block;
+	font-family: 'Marvel';
+	color: #8300ff;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: normal;
+	position: relative;
+}
+
+.reviews__rate-btn::after {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	background-image: url('../images/how-arrow.svg');
+	right: 10px;
+	background-repeat: no-repeat;
+	transform: rotate(40deg);
+	scale: 1.5;
+}
+
+.rewiews__btn {
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	border-radius: 100px;
+	border: 0.5px solid #fff;
+	background: #8300ff;
+	margin: 0 auto;
+	padding: 27px 46px;
+	transition: all 0.3s;
+	box-shadow: 0 0 40px rgba(131, 0, 255, 0.8);
+}
+
+.rewiews__btn:hover {
+	scale: 1.05;
+}
+
+.perform {
+	padding-top: 120px;
+	padding-bottom: 115px;
+}
+
+.perform__top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 58px;
+}
+.perform__title {
+	font-size: 48px;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+}
+
+.perform__title span {
+	color: #8300ff;
+}
+
+.perform__items {
+	margin-top: 50px;
+	gap: 10px;
+	display: flex;
+	align-items: stretch;
+	margin-bottom: 58px;
+}
+
+.perform__item {
+	transition: all 0.3s;
+}
+
+.perform__item-first {
+	background-image: url('../images/perform-1.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.perform__decor {
+	position: absolute;
+	top: 62.8%;
+	left: 115px;
+}
+
+.perform__img {
+	opacity: 0;
+	animation: blink 2s infinite;
+}
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.perform__item {
+	transition: all 0.3s;
+	z-index: 100;
+}
+
+.perform__item:hover {
+	scale: 1.05;
+}
+
+.perform__item-second {
+	background-image: url('../images/perform-2.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.perform__item-third {
+	background-image: url('../images/perform-3.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.perform__item {
+	width: 375px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	border-radius: 10px;
+	z-index: 10;
+}
+.perform__item-text {
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-weight: 700;
+	line-height: normal;
+	color: #fff;
+	width: 270px;
+	margin-bottom: 140px;
+	position: relative;
+}
+
+.perform__item-text::after {
+	content: '';
+	position: absolute;
+	width: 27px;
+	height: 27px;
+	background-image: url('../images/perform-arrow.svg');
+	right: -70px;
+	top: 0;
+	background-repeat: no-repeat;
+}
+
+.perform__item-arrow {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+}
+.perform__item-title {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	color: #fff;
+	text-transform: uppercase;
+}
+.perform-flex {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+}
+.perform__descr {
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-weight: 700;
+	line-height: normal;
+	border-radius: 100px;
+	border: 0.5px solid #fff;
+	padding: 5px 15px;
+	white-space: nowrap;
+}
+.perform__btn-wrapper {
+	text-align: center;
+}
+.perform__btn {
+	padding: 27px 42px;
+
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	border-radius: 100px;
+	border: 0.5px solid #fff;
+	background: #8300ff;
+	margin: 0 auto;
+	transition: all 0.3s;
+	box-shadow: 0 0 40px rgba(131, 0, 255, 0.8);
+}
+
+.perform__btn:hover {
+	scale: 1.1;
+}
+
+.team__inner {
+	display: flex;
+	align-items: center;
+	gap: 13px;
+}
+
+.team__title {
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.team__title::after {
+	content: '';
+	position: absolute;
+	width: 140px;
+	height: 48px;
+	background-repeat: no-repeat;
+	background-image: url('../images/team.png');
+	top: -37px;
+	right: 258px;
+}
+
+.team__title::before {
+	content: '';
+	position: absolute;
+	width: 247px;
+	height: 81px;
+	background-image: url('../images/team-decor.png');
+	background-repeat: no-repeat;
+	mix-blend-mode: plus-lighter;
+	top: 15px;
+	left: -27px;
+}
+
+.team__text {
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-weight: 700;
+	line-height: normal;
+	margin: 55px 0;
+}
+.team__btn {
+	display: inline-block;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	padding: 20px 48px;
+	border: 0.5px solid #fff;
+	background: #8300ff;
+	margin: 0 auto;
+	transition: all 0.3s;
+	box-shadow: 0 0 40px rgba(131, 0, 255, 0.8);
+	border-radius: 100px;
+}
+.team__btn:hover {
+	scale: 1.1;
+}
+
+.request {
+	padding-top: 115px;
+}
+
+.request__top {
+	margin-bottom: 75px;
+	position: relative;
+}
+
+.request__top::after {
+	content: '';
+	position: absolute;
+	background-image: url('../images/stars.png');
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 300px;
+	top: -130px;
+	right: 88px;
+	opacity: 0.5;
+}
+.request__title {
+	margin: 0 auto;
+
+	font-size: 48px;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	width: 635px;
+	text-align: center;
+	margin-bottom: 26px;
+}
+
+.request__title span {
+	color: #8300ff;
+}
+
+.request__descr {
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-weight: 700;
+	line-height: normal;
+	text-align: center;
+}
+.request__info {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 75px;
+	justify-content: center;
+	position: relative;
+}
+
+.request__top::before {
+	content: '';
+	position: absolute;
+	background-image: url('../images/paw.png');
+	background-repeat: no-repeat;
+	height: 690px;
+	width: 585px;
+	top: 5px;
+	left: 10px;
+	z-index: -1;
+}
+
+.paw {
+	position: absolute;
+	background-color: transparent;
+	left: 0;
+}
+
+.select-request {
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-weight: 400;
+	line-height: normal;
+	color: #fff;
+	border-radius: 10px;
+	border: 1px solid #fff;
+	background: rgba(255, 255, 255, 0.1);
+	padding: 11px 8px;
+	margin: 0;
+	height: 64px;
+}
+
+.request__info-input {
+	height: 64px;
+	padding: 24px 18px;
+	width: 413px;
+	color: #fff;
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	border-radius: 10px;
+	border: 0.2px solid #fff;
+	background: rgba(255, 255, 255, 0.1);
+}
+.request__wrapper-btn {
+	position: relative;
+	margin-bottom: 22px;
+	z-index: 10;
+	text-align: center;
+	
+}
+
+.request__btn {
+	color: #fff;
+	padding: 27px 42px;
+	display: inline-block;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	border: 0.5px solid #fff;
+	background: #8300ff;
+	margin: 0 auto;
+	transition: all 0.3s;
+	box-shadow: 0 0 40px rgba(131, 0, 255, 0.8);
+	margin: 0 auto;
+	border-radius: 100px;
+}
+
+.request__btn:hover {
+	scale: 1.1;
+}
+
+.request__note {
+	color: #aeaeae;
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-align: center;
+}
+
+.partner {
+	padding: 350px 30px 135px;
+	position: relative;
+	max-width: 1050px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.partner-wrapper {
+	margin-top: -150px;
+	background-image: url('../images/down-bgg.png');
+	background-repeat: no-repeat;
+	background-position: top;
+	background-position-y: -80px;
+	background-size: cover;
+	z-index: 10;
+}
+
+.partner__top .partner__text + .partner__text {
+	margin-top: 20px;
+}
+
+.partner__top {
+	padding-top: 130px;
+}
+
+.partner__text:first-child {
+	text-align: center;
+}
+
+.partner__text {
+	font-size: 48px;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.partner__text span {
+	color: #8300ff;
+}
+
+.partner__text-left {
+	text-align: left !important;
+}
+
+/* .partner__profit{
+	transform: translateX(-100px);
+} */
+
+.partner__inner {
+	transform: translateY(-70px);
+	display: flex;
+	align-items: end;
+	text-align: start;
+	justify-content: center;
+	gap: 50px;
+	padding-bottom: 110px;
+}
+.partner__title {
+	margin-bottom: 50px;
+
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.partner__title span {
+	color: #8300ff;
+}
+
+.partner__wrapper-btn {
+	text-align: center;
+}
+.partner__btn {
+	padding: 27px 71px;
+	position: relative;
+	color: #fff;
+
+	display: inline-block;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	border: 0.5px solid #fff;
+	background: #8300ff;
+	margin: 0 auto;
+	transition: all 0.3s;
+	box-shadow: 0 0 40px rgba(131, 0, 255, 0.8);
+	margin: 0 auto;
+	border-radius: 100px;
+	z-index: 10;
+}
+
+.partner__btn:hover {
+	scale: 1.1;
+}
+
+.footer {
+	border-radius: 54px 54px 0px 0px;
+	background: #fff;
+	padding: 97px 30px 30px 30px;
+	position: relative;
+	/* height: 415px; */
+	overflow: hidden;
+}
+
+.footer__inner {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__content {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.footer__wrapper {
+	width: 700px;
+	position: relative;
+	z-index: 10;
+}
+.footer__img {
+	position: absolute;
+	right: 150px;
+	bottom: -70px;
+	z-index: 30;
+}
+
+.footer__decor-img {
+	position: absolute;
+	z-index: 0;
+	right: 65px;
+	bottom: 90px;
+}
+
+.footer__arrow {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+}
+
+.footer__menu-title {
+	color: #767676;
+
+	font-size: 20px;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: -1px;
+	margin-bottom: 32px;
+}
+.footer__menu-link {
+	display: block;
+	margin-top: 10px;
+	color: #000;
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: -1px;
+}
+
+.footer__menu-link + .footer__menu-link {
+	margin-top: 20px;
+}
+
+.footer__bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+.footer__bottom-policy a {
+	font-family: 'Marvel';
+	color: #000;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 106%;
+	letter-spacing: -0.8px;
+	text-decoration: underline;
+}
+.footer__bottom-policy a + a {
+	margin-left: 35px;
+}
+.footer__bottom-descr {
+	max-width: 121px;
+	color: rgba(0, 0, 0, 0.4);
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 106%;
+	letter-spacing: -1.2px;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+	overflow-y: auto;
+}
+
+.modal-atm,
+.modal-del,
+.modal-cash,
+.modal-thai {
+	display: none;
+}
+
+.modal__box {
+	background: #fff;
+	border-radius: 10px;
+	max-width: 500px;
+	padding: 20px;
+	position: relative;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.modal__title {
+	color: #0e0d13;
+
+	font-size: 40px;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 25px;
+}
+.modal__descr {
+	color: #8300ff;
+	font-family: 'Marvel';
+	font-size: 16px;
+	padding: 11px;
+	border-radius: 100px;
+	width: 220px;
+	border: 1px solid #8300ff;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 45px;
+}
+.modal__text {
+	color: #000;
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 20px;
+}
+.modal__note {
+	color: #9e9e9e;
+	font-family: Marvel;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 10px;
+}
+.modal__img {
+	margin-top: auto;
+}
+
+.modal__close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+body.modal-open {
+	overflow: hidden;
+}
+
+.pop {
+	display: none;
+	position: fixed;
+	padding: 48px 15px 20px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	max-width: 1000px;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+	overflow-y: auto;
+	border-radius: 10px;
+	color: #0e0d13;
+	background: #fff;
+}
+.pop-purchase {
+	display: none;
+}
+
+.pop.active {
+	display: block; /* Попап з'являється */
+}
+
+.pop::backdrop {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.popup__close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
+	line-height: 1;
+	color: #000;
+}
+.pop__title-purchase {
+	color: #fff;
+
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	background-size: 100%;
+	padding: 150px 27px 20px;
+	background-image: linear-gradient(rgba(13, 19, 13, 0.1), rgba(0, 0, 0, 0.8)),
+		url('../images/purchase.png');
+	background-repeat: no-repeat;
+	border-radius: 20px;
+	opacity: 0.9;
+	margin-bottom: 42px;
+}
+.pop__title-transfer {
+	color: #fff;
+
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	background-size: 100%;
+	text-transform: uppercase;
+	padding: 115px 27px 20px;
+	background-image: linear-gradient(rgba(13, 19, 13, 0.1), rgba(0, 0, 0, 0.8)),
+		url('../images/transfer.png');
+	background-repeat: no-repeat;
+	border-radius: 20px;
+	opacity: 0.9;
+	margin-bottom: 42px;
+}
+.pop__title-service {
+	color: #fff;
+
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	background-size: 100%;
+	text-transform: uppercase;
+	padding: 115px 27px 20px;
+	background-image: linear-gradient(rgba(13, 19, 13, 0.1), rgba(0, 0, 0, 0.8)),
+		url('../images/service.png');
+	background-repeat: no-repeat;
+	border-radius: 20px;
+	opacity: 1;
+	margin-bottom: 42px;
+}
+
+.pop__service-text p {
+	margin-bottom: 24px;
+}
+
+.pop__service-text {
+	margin-bottom: 67px;
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.pop__service-subtitle {
+	margin: 42px 0;
+}
+
+.pop__text {
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 42px;
+}
+.pop__subtitle {
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 42px;
+}
+.pop__subtitle-text {
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 67px;
+}
+
+.pop__subtitle-text p:first-child {
+	margin-bottom: 37px;
+}
+.pop__subtitle-text p:nth-child(2) {
+	margin-bottom: 26px;
+}
+.pop__subtitle-text p:nth-child(3) {
+	margin-bottom: 25px;
+}
+
+.pop__title-second {
+	color: #0e0d13;
+	text-align: center;
+
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	margin-bottom: 24px;
+}
+.pop__descr {
+	color: #0e0d13;
+	text-align: center;
+	font-family: 'Marvel';
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 24px;
+}
+.pop__items {
+	margin-bottom: 47px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.pop__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px 10px;
+	border-radius: 100px;
+	border: 1px solid #00ff8d;
+	background: rgba(0, 255, 141, 0.1);
+	width: 170px;
+}
+
+.pop__notes {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.pop__note {
+	border-radius: 100px;
+	padding: 5px 10px;
+	border: 1px solid #00ff8d;
+	background: rgba(0, 255, 141, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 282px;
+}
+
+.pop__item-text {
+	margin-left: 5px;
+	color: #00ff8d;
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.select-pop {
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-weight: 700;
+	line-height: normal;
+	color: #fff;
+	border-radius: 10px;
+	border: 0.2px solid #0e0d13;
+	background: rgba(14, 13, 19, 0.1);
+	padding: 11px 8px;
+	margin: 0;
+	color: #0e0d13;
+	width: 77px;
+}
+
+.select__pop-icon {
+	margin-top: 10px;
+	transform: rotate(270deg);
+}
+
+.select__list-pop {
+	border-radius: 0 0 10px 10px;
+	border-top: 0px;
+}
+
+.form-wrap {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	height: 64px;
+	margin-bottom: 47px;
+}
+
+.pop__info-input {
+	padding: 24px 18px;
+	width: 413px;
+	color: #000;
+	font-family: 'Marvel';
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	border-radius: 10px;
+	border: 0.2px solid #0e0d13;
+	background: rgba(14, 13, 19, 0.1);
+}
