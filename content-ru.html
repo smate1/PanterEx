@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PanterEx</title>
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/slick.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,16 +18,16 @@
 
 <body>
   <main class="main">
-    <header class="header">
+    <header class="header" id="header">
       <div class="container">
         <div class="header__wrapper">
           <div class="header__left">
             <a class="header__logo" href="#">
               <img src="./images/logo.png" alt="">
             </a>
-            <div class="select">
-              <div class="select__header">
-                <span class="select__current" data-value=""></span>
+            <div class="select select-mobile">
+              <div class="select__header select__header-en ">
+                <span class="select__current select__current-mobile" data-value=""></span>
                 <div class="select__icon">
                   <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
                 </div>
@@ -39,14 +38,18 @@
               </div>
             </div>
           </div>
-          <div class="header__right">
-            <div class="select">
-              <div class="select__header">
-                <span class="select__current language-specific" data-value=""></span>
+          <button class="burger" id="burger">
+            <span></span>
+            <span></span>
+          </button>
+          <div class="header__right" id="header__right">
+            <div class="select select-mobile">
+              <div class="select__header select__header-mobile">
+                <span class="select__current language-specific select__current-mobile" data-value=""></span>
                 <div class="select__icon select__icon-arrow"><img src="./images/sel.svg" alt=""></div>
               </div>
               <div class="select__list">
-                <div class="select__item language-specific">Тайланд</div>
+                <div class="select__item language-specific lang-ru">Тайланд</div>
                 <div class="select__item language-specific">Бали</div>
                 <div class="select__item language-specific">ОАЭ</div>
                 <div class="select__item language-specific">Китай</div>
@@ -75,6 +78,9 @@
               </li>
             </ul>
             <div class="header__socials">
+              <div class="header__socials-title language-specific-2">
+                Социальные сети:
+              </div>
               <a class="header__socials-link instagram" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                   <path class="instagram-path"
@@ -87,12 +93,15 @@
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
-              <a class="header__socials-link telegram" href="#">
+              <a class="header__socials-link telegram" href="https://t.me/panterex_support">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                   <path class="telegram-path" fill-rule="evenodd" clip-rule="evenodd"
                     d="M20.601 4.43C20.8584 4.32599 21.1402 4.29011 21.417 4.32611C21.6937 4.36211 21.9554 4.46866 22.1747 4.63468C22.394 4.8007 22.5629 5.02011 22.6639 5.27008C22.7649 5.52005 22.7943 5.79144 22.7489 6.056L20.3864 19.813C20.1573 21.14 18.6406 21.901 17.3729 21.24C16.3125 20.687 14.7375 19.835 13.3208 18.946C12.6125 18.501 10.4427 17.076 10.7094 16.062C10.9385 15.195 14.5844 11.937 16.6677 10C17.4854 9.239 17.1125 8.8 16.1469 9.5C13.7489 11.238 9.89894 13.881 8.62603 14.625C7.50311 15.281 6.91769 15.393 6.21769 15.281C4.94061 15.077 3.75623 14.761 2.78957 14.376C1.48332 13.856 1.54686 12.132 2.78853 11.63L20.601 4.43Z"
                     fill="white" />
                 </svg>
+                <div class="header__socials-descr language-specific-2">
+                  С нами ваши финансы в безопасности
+                </div>
               </a>
             </div>
           </div>
@@ -100,7 +109,7 @@
       </div>
     </header>
     <div class="page-wrapper">
-      <section class="exchange">
+      <section class="exchange" id="exchange">
         <div class="page-container">
           <div class="exchange__items">
             <div class="exchange__item">
@@ -157,29 +166,27 @@
                     <div class="select__item">RUB <span>→</span> IDR</div>
                     <div class="select__item">AED <span>→</span> RUB</div>
                     <div class="select__item">RUB <span>→</span> AED</div>
-                    <div class="select__item">RMB <span>→</span> RUB</div>
-                    <div class="select__item">RUB <span>→</span> RMB</div>
+                    <div class="select__item">CNY <span>→</span> RUB</div>
+                    <div class="select__item">RUB <span>→</span> CNY</div>
                   </div>
                 </div>
                 <div class="exchange__amount exchange__amount-rub language-specific language-specific">
-                  <input type="text" placeholder="0"><label class="language-specific">Руб</label>
+                  <input class="exchange_from" type="number" placeholder="0"><label class="language-specific exchange_from_text">RUB</label>
                 </div>
                 <div class="exchange__info-receive language-specific">
                   Вы получите:
                 </div>
                 <div class="exchange__amount exchange__amount-thb language-specific language-specific">
-                  <input type="text" placeholder="0"><label class="language-specific">Бат</label>
+                  <input class="exchange_to" type="text" placeholder="0"><label class="language-specific exchange_to_text">THB</label>
                 </div>
                 <div class="exchange__rate ">
-                  Курс обмена: 3.08
+                  Курс обмена: <span class="exchange_output">3.08</span>
                 </div>
                 <div class="exchange__buttons">
                   <a class="exchange__telegram language-specific" href="https://t.me/panterex_support">
-                    <!-- <img src="./images/telegram.svg" alt=""> -->
                     Обменять в TG
                   </a>
                   <a class="exchange__whatsapp language-specific" href="https://wa.me/message/454TMQ2IPRJNP1">
-                    <!-- <img src="./images/whatsapp.svg" alt=""> -->
                     Обменять в whatsapp
                   </a>
                 </div>
@@ -198,11 +205,11 @@
                 <div class="exchange__aver language-specific">
                   Средний обменный курс в других обменниках:
                 </div>
-                <input class="exchange__right-input language-specific" type="text">
+                <input class="exchange__right-input language-specific " type="number">
                 <div class="exchange__averr language-specific">
                   Обменный курс Pantene:
                 </div>
-                <input class="exchange__right-input language-specific" type="text">
+                <input class="exchange__right-input language-specific exchange__right-input_custom" type="number">
                 <div class="exchange__offer language-specific">
                   Оффер:
                 </div>
@@ -265,7 +272,7 @@
         </div>
       </div>
     </section>
-    <div class="about">
+    <div class="about" id="about">
       <h1 class="about__title">
         PanterEx
       </h1>
@@ -290,7 +297,7 @@
         <div class="steps__wrapper">
           <div class="steps__left">
             <div class="steps__item">
-              <div class="steps__item-num">
+              <div class="steps__item-num language-specific-3">
                 1.
               </div>
               <div class="steps__item-text language-specific-3">
@@ -298,7 +305,7 @@
               </div>
             </div>
             <div class="steps__item">
-              <div class="steps__item-num steps__item-num--two language-specific-2">
+              <div class="steps__item-num steps__item-num--two language-specific-3">
                 2.
               </div>
               <div class="steps__item-text language-specific-3">
@@ -306,7 +313,7 @@
               </div>
             </div>
             <div class="steps__item">
-              <div class="steps__item-num steps__item-num--three language-specific-2">
+              <div class="steps__item-num steps__item-num--three language-specific-3">
                 3.
               </div>
               <div class="steps__item-text language-specific-3">
@@ -324,7 +331,7 @@
           </div>
           <div class="steps__right">
             <div class="steps__item">
-              <div class="steps__item-num">
+              <div class="steps__item-num language-specific-3">
                 4.
               </div>
               <div class="steps__item-text language-specific-3">
@@ -332,15 +339,15 @@
               </div>
             </div>
             <div class="steps__item">
-              <div class="steps__item-num">
+              <div class="steps__item-num language-specific-3">
                 5.
               </div>
               <div class="steps__item-text language-specific-3">
                 Совершим обмен за <span>15 мин</span>
               </div>
             </div>
-            <div class="steps__item">
-              <div class="steps__item-num">
+            <div class="steps__item steps__item-num--three">
+              <div class="steps__item-num language-specific-3">
                 6.
               </div>
               <div class="steps__item-text language-specific-3">
@@ -360,42 +367,42 @@
     <div class="methods__wrapper">
       <div class="methods">
         <div class="methods-track">
-          <img src="./images/raif.svg" alt="">
+          <img src="./images/raif.png" alt="">
           <img src="./images/alfa.svg" alt="">
           <img src="./images/vtb.png" alt="">
           <img src="./images/sber.png" alt="">
           <img src="./images/tbank.png" alt="">
           <img src="./images/spb.png" alt="">
           <img src="./images/union.svg" alt="">
-          <img src="./images/mastercard.svg" alt="">
-          <img src="./images/raif.svg" alt="">
+          <img src="./images/master.svg" alt="">
+          <img src="./images/raif.png" alt="">
           <img src="./images/alfa.svg" alt="">
           <img src="./images/vtb.png" alt="">
           <img src="./images/sber.png" alt="">
           <img src="./images/tbank.png" alt="">
           <img src="./images/spb.png" alt="">
           <img src="./images/union.svg" alt="">
-          <img src="./images/mastercard.svg" alt="">
-          <img src="./images/raif.svg" alt="">
+          <img src="./images/master.svg" alt="">
+          <img src="./images/raif.png" alt="">
           <img src="./images/alfa.svg" alt="">
           <img src="./images/vtb.png" alt="">
           <img src="./images/sber.png" alt="">
           <img src="./images/tbank.png" alt="">
           <img src="./images/spb.png" alt="">
           <img src="./images/union.svg" alt="">
-          <img src="./images/mastercard.svg" alt="">
-          <img src="./images/raif.svg" alt="">
+          <img src="./images/master.svg" alt="">
+          <img src="./images/raif.png" alt="">
           <img src="./images/alfa.svg" alt="">
           <img src="./images/vtb.png" alt="">
           <img src="./images/sber.png" alt="">
           <img src="./images/tbank.png" alt="">
           <img src="./images/spb.png" alt="">
           <img src="./images/union.svg" alt="">
-          <img src="./images/mastercard.svg" alt="">
+          <img src="./images/master.svg" alt="">
         </div>
       </div>
     </div>
-    <section class="how">
+    <section class="how" id="how">
       <div class="container">
         <div class="how__content">
           <h2 class="how__title">
@@ -695,7 +702,8 @@
       </div>
     </div>
     <div class="pop pop-transfer">
-      <h1 class="pop__title-transfer">
+      <button class="popup__close" id="popupClose">&times;</button>
+      <h1 class="pop__title-transfer pop-title">
         Международные переводы
       </h1>
       <p class="pop__text language-specific-6">
@@ -813,7 +821,8 @@
     </div>
     </div>
     <div class="pop pop-service">
-      <h1 class="pop__title-service">
+      <button class="popup__close" id="popupClose">&times;</button>
+      <h1 class="pop__title-service pop-title">
         Услуги для предпринимателей
       </h1>
       <p class="pop__text language-specific-6">
@@ -900,7 +909,6 @@
         </div>
         <input class="pop__info-input language-specific" type="text" placeholder="+7">
       </div>
-      <input class="request__info-input" type="text" placeholder="+7">
       <div class="request__wrapper-btn">
         <button class="request__btn">
           отправить заявку
@@ -918,7 +926,7 @@
             Помимо обмена, мы <span>помогаем решить любые финансовые вопросы</span> в Таиланде, на Бали, в ОАЭ, Китае
           </p>
           <div class="reviews__btn-wrapper">
-            <button class="reviews__top-btn">Оформить обмен</button>
+            <a class="reviews__top-btn" href="#exchange">Оформить обмен</a>
           </div>
         </div>
         <div class="reviews__items">
@@ -963,6 +971,14 @@
             <a class="reviews__item-btn" href="#" id="ekaterina">
               Видео обзор
             </a>
+          </div>
+          <div class="reviews__rate reviews__rate-between">
+            <div class="reviews__rate-soon">
+             CКОРО...
+            </div>
+            <div class="reviews__link">
+              Обращение Тео
+            </div>
           </div>
           <div class="reviews__item">
             <div class="review__item-top">
@@ -1080,7 +1096,7 @@
           </div>
         </div>
         <div class="reviews__btn-wrapper">
-          <a class="rewiews__btn">
+          <a class="reviews__btn">
             хочу оформить обмен
           </a>
         </div>
@@ -1212,6 +1228,11 @@
             <a class="team__btn" href="#">
               ДОп ИНФОРМАЦИЯ
             </a>
+            <div class="mobile__btn-wrapper">
+              <a class="mobile-btn" href="#">
+                ДОп ИНФОРМАЦИЯ
+              </a>
+            </div>
           </div>
           <img class="team__img" src="./images/team-people.png" alt="">
         </div>
@@ -1285,7 +1306,6 @@
         </div>
       </section>
     </div>
-    <!-- <img class="perform__decor" src="./images/perform-decor.png" alt=""> -->
     <img class="footer__img" src="./images/footer.svg" alt="">
     <img class="footer__decor-img" src="./images/footer-decor.png" alt="">
     <footer class="footer">
@@ -1300,27 +1320,27 @@
                   </div>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link language-specific-2" href="#">
+                  <a class="footer__menu-link language-specific" href="#exchange">
                     Обмен валюты
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link language-specific-2" href="#">
+                  <a class="footer__menu-link language-specific" href="#about">
                     О компании Pentax
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link language-specific-2" href="#">
+                  <a class="footer__menu-link language-specific" href="#how">
                     Как работает биржа?
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link language-specific-2" href="#">
+                  <a class="footer__menu-link language-specific" href="#reviews">
                     Отзывы
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link language-specific-2" href="#">
+                  <a class="footer__menu-link language-specific" href="#perform">
                     Финансовые операции
                   </a>
                 </li>
@@ -1332,29 +1352,29 @@
                   </div>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link language-specific-2" href="#">
+                  <a class="footer__menu-link language-specific" href="#">
                     Instagram
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link language-specific-2" href="#">
+                  <a class="footer__menu-link language-specific" href="#">
                     Telegram
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link language-specific-2" href="#">
+                  <a class="footer__menu-link language-specific" href="#">
                     Telegram Bot
                   </a>
                 </li>
               </ul>
               <ul class="footer__menu">
                 <li class="footer__menu-item">
-                  <div class="footer__menu-title" href="#">
+                  <div class="footer__menu-title language-specific-2" href="#">
                     контакты:
                   </div>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link language-specific-2" href="mailto:pochta@mail.ru">
+                  <a class="footer__menu-link language-specific" href="mailto:pochta@mail.ru">
                     pochta@mail.ru
                   </a>
                 </li>
@@ -1381,38 +1401,6 @@
       </div>
     </footer>
   </main>
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
