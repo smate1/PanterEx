@@ -3308,6 +3308,12 @@ body.modal-open {
 		width: 100%;
 	}
 
+	.exchange__items{
+		padding: 0;
+	}
+
+	.exchange::after
+
 	.wallet {
 		margin-top: -35px;
 	}
