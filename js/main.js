@@ -1,3 +1,117 @@
+const header = document.getElementById('header')
+const menuItems = document.querySelectorAll('.menu__item')
+
+menuItems.forEach(item => {
+	item.addEventListener('click', () => {
+		header.classList.remove('open')
+	})
+})
+
+function exchange() {
+	const outputExchange = document.querySelector('.exchange__right-input')
+	const outputExchangeCustom = document.querySelector(
+		'.exchange__right-input_custom'
+	)
+	const $exchangeRate = document.querySelector('.exchange_output')
+	const $exchange_to = document.querySelector('.exchange_to')
+	const $exchange_from = document.querySelector('.exchange_from')
+	const $exchange_to_text = document.querySelector('.exchange_to_text')
+	const $exchange_from_text = document.querySelector('.exchange_from_text')
+
+	const exchangeRates = {}
+	const customExchangeRates = {
+		AED: 0.035522969,
+		IDR: 154.34742679687,
+		CNY: 0.070721858,
+		THB: 0.332006,
+	}
+
+	fetch('https://www.cbr-xml-daily.ru/latest.js') // Замените на реальный URL API
+		.then(response => {
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`)
+			}
+			return response.json()
+		})
+		.then(data => {
+			Object.assign(exchangeRates, data.rates)
+			const rate = getExchangeRate(
+				$exchange_from_text.textContent,
+				$exchange_to_text.textContent,
+				exchangeRates
+			)
+			const customRate = getExchangeRate(
+				$exchange_from_text.textContent,
+				$exchange_to_text.textContent,
+				customExchangeRates
+			)
+
+			outputExchange.value = rate.toFixed(4)
+			outputExchangeCustom.value = customRate.toFixed(4)
+			$exchangeRate.textContent = customRate.toFixed(4)
+		})
+		.catch(error => {
+			console.error('Ошибка при получении данных:', error)
+		})
+
+	function getExchangeRate(fromCurrency, toCurrency, rates) {
+		if (fromCurrency === 'RUB') {
+			return rates[toCurrency]
+		} else if (toCurrency === 'RUB') {
+			return 1 / rates[fromCurrency]
+		} else {
+			return rates[toCurrency] / rates[fromCurrency]
+		}
+	}
+
+	document.querySelector('.select-ex-list').addEventListener('click', e => {
+		if (e.target.classList.contains('select__item')) {
+			const selectedText = e.target.textContent.trim()
+			const [fromCurrency, toCurrency] = selectedText
+				.split(' → ')
+				.map(s => s.trim())
+
+			const rate = getExchangeRate(fromCurrency, toCurrency, exchangeRates)
+			const customRate = getExchangeRate(
+				fromCurrency,
+				toCurrency,
+				customExchangeRates
+			)
+
+			$exchange_from.value = 0
+			$exchange_to.value = 0
+			outputExchange.value = rate.toFixed(4)
+			outputExchangeCustom.value = customRate.toFixed(4)
+			$exchangeRate.textContent = customRate.toFixed(4)
+			$exchange_to_text.innerHTML = toCurrency
+			$exchange_from_text.textContent = fromCurrency
+		}
+	})
+
+	$exchange_from.addEventListener('input', e => {
+		const value = e.target.value
+		const rate = getExchangeRate(
+			$exchange_from_text.textContent,
+			$exchange_to_text.textContent,
+			customExchangeRates
+		)
+		const result = value * rate
+		$exchange_to.value = result.toFixed(4)
+	})
+
+	$exchange_to.addEventListener('input', e => {
+		const value = e.target.value
+		const rate = getExchangeRate(
+			$exchange_to_text.textContent,
+			$exchange_from_text.textContent,
+			customExchangeRates
+		)
+		const result = value * rate
+		$exchange_from.value = result.toFixed(4)
+	})
+}
+exchange()
+
 document.addEventListener('DOMContentLoaded', () => {
 	const initializeDropdown = select => {
 		const selectHeader = select.querySelector('.select__header')
@@ -5,68 +119,63 @@ document.addEventListener('DOMContentLoaded', () => {
 		const selectList = select.querySelector('.select__list')
 		let selectItems = select.querySelectorAll('.select__item')
 
-		// Ініціалізація: встановлюємо перший елемент як вибраний
 		if (selectItems.length > 0) {
 			const firstItem = selectItems[0]
 			selectCurrent.innerText = firstItem.innerText
 			selectCurrent.dataset.value =
 				firstItem.dataset.value || firstItem.innerText
 			firstItem.remove()
-			selectItems = select.querySelectorAll('.select__item') // Оновлюємо список
+			selectItems = select.querySelectorAll('.select__item')
 		}
 
-		// Функція для обробки вибору елемента
 		const handleItemClick = item => {
 			const selectedLang = item.dataset.value || item.innerText.toLowerCase()
 			const previousText = selectCurrent.innerText
 
-			// Оновлення поточного вибору
 			selectCurrent.innerText = item.innerText
 			selectCurrent.dataset.value = selectedLang
 
-			// Зміна атрибуту `lang` у <html>
-			document.documentElement.setAttribute('lang', selectedLang)
+			// Оновлення класів для мови
+			document.documentElement.classList.remove('lang-ru', 'lang-en')
+			if (selectedLang === 'тайланд' || selectedLang === 'китай') {
+				document.documentElement.classList.add('lang-ru')
+			} else {
+				document.documentElement.classList.add('lang-en')
+			}
 
-			// Додавання попереднього значення назад у список
+			// Додавання попереднього вибору
 			if (previousText) {
 				const newItem = document.createElement('div')
-				newItem.classList.add('select__item')
+				newItem.classList.add('select__item', 'language-specific') // Додаємо клас
 				newItem.innerText = previousText
 				newItem.dataset.value = selectCurrent.dataset.value || previousText
 				newItem.addEventListener('click', () => handleItemClick(newItem))
 				selectList.appendChild(newItem)
 			}
 
-			// Видалення вибраного елемента
 			item.remove()
 			select.classList.remove('is-active')
 		}
 
-		// Додаємо обробник кліку для кожного пункту
 		selectItems.forEach(item => {
 			item.addEventListener('click', () => handleItemClick(item))
 		})
 
-		// Відкриття/закриття меню
 		selectHeader.addEventListener('click', event => {
-			event.stopPropagation() // Зупиняємо "всплиття" події
+			event.stopPropagation()
 			const isActive = select.classList.contains('is-active')
 
-			// Закриваємо всі інші dropdown-и
 			document.querySelectorAll('.select').forEach(otherSelect => {
 				otherSelect.classList.remove('is-active')
 			})
 
-			// Відкриваємо або закриваємо поточне меню
 			select.classList.toggle('is-active', !isActive)
 		})
 	}
 
-	// Ініціалізуємо всі dropdown-и
 	const selects = document.querySelectorAll('.select')
 	selects.forEach(select => initializeDropdown(select))
 
-	// Закриття всіх меню при кліку поза ними
 	document.addEventListener('click', () => {
 		document.querySelectorAll('.select').forEach(select => {
 			select.classList.remove('is-active')
@@ -93,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	const muteToggle = document.getElementById('muteToggle')
 	const fullScreen = document.getElementById('fullScreen')
 
-	// Відкриття модального вікна
 	document.querySelectorAll('.reviews__item-btn').forEach(button => {
 		button.addEventListener('click', event => {
 			event.preventDefault()
@@ -107,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	})
 
-	// Закриття модального вікна
 	closeModal.addEventListener('click', () => {
 		modal.style.display = 'none'
 		videoPlayer.pause()
@@ -120,7 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 
-	// Відтворення/Пауза
 	playPause.addEventListener('click', () => {
 		if (videoPlayer.paused) {
 			videoPlayer.play()
@@ -131,7 +237,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 
-	// Оновлення прогресу
 	videoPlayer.addEventListener('timeupdate', () => {
 		const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100
 		progressBar.value = progress
@@ -139,26 +244,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		duration.textContent = formatTime(videoPlayer.duration)
 	})
 
-	// Перемотування
 	progressBar.addEventListener('input', () => {
 		const time = (progressBar.value / 100) * videoPlayer.duration
 		videoPlayer.currentTime = time
 	})
 
-	// Мутування звуку
 	muteToggle.addEventListener('click', () => {
 		videoPlayer.muted = !videoPlayer.muted
 		muteToggle.textContent = videoPlayer.muted ? '🔇' : '🔊'
 	})
 
-	// Повноекранний режим
 	fullScreen.addEventListener('click', () => {
 		if (videoPlayer.requestFullscreen) {
 			videoPlayer.requestFullscreen()
 		}
 	})
 
-	// Формат часу
 	function formatTime(seconds) {
 		const mins = Math.floor(seconds / 60)
 		const secs = Math.floor(seconds % 60)
@@ -209,6 +310,27 @@ function animateNumber(targetNumber, duration) {
 
 	requestAnimationFrame(updateNumber)
 }
+function removeNoBr() {
+	if (window.matchMedia('(max-width: 550px)').matches) {
+		document.querySelectorAll('nobr').forEach(nobr => {
+			const parent = nobr.parentNode
+			while (nobr.firstChild) {
+				parent.insertBefore(nobr.firstChild, nobr)
+			}
+			parent.removeChild(nobr)
+		})
+	}
+}
+
+window.addEventListener('load', removeNoBr)
+
+window.addEventListener('resize', removeNoBr)
+
+document.addEventListener('DOMContentLoaded', function () {
+	document.getElementById('burger').addEventListener('click', function () {
+		document.querySelector('.header').classList.toggle('open')
+	})
+})
 
 const targetNumber = getBaseNumber()
 animateNumber(targetNumber, 3000)
@@ -245,40 +367,32 @@ window.addEventListener('click', event => {
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-	// Вибір елементів для відкриття попапів
 	const openPopupButtons = document.querySelectorAll(
 		'.perform__item-first, .perform__item-second, .perform__item-third'
 	)
-	// Вибір попапів
 	const popups = {
 		'perform__item-first': '.pop-purchase',
 		'perform__item-second': '.pop-transfer',
 		'perform__item-third': '.pop-service',
 	}
 
-	// Відкриття попапів при натисканні на елементи
 	openPopupButtons.forEach(button => {
 		button.addEventListener('click', event => {
 			event.preventDefault()
 
-			// Знаходимо попап, що відповідає натиснутому елементу
 			const targetPopupClass = popups[button.classList[1]]
 			const popup = document.querySelector(targetPopupClass)
 			if (popup) {
-				// Закриваємо всі попапи
 				document
 					.querySelectorAll('.pop-purchase, .pop-transfer, .pop-service')
 					.forEach(p => p.classList.remove('active'))
-				// Відкриваємо відповідний попап
 				popup.classList.add('active')
 				popup.setAttribute('aria-hidden', 'false')
 			}
 		})
 	})
 
-	// Закриття попапів при кліку поза ними або по кнопці закриття
 	document.addEventListener('click', event => {
-		// Клік поза попапом
 		document
 			.querySelectorAll('.pop-purchase, .pop-transfer, .pop-service')
 			.forEach(popup => {
@@ -293,7 +407,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				}
 			})
 
-		// Клік по кнопці закриття
 		if (event.target.matches('.popup__close')) {
 			const popup = event.target.closest(
 				'.pop-purchase, .pop-transfer, .pop-service'
