@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PanterEx</title>
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/slick.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,16 +18,16 @@
 
 <body>
   <main class="main">
-    <header class="header">
+    <header class="header" id="header">
       <div class="container">
         <div class="header__wrapper">
           <div class="header__left">
             <a class="header__logo" href="#">
               <img src="./images/logo.png" alt="">
             </a>
-            <div class="select">
-              <div class="select__header">
-                <span class="select__current" data-value=""></span>
+            <div class="select select-mobile">
+              <div class="select__header select__header-en">
+                <span class="select__current select__current-mobile" data-value=""></span>
                 <div class="select__icon">
                   <div class="select__icon"><img src="./images/sel.svg" alt=""></div>
                 </div>
@@ -39,10 +38,14 @@
               </div>
             </div>
           </div>
-          <div class="header__right">
-            <div class="select">
-              <div class="select__header">
-                <span class="select__current language-specific" data-value=""></span>
+          <button class="burger" id="burger">
+            <span></span>
+            <span></span>
+          </button>
+          <div class="header__right" id="header__right">
+            <div class="select select-mobile">
+              <div class="select__header select__header-mobile">
+                <span class="select__current  select__current-mobile language-specific"></span>
                 <div class="select__icon select__icon-arrow"><img src="./images/sel.svg" alt=""></div>
               </div>
               <div class="select__list">
@@ -75,6 +78,9 @@
               </li>
             </ul>
             <div class="header__socials">
+              <div class="header__socials-title">
+                SOC. NETWORKS:
+              </div>
               <a class="header__socials-link instagram" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                   <path class="instagram-path"
@@ -87,20 +93,23 @@
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
-              <a class="header__socials-link telegram" href="@panterex_support">
+              <a class="header__socials-link telegram" href="https://t.me/panterex_support">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                   <path class="telegram-path" fill-rule="evenodd" clip-rule="evenodd"
                     d="M20.601 4.43C20.8584 4.32599 21.1402 4.29011 21.417 4.32611C21.6937 4.36211 21.9554 4.46866 22.1747 4.63468C22.394 4.8007 22.5629 5.02011 22.6639 5.27008C22.7649 5.52005 22.7943 5.79144 22.7489 6.056L20.3864 19.813C20.1573 21.14 18.6406 21.901 17.3729 21.24C16.3125 20.687 14.7375 19.835 13.3208 18.946C12.6125 18.501 10.4427 17.076 10.7094 16.062C10.9385 15.195 14.5844 11.937 16.6677 10C17.4854 9.239 17.1125 8.8 16.1469 9.5C13.7489 11.238 9.89894 13.881 8.62603 14.625C7.50311 15.281 6.91769 15.393 6.21769 15.281C4.94061 15.077 3.75623 14.761 2.78957 14.376C1.48332 13.856 1.54686 12.132 2.78853 11.63L20.601 4.43Z"
                     fill="white" />
                 </svg>
               </a>
+              <div class="header__socials-descr language-specific-2">
+                Your finances are safe with us
+              </div>
             </div>
           </div>
         </div>
       </div>
     </header>
     <div class="page-wrapper">
-      <section class="exchange">
+      <section class="exchange" id="exchange">
         <div class="page-container">
           <div class="exchange__items">
             <div class="exchange__item">
@@ -157,29 +166,27 @@
                     <div class="select__item">RUB <span>→</span> IDR</div>
                     <div class="select__item">AED <span>→</span> RUB</div>
                     <div class="select__item">RUB <span>→</span> AED</div>
-                    <div class="select__item">RMB <span>→</span> RUB</div>
-                    <div class="select__item">RUB <span>→</span> RMB</div>
+                    <div class="select__item">CNY <span>→</span> RUB</div>
+                    <div class="select__item">RUB <span>→</span> CNY</div>
                   </div>
                 </div>
                 <div class="exchange__amount exchange__amount-rub ">
-                  <input type="text" placeholder="0"><label>RUB</label>
+                  <input class="exchange_from" type="number" placeholder="0"><label class="exchange_from_text">RUB</label>
                 </div>
                 <div class="exchange__info-receive">
                   You will receive:
                 </div>
                 <div class="exchange__amount exchange__amount-thb ">
-                  <input type="text" placeholder="0"><label>THB</label>
+                  <input class="exchange_to" type="text" placeholder="0"><label class="exchange_to_text">THB</label>
                 </div>
                 <div class="exchange__rate">
-                  Exchange rate: 3.08
+                  Exchange rate: <span class="exchange_output">3.08</span>
                 </div>
                 <div class="exchange__buttons">
                   <a class="exchange__telegram" href="https://t.me/panterex_support">
-                    <!-- <img src="./images/telegram.svg" alt=""> -->
                     Exchange in TG
                   </a>
                   <a class="exchange__whatsapp" href="https://wa.me/message/454TMQ2IPRJNP1">
-                    <!-- <img src="./images/whatsapp.svg" alt=""> -->
                     Exchange in whatsapp
                   </a>
                 </div>
@@ -197,11 +204,11 @@
                 <div class="exchange__aver">
                   The average exchange rate in other exchangers:
                 </div>
-                <input class="exchange__right-input" type="text">
+                <input class="exchange__right-input" type="number">
                 <div class="exchange__averr">
                   PanterEx Exchange Rate:
                 </div>
-                <input class="exchange__right-input" type="text">
+                <input class="exchange__right-input exchange__right-input_custom" type="number">
                 <div class="exchange__offer">
                   Offer:
                 </div>
@@ -262,8 +269,8 @@
           </div>
         </div>
       </div>
-    </section>
-    <div class="about">
+    </section> 
+    <div class="about" id="about">
       <h1 class="about__title">
         PanterEx
       </h1>
@@ -354,7 +361,7 @@
           </button>
         </div>
       </div>
-    </section>
+    </section>  
     <div class="methods__wrapper">
       <div class="methods">
         <div class="methods-track">
@@ -392,8 +399,8 @@
           <img src="./images/master.svg" alt="">
         </div>
       </div>
-    </div>
-    <section class="how">
+    </div> 
+    <section class="how" id="how">
       <div class="container">
         <div class="how__content">
           <h2 class="how__title">
@@ -450,7 +457,7 @@
         </div>
       </div>
     </section>
-    <section class="reviews">
+    <section class="reviews" id="reviews">
       <div class="container">
         <div class="reviews__top">
           <h2 class="reviews__title">
@@ -461,7 +468,7 @@
             In addition to the exchange, <span>we help solve any financial issues</span> in Thailand, Bali, UAE, China
           </p>
           <div class="reviews__btn-wrapper">
-            <button class="reviews__top-btn">exchange counter</button>
+            <a class="reviews__top-btn" href="#exchange">exchange counter</a>
           </div>
         </div>
         <div class="reviews__items">
@@ -508,6 +515,14 @@
             <a class="reviews__item-btn" href="#" id="ekaterina">
               Video review
             </a>
+          </div>
+          <div class="reviews__rate reviews__rate-between">
+            <div class="reviews__rate-soon">
+              SOON...
+            </div>
+            <div class="reviews__link">
+              Theo's Appeal
+            </div>
           </div>
           <div class="reviews__item">
             <div class="review__item-top">
@@ -624,7 +639,7 @@
           </div>
         </div>
         <div class="reviews__btn-wrapper">
-          <a class="rewiews__btn">
+          <a class="reviews__btn">
             I want to make an exchange
           </a>
         </div>
@@ -744,9 +759,9 @@
         <img class="modal__img" src="./images/thai.png" alt="">
       </div>
     </div>
-    <div class="pop pop-purchase">
+   <div class="pop pop-purchase">
       <button class="popup__close" id="popupClose">&times;</button>
-      <h1 class="pop__title-purchase">
+      <h1 class="pop__title-purchase pop-title">
         <nobr>PURCHASE OF REAL ESTATE, PAYMEN</nobr>T FOR HOUSING AND TANSPORT
       </h1>
       <p class="pop__text">
@@ -879,7 +894,7 @@
     </div>
     <div class="pop pop-transfer">
       <button class="popup__close" id="popupClose">&times;</button>
-      <h1 class="pop__title-transfer">
+      <h1 class="pop__title-transfer pop-title">
         International <br> transfers
       </h1>
       <p class="pop__text">
@@ -946,7 +961,6 @@
         </div>
       </div>
       <div class="pop__items">
-
         <div class="pop__item">
           <svg class="pop__item-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
             fill="none">
@@ -999,7 +1013,7 @@
     </div>
     <div class="pop pop-service">
       <button class="popup__close" id="popupClose">&times;</button>
-      <h1 class="pop__title-service">
+      <h1 class="pop__title-service pop-title">
         Services for <br> entrepreneurs
       </h1>
       <p class="pop__text">
@@ -1090,84 +1104,6 @@
         </button>
       </div>
     </div>
-    <!-- <section class="reviews" id="reviews">
-      <div class="container">
-        <div class="reviews__top">
-          <h2 class="reviews__title">
-            reviews
-          </h2>
-          <p class="reviews__descr">
-            These are not just customer reviews, <span>they are whole stories.</span><br>
-            In addition to the exchange, <span>we help solve any financial issues</span> in Thailand, Bali, UAE, China
-          </p>
-          <div class="reviews__btn-wrapper">
-            <button class="reviews__top-btn">exchange counter</button>
-          </div>
-        </div>
-
-        <div class="reviews__rates">
-          <div class="reviews__rate reviews__rate-first">
-            <divЮю class="reviews__rate-soon">
-              SOON...
-          </div>
-          <div class="reviews__link">
-            Theo's Appeal
-          </div>
-        </div>
-        <div class="reviews__rate">
-          <img class="reviews__rate-logo" src="./images/google.png" alt="">
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Average rating:</div>
-            <div class="reviews__rate-info-num">5.0</div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
-                fill="#FBBC05" />
-            </svg>
-          </div>
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Number of reviews:</div>
-            <div class="reviews__rate-info-num">108</div>
-          </div>
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Number of ratings:</div>
-            <div class="reviews__rate-info-num">210</div>
-          </div>
-          <a class="reviews__rate-btn" href="#">
-            Read reviews
-          </a>
-        </div>
-        <div class="reviews__rate">
-          <img class="reviews__rate-logo" src="./images/yandex.svg" alt="">
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Average rating:</div>
-            <div class="reviews__rate-info-num">5.0</div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M9.09999 2.39C9.19169 2.23263 9.32306 2.10206 9.48098 2.01131C9.6389 1.92056 9.81785 1.8728 9.99999 1.8728C10.1821 1.8728 10.3611 1.92056 10.519 2.01131C10.6769 2.10206 10.8083 2.23263 10.9 2.39L13.2292 6.38833L17.7525 7.36833C17.9304 7.407 18.0951 7.49162 18.2301 7.61378C18.3651 7.73593 18.4658 7.89134 18.522 8.06452C18.5783 8.2377 18.5881 8.42259 18.5506 8.60077C18.5131 8.77894 18.4296 8.94418 18.3083 9.08L15.225 12.5308L15.6917 17.135C15.7101 17.3163 15.6806 17.4992 15.6062 17.6656C15.5318 17.8319 15.415 17.9758 15.2676 18.083C15.1202 18.1901 14.9472 18.2566 14.766 18.276C14.5848 18.2954 14.4017 18.2669 14.235 18.1933L9.99999 16.3267L5.76499 18.1933C5.59825 18.2669 5.41515 18.2954 5.23395 18.276C5.05275 18.2566 4.87981 18.1901 4.73238 18.083C4.58495 17.9758 4.46821 17.8319 4.39379 17.6656C4.31938 17.4992 4.28991 17.3163 4.30832 17.135L4.77499 12.5308L1.69165 9.08083C1.57018 8.94502 1.48645 8.77972 1.44883 8.60143C1.41121 8.42314 1.42102 8.23811 1.47727 8.06479C1.53353 7.89148 1.63426 7.73596 1.76941 7.61375C1.90456 7.49154 2.06941 7.40692 2.24749 7.36833L6.77082 6.38833L9.09999 2.39Z"
-                fill="#FBBC05" />
-            </svg>
-          </div>
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Number of reviews:</div>
-            <div class="reviews__rate-info-num">255</div>
-          </div>
-          <div class="reviews__rate-info">
-            <div class="reviews__rate-info-text">Number of ratings:</div>
-            <div class="reviews__rate-info-num">308</div>
-          </div>
-          <a class="reviews__rate-btn" href="#">
-            Read reviews
-          </a>
-        </div>
-      </div>
-      <div class="reviews__btn-wrapper">
-        <a class="rewiews__btn">
-          I want to make an exchange
-        </a>
-      </div>
-      </div>
-    </section> -->
     <section class="perform" id="perform">
       <div class="container">
         <div class="perform__top">
@@ -1273,7 +1209,7 @@
           </a>
         </div>
       </div>
-    </section>
+    </section> 
     <section class="team">
       <div class="container">
         <div class="team__inner">
@@ -1296,11 +1232,17 @@
             <a class="team__btn" href="#">
               MORE INFO
             </a>
+            <div class="mobile__btn-wrapper">
+              <a class="mobile-btn" href="#">
+                MORE INFO
+              </a>
+            </div>
           </div>
+          
           <img class="team__img" src="./images/team-people.png" alt="">
         </div>
       </div>
-    </section>
+    </section> 
     <section class="request" id="request">
       <div class="container">
         <div class="request__top">
@@ -1371,7 +1313,6 @@
         </div>
       </section>
     </div>
-    <!-- <img class="perform__decor" src="./images/perform-decor.png" alt=""> -->
     <img class="footer__img" src="./images/footer.svg" alt="">
     <img class="footer__decor-img" src="./images/footer-decor.png" alt="">
     <footer class="footer">
@@ -1386,27 +1327,27 @@
                   </div>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
+                  <a class="footer__menu-link" href="#exchange">
                     Currency exchange
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
+                  <a class="footer__menu-link" href="#about">
                     About PanterEx
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
+                  <a class="footer__menu-link" href="#how">
                     How does the exchange work?
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
+                  <a class="footer__menu-link" href="#reviews">
                     Reviews
                   </a>
                 </li>
                 <li class="footer__menu-item">
-                  <a class="footer__menu-link" href="#">
+                  <a class="footer__menu-link" href="#perform">
                     Financial transactions
                   </a>
                 </li>
