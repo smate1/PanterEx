@@ -250,6 +250,12 @@ html[lang='ru'] .language-specific-10--descrip {
 }
 
 .select__header {
+	font-family: 'Marvel';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	text-transform: capitalize;
 	position: relative;
 	cursor: pointer;
 	display: flex;
