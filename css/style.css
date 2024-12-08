@@ -260,14 +260,14 @@ html[lang='ru'] .language-specific-10--descrip {
 
 .select__current {
 	font-family: 'Marvel';
-	color: #fff;
+	-webkit-color: #fff;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
 	text-transform: capitalize;
 	font-size: 18px;
-	line-height: 24px;
+	/* line-height: 24px; */
 	padding: 8px;
 }
 
