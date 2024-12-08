@@ -65,16 +65,15 @@ select {
 	border: none;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
-input[type="number"] {
-    -moz-appearance: textfield;
+input[type='number'] {
+	-moz-appearance: textfield;
 }
-
 
 html[lang='en'] .language-specific {
 	font-family: 'Marvel', sans-serif;
@@ -224,7 +223,7 @@ html[lang='ru'] .language-specific-10--descrip {
 	background: #310857;
 	border-radius: 0 0 5px 5px;
 	width: 100%;
-	overflow: hidden;
+	overflow: scroll;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -1424,7 +1423,7 @@ hr {
 	line-height: normal;
 	text-transform: uppercase;
 	border-radius: 100px;
-	border: 0.5px solid #fff;
+	border: 1px solid #fff;
 	padding: 20px 45px;
 	margin: 0 auto;
 	color: #fff;
@@ -2759,7 +2758,7 @@ body.modal-open {
 	.page-wrapper {
 		background-image: none;
 	}
-	
+
 	.page-wrapper {
 		position: relative;
 	}
@@ -3308,13 +3307,11 @@ body.modal-open {
 		width: 100%;
 	}
 
-	.exchange__items{
+	.exchange__items {
 		padding: 0;
 	}
 
-	.exchange::after
-
-	.wallet {
+	.exchange::after .wallet {
 		margin-top: -35px;
 	}
 	.page-wrapper:before {
@@ -3344,6 +3341,9 @@ body.modal-open {
 	}
 }
 @media (max-width: 515px) {
+	.wallet {
+		margin-bottom: 200px;
+	}
 	.methods-track {
 		gap: 20px;
 		display: flex;
