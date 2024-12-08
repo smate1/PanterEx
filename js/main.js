@@ -1,3 +1,31 @@
+
+selectCurrent.textContent = item.textContent
+
+requestAnimationFrame(() => {
+	selectCurrent.textContent = item.textContent
+})
+
+selectItems.forEach(item => {
+	item.addEventListener('click', () => handleItemClick(item))
+	item.addEventListener('touchstart', () => handleItemClick(item))
+})
+
+console.log(document.documentElement.className)
+
+setTimeout(() => {
+	selectCurrent.textContent = item.textContent
+}, 10)
+
+
+
+
+
+
+
+
+
+
+
 const header = document.getElementById('header')
 const menuItems = document.querySelectorAll('.menu__item')
 
