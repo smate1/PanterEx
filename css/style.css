@@ -217,6 +217,11 @@ html[lang='ru'] .language-specific-10--descrip {
 	line-height: normal;
 }
 
+.select__list-lang{
+	overflow: hidden;
+
+}
+
 .select__list {
 	display: block;
 	z-index: 300;
@@ -252,9 +257,9 @@ html[lang='ru'] .language-specific-10--descrip {
 .select__header {
 	position: relative;
 	cursor: pointer;
-	display: -webkit-flex; /* Префікс для flexbox */
+	display: -webkit-flex;
 	display: flex;
-	-webkit-align-items: center; /* Префікс для align-items */
+	-webkit-align-items: center; 
 	align-items: center;
 	z-index: 300;
 	width: 100px;
@@ -262,16 +267,14 @@ html[lang='ru'] .language-specific-10--descrip {
 
 .select__current {
 	font-family: 'Marvel';
-	-webkit-color: #fff; /* Префікс для color (застарілий, але безпечний варіант) */
-	color: #fff;
-	-webkit-font-size: 16px; /* Префікс для font-size (необов'язково, для повної сумісності) */
+	-webkit-font-size: 16px; 
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
-	-webkit-line-height: normal; /* Префікс для line-height */
+	-webkit-line-height: normal;
 	line-height: normal;
 	text-transform: capitalize;
-	-webkit-font-size: 18px; /* Префікс для font-size (повторний) */
+	-webkit-font-size: 18px;
 	font-size: 18px;
 	/* line-height: 24px; */
 	padding: 8px;
