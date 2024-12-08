@@ -250,9 +250,12 @@ html[lang='ru'] .language-specific-10--descrip {
 }
 
 .select__header {
+	position: relative;
 	cursor: pointer;
 	display: flex;
+	align-items: center;
 	z-index: 300;
+	width: 200px;
 }
 
 .select__current {
@@ -3022,7 +3025,7 @@ body.modal-open {
 		margin-top: 0px;
 	}
 	.steps {
-		padding-top: 50px;
+		padding-top: 30px;
 	}
 	.methods {
 		height: 70px;
@@ -3195,7 +3198,7 @@ body.modal-open {
 	}
 
 	.select-mobile {
-		margin-bottom: 10px;
+		/* margin-bottom: 10px; */
 	}
 
 	.select__header-en {
