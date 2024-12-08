@@ -1,14 +1,14 @@
 
-selectCurrent.textContent = item.textContent
+// selectCurrent.textContent = item.textContent
 
 requestAnimationFrame(() => {
 	selectCurrent.textContent = item.textContent
 })
 
-selectItems.forEach(item => {
-	item.addEventListener('click', () => handleItemClick(item))
-	item.addEventListener('touchstart', () => handleItemClick(item))
-})
+// selectItems.forEach(item => {
+// 	item.addEventListener('click', () => handleItemClick(item))
+// 	item.addEventListener('touchstart', () => handleItemClick(item))
+// })
 
 console.log(document.documentElement.className)
 
