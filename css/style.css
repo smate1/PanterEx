@@ -208,6 +208,10 @@ html[lang='ru'] .language-specific-10--descrip {
 	display: block;
 }
 
+.select-mobile-pad {
+	margin-bottom: 10px;
+}
+
 .select-ex-list {
 	color: #000;
 	overflow-y: scroll;
