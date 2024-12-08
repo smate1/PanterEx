@@ -210,7 +210,7 @@ html[lang='ru'] .language-specific-10--descrip {
 
 .select-ex-list {
 	color: #000;
-	overflow: scroll;
+	overflow-y: scroll;
 	font-family: 'Marvel';
 	font-size: 16px;
 	font-style: normal;
